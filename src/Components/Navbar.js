@@ -23,13 +23,17 @@ class TopNav extends Component {
                       >
                       
                         <NavLink to='/collections'>
-                          All Collections
+                          <Nav.Link as="span">
+                            All Collections
+                          </Nav.Link>
                         </NavLink>
-                    
-                    
+                      
                         <NavLink to='/contact'>
-                          Get in touch
+                          <Nav.Link as="span">
+                            Get in touch
+                          </Nav.Link>
                         </NavLink>
+                      
                     
                 </Nav>
                 <Form className="d-flex">
