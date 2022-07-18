@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
+import PageHeader from '../Components/PageHeader';
 
 class AllCollectionsContainer extends Component {
     slugifyName = (name) => {
@@ -10,7 +11,7 @@ class AllCollectionsContainer extends Component {
 
     testData = [
         { 
-            name: "MetaBoy", 
+            name: "really really really really long name example", 
             collectionSize: "10,000",
             volume: "88.15 eth",
             avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc", 
@@ -146,16 +147,17 @@ class AllCollectionsContainer extends Component {
     render() {
         return (
             <Container>
-                <Table striped bordered>
+                <PageHeader name="All Collections"/>
+                <Table striped bordered responsive className='align-middle' >
                     <thead>
                         <tr>
-                        <th>#</th>
-                        <th>Collection</th>
-                        <th>Total Supply</th>
-                        <th>Unique Owner Count</th>
-                        <th>Lifetime Volume</th>
-                        <th>7-day Volume</th>
-                        <th>24hr Volume</th>
+                            <th>#</th>
+                            <th>Collection</th>
+                            <th>Total Supply</th>
+                            <th>Owner Count</th>
+                            <th>Lifetime Volume</th>
+                            <th>7-day Volume</th>
+                            <th>24hr Volume</th>
                         </tr>
                     </thead>
                     <tbody>

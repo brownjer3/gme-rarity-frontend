@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import NftDetailsCard from '../Components/NftDetailsCard';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button'
+// import Modal from 'react-bootstrap/Modal';
+// import Button from 'react-bootstrap/Button';
 
 
 export default function ItemsGridContainer() {
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    // const [selectedItemRank, setSelectedItemRank] = useState('1');
 
     const testData = [
         { 
@@ -48,13 +49,8 @@ export default function ItemsGridContainer() {
     //         return <CollectionTableRow index={index} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
     //     })
     // }
-    let selectedItem;
-    let rank = '';
-    const handleClick = (item) => {
-        selectedItem = item;
-        rank = item.rarityRank;
-        setModalShow(true);
-    }
+
+    
 
     return (
         <div>
