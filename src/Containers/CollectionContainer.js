@@ -1,0 +1,55 @@
+import React, { Component } from 'react';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import ItemsGridContainer from './ItemsGridContainer';
+import GridPagination from '../Components/GridPagination';
+
+class CollectionContainer extends Component {
+
+    testData = {
+        banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12?img-width=expanded&img-format=WebP",
+        name: "MetaBoy",
+        description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
+        supply: '10,000',
+        gmeLink: 'https://nft.gamestop.com/collection/MetaBoy',
+        stats: {
+            dayVolume: '44 ETH',
+            weekVolume: '1.1k ETH',
+            totalVolume: '1.1k ETH'
+        }
+    }
+
+    render() {
+        return(
+            <Container>
+                <Card>
+                    <Card.Img variant="top" src={this.testData.banner} />
+                    <Card.Body style={{textAlign: "left"}}>
+                        <Card.Title>{this.testData.name}</Card.Title>
+                        <Card.Text>{this.testData.description}</Card.Text>
+                        <a href={this.testData.gmeLink} target="_blank">
+                            <Button variant="primary" >View on GameStop</Button>
+                        </a>
+                    </Card.Body>
+                </Card>
+                <br />
+                <p style={{textAlign: "left"}} className="text-muted">{this.testData.supply} items</p>
+                <ItemsGridContainer />
+                <br />
+                <GridPagination />
+            </Container>
+        )
+    }
+}
+
+export default CollectionContainer;
+
+// https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12?img-width=expanded&img-format=WebP
+// Banner
+// Collection name
+// Description
+// Filters
+// Grid
+
+
