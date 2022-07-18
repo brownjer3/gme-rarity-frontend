@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from "react-router-dom";
 
 class TopNav extends Component {
@@ -23,14 +22,14 @@ class TopNav extends Component {
                           navbarScroll
                       >
                       <Nav.Link>
-                        <NavLink to='all'>
+                        <NavLink to='/collections'>
                           All Collections
                         </NavLink>
                     </Nav.Link>
                     <Nav.Link>
-                    <NavLink to='collectionPage'>
-                      Collection Page
-                    </NavLink>
+                        <NavLink to='/contact'>
+                          Get in touch
+                        </NavLink>
                     </Nav.Link>
                 </Nav>
                 <Form className="d-flex">

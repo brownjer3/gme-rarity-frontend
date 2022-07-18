@@ -23,7 +23,7 @@ class CollectionCard extends Component {
                 </ListGroup>
                 <Card.Body>
                 
-                    <Card.Link href='/collectionPage'>View Collection</Card.Link>
+                    <Link to={`/collections/${this.props.name}`} >View Collection</Link>
 
                 </Card.Body>
                 </Card>
