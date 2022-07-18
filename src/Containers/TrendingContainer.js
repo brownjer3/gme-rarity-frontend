@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CollectionCard from '../Components/CollectionCard'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import PageHeader from '../Components/PageHeader';
 
 class MainCollectionsContainer extends Component {
     testData = [
@@ -34,7 +35,8 @@ class MainCollectionsContainer extends Component {
     render() {
         return (
             <Container>
-                <Container><h2>Trending Collections</h2></Container>
+                <PageHeader name="Deep Fuckin' Rarity"/>
+                <h2>Trending Collections</h2>
                 <Row xs={1} md={3} className="g-4">
                 { this.getCollections() }
                 </Row>

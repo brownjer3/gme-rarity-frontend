@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class PageHeader extends Component {
     render() {
         return (
-            <h1>{this.props.name}</h1>
+            <h1 class="display-2">{this.props.name}</h1>
         )
     }
 }

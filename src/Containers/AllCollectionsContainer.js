@@ -7,9 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 class AllCollectionsContainer extends Component {
-    slugifyName = (name) => {
-        return name.replace(" ", "-").toLowerCase();
-    }
 
     testData = [
         { 
@@ -139,6 +136,10 @@ class AllCollectionsContainer extends Component {
             ownerCount: '6666'
         }
     ];
+
+    slugifyName = (name) => {
+        return name.replaceAll(" ", "-").toLowerCase();
+    }
     
     makeTableRows = () => {
         return this.testData.map((item, index) => {
