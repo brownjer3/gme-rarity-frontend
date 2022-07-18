@@ -4,6 +4,10 @@ import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
 
 class AllCollectionsContainer extends Component {
+    slugifyName = (name) => {
+        return name.replace(" ", "-").toLowerCase();
+    }
+
     testData = [
         { 
             name: "MetaBoy", 
@@ -117,7 +121,7 @@ class AllCollectionsContainer extends Component {
     
     makeTableRows = () => {
         return this.testData.map((item, index) => {
-            return <CollectionTableRow index={index} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
+            return <CollectionTableRow index={index} slug={this.slugifyName(item.name)} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
         })
     }
 
