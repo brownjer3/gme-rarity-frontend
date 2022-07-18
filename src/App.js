@@ -3,12 +3,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import TopNav from './Components/Navbar';
-import TrendingContainer from './Containers/TrendingContainer';
-import CollectionContainer from './Containers/CollectionContainer';
-import AllCollectionsContainer from './Containers/AllCollectionsContainer';
+import ContactContainer from './Containers/ContactContainer';
 import NotFound from './Components/NotFound';
 import AllCollections from './Containers/AllCollections';
-import ContactContainer from './Containers/ContactContainer'
+import AllCollectionsContainer from './Containers/AllCollectionsContainer';
+import CollectionContainer from './Containers/CollectionContainer';
+import TrendingContainer from './Containers/TrendingContainer';
+
 
 function App() {
   return (

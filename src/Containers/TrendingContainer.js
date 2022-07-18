@@ -26,8 +26,8 @@ class MainCollectionsContainer extends Component {
     ];
 
     getCollections = () => {
-        return this.testData.map((item) => {
-            return <CollectionCard name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
+        return this.testData.map((item, index) => {
+            return <CollectionCard key={index} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
         })
     }
 

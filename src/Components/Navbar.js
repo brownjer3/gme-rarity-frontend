@@ -21,16 +21,16 @@ class TopNav extends Component {
                           style={{ maxHeight: '100px' }}
                           navbarScroll
                       >
-                      <Nav.Link>
+                      
                         <NavLink to='/collections'>
                           All Collections
                         </NavLink>
-                    </Nav.Link>
-                    <Nav.Link>
+                    
+                    
                         <NavLink to='/contact'>
                           Get in touch
                         </NavLink>
-                    </Nav.Link>
+                    
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control

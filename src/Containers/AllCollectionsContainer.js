@@ -121,7 +121,7 @@ class AllCollectionsContainer extends Component {
     
     makeTableRows = () => {
         return this.testData.map((item, index) => {
-            return <CollectionTableRow index={index} slug={this.slugifyName(item.name)} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
+            return <CollectionTableRow key={index} index={index} slug={this.slugifyName(item.name)} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri}/>
         })
     }
 
