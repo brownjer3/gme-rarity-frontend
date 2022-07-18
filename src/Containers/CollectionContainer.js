@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { useParams } from 'react-router-dom';
+import TraitFilterContainer from '../Containers/TraitFilterContainer';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ItemsGridContainer from './ItemsGridContainer';
 import GridPagination from '../Components/GridPagination';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 export default function CollectionContainer() {
@@ -25,21 +28,28 @@ export default function CollectionContainer() {
 
     return(
         <Container>
-            <Card>
-                <Card.Img variant="top" src={testData.banner} />
-                <Card.Body style={{textAlign: "left"}}>
-                    <Card.Title>{testData.name}</Card.Title>
-                    <Card.Text>{testData.description}</Card.Text>
-                    <a href={testData.gmeLink} target="_blank">
-                        <Button variant="primary" >View on GameStop</Button>
-                    </a>
-                </Card.Body>
-            </Card>
-            <br />
-            <p style={{textAlign: "left"}} className="text-muted">{testData.supply} items</p>
-            <ItemsGridContainer />
-            <br />
-            <GridPagination />
+            <Row >
+                <Col md={2}>
+                    <TraitFilterContainer />
+                </Col>
+                <Col >
+                    <Card>
+                        <Card.Img variant="top" src={testData.banner}/>
+                        <Card.Body style={{textAlign: "left"}}>
+                            <Card.Title>{testData.name}</Card.Title>
+                            <Card.Text>{testData.description}</Card.Text>
+                            <a href={testData.gmeLink} target="_blank">
+                                <Button variant="primary" >View on GameStop</Button>
+                            </a>
+                        </Card.Body>
+                    </Card>
+                    <br />
+                    <p style={{textAlign: "left"}} className="text-muted">{testData.supply} items</p>
+                    <ItemsGridContainer />
+                    <br />
+                    <GridPagination />
+                </Col>
+            </Row>
         </Container>
     )
 }
