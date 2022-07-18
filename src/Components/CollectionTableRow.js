@@ -15,7 +15,7 @@ class CollectionTableRow extends Component {
                             <Col md={2}>
                                 <Image fluid rounded src={this.props.image} style={{ height: '3rem' }}/>
                             </Col>
-                            <Col className='pt-2 text-wrap text-start'>{this.props.name}</Col>  
+                            <Col className='pt-2 pe-0 text-wrap text-start'>{this.props.name}</Col>  
                         </Row>
                     </Link>
                 </td>

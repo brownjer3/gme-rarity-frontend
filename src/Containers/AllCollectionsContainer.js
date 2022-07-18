@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
 import PageHeader from '../Components/PageHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 class AllCollectionsContainer extends Component {
     slugifyName = (name) => {
@@ -152,12 +154,30 @@ class AllCollectionsContainer extends Component {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Collection</th>
-                            <th>Total Supply</th>
-                            <th>Owner Count</th>
-                            <th>Lifetime Volume</th>
-                            <th>7-day Volume</th>
-                            <th>24hr Volume</th>
+                            <th>
+                                Collection
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
+                            <th>
+                                Total Supply
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
+                            <th>
+                                Owner Count
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
+                            <th>
+                                Lifetime Volume
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
+                            <th>
+                                7-day Volume
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
+                            <th>
+                                24hr Volume
+                                <FontAwesomeIcon icon={faSort} className='mx-2'/>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
