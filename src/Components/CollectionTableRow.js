@@ -14,6 +14,7 @@ class CollectionTableRow extends Component {
                     </Link>
                 </td>
                 <td>{this.props.collectionSize}</td>
+                <td>{this.props.ownerCount}</td>
                 <td>{this.props.volume}</td>
                 <td>{this.props.volume}</td>
                 <td>{this.props.volume}</td>
