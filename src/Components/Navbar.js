@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 class TopNav extends Component {
     render() {
         return (
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className='mb-3'>
                 <Container fluid>
                   <NavLink to='/'>
                       <Navbar.Brand>[Logo Placeholder]</Navbar.Brand>
