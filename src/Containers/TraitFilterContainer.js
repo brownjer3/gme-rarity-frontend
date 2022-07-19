@@ -38,22 +38,73 @@ class TraitFilterContainer extends Component {
                             Background
                             <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
                             <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                                <ListGroup.Item className='bg-dark text-white'>Trait 1</ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white'>Trait 2</ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white'>Trait 3</ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 1</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 2</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 3</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
                             </ListGroup>
                         </ListGroup.Item>   
-                    <ListGroup.Item className='bg-dark text-white'>
+                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
                         Body
-                        <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
+                        <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
+                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 1</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 2</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 3</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                            </ListGroup>
                     </ListGroup.Item>
-                    <ListGroup.Item className='bg-dark text-white'>
+                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
                         Head
                         <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
+                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 1</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 2</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 3</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                            </ListGroup>
                     </ListGroup.Item>
-                    <ListGroup.Item className='bg-dark text-white'>
+                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
                         Weapon
                         <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
+                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 1</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 2</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                                    <span>Trait 3</span>
+                                    <input type='checkbox'/>
+                                </ListGroup.Item>
+                            </ListGroup>
                     </ListGroup.Item>
                 </ListGroup>
             </div>

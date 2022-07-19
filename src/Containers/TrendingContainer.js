@@ -3,6 +3,7 @@ import CollectionCard from '../Components/CollectionCard'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import PageHeader from '../Components/PageHeader';
+import Image from 'react-bootstrap/Image';
 
 class MainCollectionsContainer extends Component {
     testData = [
@@ -36,6 +37,7 @@ class MainCollectionsContainer extends Component {
         return (
             <Container >
                 <PageHeader name="💎 Deep Fungible Value 💎"/>
+                {/* <Image className='w-50' src={process.env.PUBLIC_URL+"/images/DFV_moon_match_bg.png"}/> */}
                 <h2>Trending Collections</h2>
                 <Row xs={1} md={3} className="g-4">
                 { this.getCollections() }
