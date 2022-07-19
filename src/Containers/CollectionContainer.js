@@ -32,7 +32,7 @@ export default function CollectionContainer() {
                 <Col md={2} >
                     <TraitFilterContainer />
                 </Col>
-                <Col >
+                <Col>
                     <Card bg='dark' text='white' border='light'>
                         <Card.Img variant="top" src={testData.banner}/>
                         <Card.Body style={{textAlign: "left"}}>
