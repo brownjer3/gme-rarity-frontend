@@ -8,6 +8,7 @@ import ItemsGridContainer from './ItemsGridContainer';
 import GridPagination from '../Components/GridPagination';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import SortDropdown from '../Components/SortDropdown';
 
 
 export default function CollectionContainer() {
@@ -44,6 +45,7 @@ export default function CollectionContainer() {
                     </Card>
                     <br />
                     <p style={{textAlign: "left"}} className="text-muted">{testData.supply} items</p>
+                    <SortDropdown />
                     <ItemsGridContainer />
                     <br />
                     <GridPagination />
