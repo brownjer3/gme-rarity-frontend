@@ -9,9 +9,9 @@ import { NavLink } from "react-router-dom";
 class TopNav extends Component {
     render() {
         return (
-            <Navbar bg="light" expand="lg" className='mb-3'>
+            <Navbar bg="dark" variant="dark" expand="lg" className='mb-3'>
                 <Container fluid>
-                  <NavLink to='/'>
+                  <NavLink to='/' className="nav-link">
                       <Navbar.Brand>[Logo Placeholder]</Navbar.Brand>
                   </NavLink>
                       <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,17 +21,12 @@ class TopNav extends Component {
                           style={{ maxHeight: '100px' }}
                           navbarScroll
                       >
-                      
-                        <NavLink to='/collections'>
-                          <Nav.Link as="span">
+                        <NavLink to='/collections' className="nav-link">
                             All Collections
-                          </Nav.Link>
                         </NavLink>
                       
-                        <NavLink to='/contact'>
-                          <Nav.Link as="span">
+                        <NavLink to='/contact' className="nav-link">
                             Get in touch
-                          </Nav.Link>
                         </NavLink>
                       
                     

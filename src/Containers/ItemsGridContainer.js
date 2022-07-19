@@ -57,7 +57,7 @@ export default function ItemsGridContainer() {
             <Row md={5} className="g-4">
                 {testData.map((item) => (
                         <Col>
-                            <Card onClick={() => setModalShow(true)}>
+                            <Card bg='dark' text='white' border='light' onClick={() => setModalShow(true)}>
                                 <Card.Img variant="top" src={item.image} />
                                 <Card.Body>
                                 <Card.Title>Rarity Rank: {item.rarityRank}</Card.Title>

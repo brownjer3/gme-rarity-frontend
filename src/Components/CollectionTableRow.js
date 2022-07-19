@@ -10,7 +10,7 @@ class CollectionTableRow extends Component {
             <tr >
                 <td >{this.props.index+1}</td>
                 <td>
-                    <Link to={`/collections/${this.props.slug}`}>
+                    <Link className='text-white text-decoration-none' to={`/collections/${this.props.slug}`}>
                         <Row>
                             <Col md={2}>
                                 <Image fluid rounded src={this.props.image} style={{ height: '3rem' }}/>

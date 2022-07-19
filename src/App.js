@@ -14,7 +14,7 @@ import TrendingContainer from './Containers/TrendingContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark text-white">
       <Router>
         <TopNav />
 

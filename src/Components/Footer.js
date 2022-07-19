@@ -9,12 +9,22 @@ class Footer extends Component {
     
     render() {
         return (
-            <Navbar bg="light" className='mt-3'>
-                <Container className='d-flex align-items-center'>
-                    <p className='fw-lighter w-25'>Made with ❤️ by @honeycrisp</p>
-                    <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
-                        <Image className="float-start" style={{width: '15%'}} src={process.env.PUBLIC_URL+"images/bmc.png"} />
-                    </a>
+            <Navbar bg="dark" text='white' className='mt-3'>
+                <Container>
+                    <Row>
+                        <Col>
+                            <p className='fw-lighter mt-1'>Made with ❤️ by 
+                                <a class="text-decoration-none" href='https://twitter.com/honey_crisp_' target='_blank'> @honeycrisp </a>
+                                and 
+                                <a class="text-decoration-none" href='https://twitter.com/GatoFlaco9' target='_blank'> @GatoFlaco9 </a>
+                            </p>
+                        </Col>
+                        <Col>
+                            <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
+                                <Image  style={{width: '20%'}} src={process.env.PUBLIC_URL+"/images/bmc.png"} />
+                            </a>
+                        </Col>
+                    </Row>
                 </Container>
             </Navbar>
         )

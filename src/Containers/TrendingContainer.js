@@ -34,8 +34,8 @@ class MainCollectionsContainer extends Component {
 
     render() {
         return (
-            <Container>
-                <PageHeader name="Deep Fuckin' Rarity"/>
+            <Container >
+                <PageHeader name="💎 Deep Fungible Value 💎"/>
                 <h2>Trending Collections</h2>
                 <Row xs={1} md={3} className="g-4">
                 { this.getCollections() }

@@ -151,7 +151,7 @@ class AllCollectionsContainer extends Component {
         return (
             <Container>
                 <PageHeader name="All Collections"/>
-                <Table striped bordered responsive className='align-middle' >
+                <Table striped bordered responsive hover className='align-middle' variant="dark">
                     <thead>
                         <tr>
                             <th>#</th>

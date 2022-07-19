@@ -27,13 +27,12 @@ export default function CollectionContainer() {
     }
 
     return(
-        <Container>
             <Row >
-                <Col md={2}>
+                <Col md={2} >
                     <TraitFilterContainer />
                 </Col>
                 <Col >
-                    <Card>
+                    <Card bg='dark' text='white' border='light'>
                         <Card.Img variant="top" src={testData.banner}/>
                         <Card.Body style={{textAlign: "left"}}>
                             <Card.Title>{testData.name}</Card.Title>
@@ -49,8 +48,7 @@ export default function CollectionContainer() {
                     <br />
                     <GridPagination />
                 </Col>
-            </Row>
-        </Container>
+            </Row>   
     )
 }
 
