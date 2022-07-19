@@ -17,7 +17,6 @@ function App() {
     <div className="App bg-dark text-white">
       <Router>
         <TopNav />
-
           <Routes>
             <Route path="/" element={<TrendingContainer />} />
             <Route path="collections" element={<AllCollections />}>

@@ -9,25 +9,27 @@ import PageHeader from "../Components/PageHeader";
 class ContactContainer extends Component {
     render() {
         return (
-            <Container className='' >
+            <Container style={{height:'82vh'}}>
                 <PageHeader name='Contact Us'/>
                 <Form className="text-start" >
                     <Row>
                         <Col>
-                        <Form.Label>Your name</Form.Label>
-                        <Form.Control type='text' placeholder="Vitalik Buterin" />
+                            <Form.Label>Your name</Form.Label>
+                            <Form.Control type='text' placeholder="Vitalik Buterin" />
                         </Col>
                         <Col>
-                        <Form.Label>Your email</Form.Label>
-                        <Form.Control type="email" placeholder="Vitalik@Ethereum.org" />
+                            <Form.Label>Your email</Form.Label>
+                            <Form.Control type="email" placeholder="Vitalik@Ethereum.org" />
                         </Col>
                     </Row>
-                    <Form.Group className="mt-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Your message</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="We're going to the moon..."/>
                     </Form.Group>
-                    </Form>
-                    
+                    <Button variant="primary" type="submit">
+                        Send
+                    </Button>
+                </Form>
             </Container>
         )
     }

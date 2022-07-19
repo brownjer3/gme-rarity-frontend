@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import TraitFilterContainer from '../Containers/TraitFilterContainer';
 import Container from 'react-bootstrap/Container';
@@ -9,10 +9,52 @@ import GridPagination from '../Components/GridPagination';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SortDropdown from '../Components/SortDropdown';
+import NftDetailsCard from '../Components/NftDetailsCard';
 
 
 export default function CollectionContainer() {
     const { collectionName } = useParams();
+    const [modalShow, setModalShow] = useState(false);
+    const [selectedItem, setSelectedItem] = useState('');
+    const [items, setItems] = useState([
+        { 
+            id: '3422',
+            image: 'https://www.gstop-content.com/ipfs/QmVjCB7fiPkq9fwzBVFgU6cvu4YkiY6KH5eA3J5sqDQeQJ',
+            rarityRank : "1"
+        },
+        { 
+            id: '722',
+            image: 'https://www.gstop-content.com/ipfs/QmdVHYfZkG6bD6e7cEJity6doz5baxvJjELd6fwVSeyTxS',
+            rarityRank : "55"
+        },
+        { 
+            id: '1035',
+            image: 'https://www.gstop-content.com/ipfs/QmVq8TM5AvDFVAscMnkVauDRUZb5Ufw53xPy3EQFizZ9hp',
+            rarityRank : "3355"
+        },
+        { 
+            id: '23',
+            image: 'https://www.gstop-content.com/ipfs/QmZ6grDxxNDrjyEYgFjy3MhXDAaxyJJDrViiRjRfiu4FEJ',
+            rarityRank : "11"
+        },
+        { 
+            id: '7222',
+            image: 'https://www.gstop-content.com/ipfs/QmQy6g1iD2gCJJXDKTDcYx541RbcpaBbrxupkXNh5Tuzbi',
+            rarityRank : "420.69"
+        },
+        { 
+            id: '431',
+            image: 'https://www.gstop-content.com/ipfs/Qmc9fimbCCN9oCHcffA5HepqwSt9JNatPn6513ZaXrih61',
+            rarityRank : "9999"
+        }
+    ])
+
+    const handleItemSelect = (e) => {
+        const index = e.target.closest('.detailsCard').getAttribute('index');
+        const selected = items[index];
+        setSelectedItem(selected);
+        setModalShow(true);
+    }
 
     const testData = {
         banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12?img-width=expanded&img-format=WebP",
@@ -28,7 +70,7 @@ export default function CollectionContainer() {
     }
 
     return(
-            <Row >
+            <Row className='w-100'>
                 <Col md={2} >
                     <TraitFilterContainer />
                 </Col>
@@ -43,33 +85,21 @@ export default function CollectionContainer() {
                             </a>
                         </Card.Body>
                     </Card>
+                    <NftDetailsCard
+                        item={selectedItem}
+                        collectionName={collectionName}
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                     <br />
                     <p style={{textAlign: "left"}} className="text-muted">{testData.supply} items</p>
                     <SortDropdown />
-                    <ItemsGridContainer />
+                    <ItemsGridContainer items={items} handleItemSelect={handleItemSelect}/>
                     <br />
                     <GridPagination />
                 </Col>
             </Row>   
     )
 }
-
-// class CollectionContainer extends Component {
-
-//     getSlug = () => {
-//         const { collectionName } = useParams();
-//         console.log(collectionName);
-
-//         return collectionName;
-//     }
-
-
-
-//     render() {
-
-//     }
-// }
-
-// export default CollectionContainer;
 
 
