@@ -14,9 +14,9 @@ class Footer extends Component {
                     <Row>
                         <Col>
                             <p className='fw-lighter mt-1'>Made with ❤️ by 
-                                <a class="text-decoration-none" href='https://twitter.com/honey_crisp_' target='_blank'> @honeycrisp </a>
+                                <a class="text-decoration-none text-white" href='https://twitter.com/honey_crisp_' target='_blank'> @honeycrisp </a>
                                 and 
-                                <a class="text-decoration-none" href='https://twitter.com/GatoFlaco9' target='_blank'> @GatoFlaco9 </a>
+                                <a class="text-decoration-none text-white" href='https://twitter.com/GatoFlaco9' target='_blank'> @GatoFlaco9 </a>
                             </p>
                         </Col>
                         <Col>

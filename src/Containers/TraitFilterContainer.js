@@ -3,10 +3,21 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 
 
 class TraitFilterContainer extends Component {
+
+
+    handleClick(e) {
+        const dropdownContent = e.target.querySelector('.dropdown-container') || e.target.closest('.dropdown-btn').querySelector('.dropdown-container');
+        if (dropdownContent.classList.contains("d-none")) {
+            dropdownContent.classList.remove("d-none");
+          } else {
+            dropdownContent.classList.add("d-none");
+          }
+    }
+
     render() {
         return (
             <div>
@@ -23,10 +34,15 @@ class TraitFilterContainer extends Component {
                 <br />
                 <h3>Traits</h3>
                 <ListGroup variant="flush" className='text-start'>
-                    <ListGroup.Item className='bg-dark text-white'>
-                        Background
-                        <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
-                    </ListGroup.Item>
+                        <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
+                            Background
+                            <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
+                            <ListGroup variant="flush" className='dropdown-container d-none text-start'>
+                                <ListGroup.Item className='bg-dark text-white'>Trait 1</ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white'>Trait 2</ListGroup.Item>
+                                <ListGroup.Item className='bg-dark text-white'>Trait 3</ListGroup.Item>
+                            </ListGroup>
+                        </ListGroup.Item>   
                     <ListGroup.Item className='bg-dark text-white'>
                         Body
                         <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
