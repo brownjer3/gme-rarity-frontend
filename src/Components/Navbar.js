@@ -12,7 +12,9 @@ class TopNav extends Component {
             <Navbar bg="dark" variant="dark" expand="lg" className='mb-3'>
                 <Container fluid>
                   <NavLink to='/' className="nav-link">
-                      <Navbar.Brand>[Logo Placeholder]</Navbar.Brand>
+                      <Navbar.Brand>
+                        <img width="50" src={process.env.PUBLIC_URL+"/images/OrdinaryMoon.gif"} />
+                      </Navbar.Brand>
                   </NavLink>
                       <Navbar.Toggle aria-controls="navbarScroll" />
                       <Navbar.Collapse id="navbarScroll">
