@@ -81,6 +81,7 @@ export default function CollectionContainer() {
         description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
         supply: '10,000',
         gmeLink: 'https://nft.gamestop.com/collection/MetaBoy',
+        avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
         stats: {
             dayVolume: '44 ETH',
             weekVolume: '1.1k ETH',
@@ -98,7 +99,7 @@ export default function CollectionContainer() {
     return(
             <Row className='w-100'>
                 <Col md={2} >
-                    <TraitFilterContainer isTraitSelected={isTraitSelected} handleTraitSelect={handleTraitSelect} traits={testData.traits} />
+                    <TraitFilterContainer image={testData.avatarUri} isTraitSelected={isTraitSelected} handleTraitSelect={handleTraitSelect} traits={testData.traits} />
                 </Col>
                 <Col>
                     <Card bg='dark' text='white' border='light'>

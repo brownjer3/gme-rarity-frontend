@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import Image from 'react-bootstrap/Image';
 
 
 class TraitFilterContainer extends Component {
@@ -48,6 +49,7 @@ class TraitFilterContainer extends Component {
     render() {
         return (
             <div>
+                <Image fluid thumbnail className="ms-2 mb-2" src={this.props.image}/>
                 <h3>Find your NFT</h3>
                 <Form className="d-flex px-2">
                   <Form.Control
