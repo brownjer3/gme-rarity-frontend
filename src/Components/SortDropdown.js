@@ -4,8 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 class SortDropdown extends Component {
     render() {
         return(
-            <div >{/* class='text-end me-4 mb-2' */}
-                
+            <div >
                 <Dropdown>
                     <Dropdown.Toggle id="dropdown-button-dark-example1" variant="dark">
                     Sort by

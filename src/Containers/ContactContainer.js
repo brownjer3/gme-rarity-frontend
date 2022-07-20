@@ -9,7 +9,7 @@ import PageHeader from "../Components/PageHeader";
 class ContactContainer extends Component {
     render() {
         return (
-            <Container >
+            <Container className='px-5'>
                 <PageHeader name='Contact Us'/>
                 <Form className="text-start" >
                     <Row>

@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import TraitFilterContainer from '../Containers/TraitFilterContainer';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import ItemsGridContainer from './ItemsGridContainer';
@@ -10,12 +9,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SortDropdown from '../Components/SortDropdown';
 import NftDetailsCard from '../Components/NftDetailsCard';
+import TraitBadges from '../Components/TraitBadges';
 
 
 export default function CollectionContainer() {
     const { collectionName } = useParams();
     const [modalShow, setModalShow] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
+    const [selectedTraits, setSelectedTraits] = useState([]);
     const [items, setItems] = useState([
         { 
             id: '3422',
@@ -56,6 +57,24 @@ export default function CollectionContainer() {
         setModalShow(true);
     }
 
+    const handleTraitSelect = (e) => {
+        const name = e.target.value;
+        if (isTraitSelected(name)) {
+            setSelectedTraits(selectedTraits.filter(trait => trait != name ));
+        } else {
+            setSelectedTraits(selectedTraits => [...selectedTraits, name]);   
+        }
+    }
+
+    const handleTraitDeselect = (e) => {
+        const name = e.target.closest('.trait-badge').id;
+        setSelectedTraits(selectedTraits.filter(trait => trait != name ));
+    }
+
+    const isTraitSelected = (name) => {
+        return selectedTraits.includes(name);
+    }
+
     const testData = {
         banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12?img-width=expanded&img-format=WebP",
         name: collectionName,
@@ -79,7 +98,7 @@ export default function CollectionContainer() {
     return(
             <Row className='w-100'>
                 <Col md={2} >
-                    <TraitFilterContainer traits={testData.traits} />
+                    <TraitFilterContainer isTraitSelected={isTraitSelected} handleTraitSelect={handleTraitSelect} traits={testData.traits} />
                 </Col>
                 <Col>
                     <Card bg='dark' text='white' border='light'>
@@ -99,13 +118,14 @@ export default function CollectionContainer() {
                         onHide={() => setModalShow(false)}
                     />
                     <br />
-                        <Row className='align-items-center my-2'>
-                            <Col className='text-start text-muted'>
+                        <Row className='align-middle my-2'>
+                            <Col md={2} className='text-start text-muted align-self-center'>
                                 <div>{testData.supply} items</div>
                             </Col>
-                            <Col>
+                            <Col className='d-flex flex-wrap justify-content-flex-start'>
+                                <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
                             </Col>
-                            <Col className='text-end pe-5'>
+                            <Col md={2} className='text-end pe-5'>
                                 <SortDropdown />
                             </Col>
                         </Row>
