@@ -66,13 +66,20 @@ export default function CollectionContainer() {
             dayVolume: '44 ETH',
             weekVolume: '1.1k ETH',
             totalVolume: '1.1k ETH'
+        }, 
+        traits: {
+            "Hat": {"Beret Hat": "5", "Halo": "100", "Crown": "5514", "Santa": "928", "Helmet": "8242"},
+            "Body": {"Schoolboy": "2312", 'Schoolgirl': "2312", "Armor": "2312", "Hoodie": "2312"},
+            "Face": {"Teeth Smile": "23", "Goofy": "23", "Serious": "23", "Angry": "23"},
+            "Weapon": {"Axe and Shield": "832", "Sword": "832", "Medusa Head": "832", "Bomb": "832", "Phonebook": "832"},
+            "Background": {"Apocalypse": "7322", "Space": "7322", "Field": "7322", "Video Game": "7322", "Haunted House": "7322"}
         }
     }
 
     return(
             <Row className='w-100'>
                 <Col md={2} >
-                    <TraitFilterContainer />
+                    <TraitFilterContainer traits={testData.traits} />
                 </Col>
                 <Col>
                     <Card bg='dark' text='white' border='light'>

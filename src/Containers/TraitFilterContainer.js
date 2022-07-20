@@ -8,6 +8,33 @@ import { faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 
 class TraitFilterContainer extends Component {
 
+    createTraits = (category) => {
+        return Object.keys(category).map((trait) => {
+            return ( 
+                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
+                    <span>{trait} ({category[trait]})</span>
+                    <input type='checkbox'/>
+                </ListGroup.Item>
+            )
+        });
+    }
+
+    createTraitMenu = (traits) => {
+        return Object.keys(traits).map((category) => {
+            return ( 
+                <ListGroup.Item className='dropdown-btn bg-dark text-white'>
+                    <span onClick={this.handleClick}>
+                        {category}
+                        <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
+                    </span>
+                    <ListGroup variant="flush" className='dropdown-container d-none text-start'>
+                    {this.createTraits(traits[category])}
+                    </ListGroup>
+                </ListGroup.Item>  
+            )
+        });
+    }
+
 
     handleClick(e) {
         const dropdownContent = e.target.closest('.dropdown-btn').querySelector('.dropdown-container');
@@ -34,80 +61,7 @@ class TraitFilterContainer extends Component {
                 <br />
                 <h3>Traits</h3>
                 <ListGroup variant="flush" className='text-start'>
-                        <ListGroup.Item className='dropdown-btn bg-dark text-white'>
-                            <span onClick={this.handleClick}>
-                                Background
-                                <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
-                            </span>
-                            <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 1</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 2</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 3</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                            </ListGroup>
-                        </ListGroup.Item>   
-                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
-                        Body
-                        <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
-                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 1</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 2</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 3</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                            </ListGroup>
-                    </ListGroup.Item>
-                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
-                        Head
-                        <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
-                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 1</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 2</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 3</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                            </ListGroup>
-                    </ListGroup.Item>
-                    <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
-                        Weapon
-                        <FontAwesomeIcon icon={faCaretDown} className='mx-2'/>
-                        <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 1</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 2</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                                <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
-                                    <span>Trait 3</span>
-                                    <input type='checkbox'/>
-                                </ListGroup.Item>
-                            </ListGroup>
-                    </ListGroup.Item>
+                    {this.createTraitMenu(this.props.traits)}
                 </ListGroup>
             </div>
         )
