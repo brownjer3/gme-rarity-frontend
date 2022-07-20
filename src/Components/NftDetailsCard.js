@@ -9,10 +9,26 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Table from 'react-bootstrap/Table';
 
 export default function NftDetailsCard(props) {
-    useEffect(() => {
-        const closeButton = document.querySelector('.btn-close');
-        closeButton.classList.add('btn-close-white');
-      });
+    // useEffect(() => {
+    //         const closeButton = document.querySelector('.btn-close');
+    //         closeButton.classList.add('btn-close-white');
+    //   });
+
+      const makeTraitRows = (traits) => {
+        if (traits) {
+            return Object.keys(traits).map((category) => {
+                return (
+                    <tr>
+                        <td>{category}</td>
+                        <td>{traits[category]}</td>
+                        <td>231</td>
+                    </tr>
+                )
+            })
+        } else {
+            <div>nothing yet</div>
+        }
+      }
 
     return(
         <Modal
@@ -41,23 +57,11 @@ export default function NftDetailsCard(props) {
                                 <tr>
                                     <th>Type</th>
                                     <th>Value</th>
-                                    <th>Count</th>
                                     <th>Rarity Score</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Background</td>
-                                    <td>Space</td>
-                                    <td>6666</td>
-                                    <td>231</td>
-                                </tr>
-                                <tr>
-                                    <td>Hat</td>
-                                    <td>Halo</td>
-                                    <td>777</td>
-                                    <td>8323</td>
-                                </tr>
+                                {makeTraitRows(props.item.traits)}
                             </tbody>
                         </Table>
                     </Col>
