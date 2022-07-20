@@ -17,6 +17,7 @@ export default function CollectionContainer() {
     const [modalShow, setModalShow] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
     const [selectedTraits, setSelectedTraits] = useState([]);
+    const [filteredItemsLength, setFilteredItemsLength] = useState(10000);
     const [items, setItems] = useState([
         { 
             id: '3422',
@@ -62,7 +63,8 @@ export default function CollectionContainer() {
         if (isTraitSelected(name)) {
             setSelectedTraits(selectedTraits.filter(trait => trait != name ));
         } else {
-            setSelectedTraits(selectedTraits => [...selectedTraits, name]);   
+            setSelectedTraits(selectedTraits => [...selectedTraits, name]);
+            // setFilteredItemsLength(filteredItemsLength + testData)
         }
     }
 
@@ -119,17 +121,17 @@ export default function CollectionContainer() {
                         onHide={() => setModalShow(false)}
                     />
                     <br />
-                        <Row className='align-middle my-2'>
-                            <Col md={2} className='text-start text-muted align-self-center'>
-                                <div>{testData.supply} items</div>
-                            </Col>
-                            <Col className='d-flex flex-wrap justify-content-flex-start'>
-                                <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
-                            </Col>
-                            <Col md={2} className='text-end pe-5'>
-                                <SortDropdown />
-                            </Col>
-                        </Row>
+                    <Row className='align-middle my-2'>
+                        <Col md={2} className='text-start text-muted align-self-center'>
+                            <div>{String(filteredItemsLength)} items</div>
+                        </Col>
+                        <Col className='d-flex flex-wrap justify-content-flex-start'>
+                            <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
+                        </Col>
+                        <Col md={2} className='text-end pe-5'>
+                            <SortDropdown />
+                        </Col>
+                    </Row>
                     <ItemsGridContainer items={items} handleItemSelect={handleItemSelect}/>
                     <br />
                     <GridPagination />

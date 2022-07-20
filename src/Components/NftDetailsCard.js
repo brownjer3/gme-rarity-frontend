@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -9,6 +9,10 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Table from 'react-bootstrap/Table';
 
 export default function NftDetailsCard(props) {
+    useEffect(() => {
+        const closeButton = document.querySelector('.btn-close');
+        closeButton.classList.add('btn-close-white');
+      });
 
     return(
         <Modal
@@ -21,6 +25,7 @@ export default function NftDetailsCard(props) {
                 <Modal.Title>
                     {props.collectionName} #{props.item.id}
                 </Modal.Title>
+                
             </Modal.Header>
             <Modal.Body className='bg-dark text-white'>
                 <Row>
