@@ -99,8 +99,16 @@ export default function CollectionContainer() {
                         onHide={() => setModalShow(false)}
                     />
                     <br />
-                    <p style={{textAlign: "left"}} className="text-muted">{testData.supply} items</p>
-                    <SortDropdown />
+                        <Row className='align-items-center my-2'>
+                            <Col className='text-start text-muted'>
+                                <div>{testData.supply} items</div>
+                            </Col>
+                            <Col>
+                            </Col>
+                            <Col className='text-end pe-5'>
+                                <SortDropdown />
+                            </Col>
+                        </Row>
                     <ItemsGridContainer items={items} handleItemSelect={handleItemSelect}/>
                     <br />
                     <GridPagination />
