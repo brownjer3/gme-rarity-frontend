@@ -9,7 +9,7 @@ import PageHeader from "../Components/PageHeader";
 class ContactContainer extends Component {
     render() {
         return (
-            <Container style={{height:'82vh'}}>
+            <Container >
                 <PageHeader name='Contact Us'/>
                 <Form className="text-start" >
                     <Row>
@@ -22,7 +22,7 @@ class ContactContainer extends Component {
                             <Form.Control type="email" placeholder="Vitalik@Ethereum.org" />
                         </Col>
                     </Row>
-                    <Form.Group className="mt-3 mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group className="my-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Your message</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="We're going to the moon..."/>
                     </Form.Group>

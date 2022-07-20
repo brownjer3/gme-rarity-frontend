@@ -9,7 +9,7 @@ class Footer extends Component {
     
     render() {
         return (
-            <Navbar bg="dark" text='white' className='mt-3'>
+            <Navbar bg="dark" text='white' className='mt-auto'>
                 <Container>
                     <Row>
                         <Col>

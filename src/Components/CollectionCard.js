@@ -11,13 +11,10 @@ class CollectionCard extends Component {
     render() {
         return (
             <Col>
-                <Card bg='dark' border="light" style={{ width: '25rem' }}>
+                <Card bg='dark' border="light" >
                 <Card.Img variant="top" src={this.props.image} />
                 <Card.Body>
                     <Card.Title>{this.props.name}</Card.Title>
-                    <Card.Text>
-                        A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.
-                    </Card.Text>
                     <ListGroup className="list-group-flush">
                             <ListGroup.Item className='bg-dark text-white'>Collection Size: {this.props.collectionSize}</ListGroup.Item>
                             <ListGroup.Item className='bg-dark text-white'>24hr Volume: {this.props.volume}</ListGroup.Item>
