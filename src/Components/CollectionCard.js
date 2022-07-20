@@ -21,7 +21,7 @@ class CollectionCard extends Component {
                         </ListGroup>
                 </Card.Body>
                 <Card.Body>
-                    <Link className='text-white text-decoration-none' to={`/collections/${this.props.name}`}>
+                    <Link className='text-white text-decoration-none' to={`/collections/${this.props.slug}`}>
                         Collection Details
                         <FontAwesomeIcon icon={faUpRightFromSquare} className='mx-2' />
                     </Link>

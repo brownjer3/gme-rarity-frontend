@@ -10,7 +10,7 @@ class TraitFilterContainer extends Component {
 
 
     handleClick(e) {
-        const dropdownContent = e.target.querySelector('.dropdown-container') || e.target.closest('.dropdown-btn').querySelector('.dropdown-container');
+        const dropdownContent = e.target.closest('.dropdown-btn').querySelector('.dropdown-container');
         if (dropdownContent.classList.contains("d-none")) {
             dropdownContent.classList.remove("d-none");
           } else {
@@ -34,9 +34,11 @@ class TraitFilterContainer extends Component {
                 <br />
                 <h3>Traits</h3>
                 <ListGroup variant="flush" className='text-start'>
-                        <ListGroup.Item className='dropdown-btn bg-dark text-white' onClick={this.handleClick}>
-                            Background
-                            <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
+                        <ListGroup.Item className='dropdown-btn bg-dark text-white'>
+                            <span onClick={this.handleClick}>
+                                Background
+                                <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
+                            </span>
                             <ListGroup variant="flush" className='dropdown-container d-none text-start'>
                                 <ListGroup.Item className='bg-dark text-white d-flex justify-content-between'>
                                     <span>Trait 1</span>
