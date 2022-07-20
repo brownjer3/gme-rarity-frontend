@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class PageHeader extends Component {
+class SectionHeader extends Component {
     render() {
         return (
             <h1 className="display-2">{this.props.name}</h1>
@@ -8,4 +8,4 @@ class PageHeader extends Component {
     }
 }
 
-export default PageHeader;
+export default SectionHeader;

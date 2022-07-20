@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import CollectionCard from '../Components/CollectionCard'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import PageHeader from '../Components/PageHeader';
-import Image from 'react-bootstrap/Image';
+import SectionHeader from '../Components/SectionHeader';
+import HomeBanner from '../Components/HomeBanner';
 
 class TrendingContainer extends Component {
 
@@ -57,9 +57,8 @@ class TrendingContainer extends Component {
     render() {
         return (
             <Container >
-                <PageHeader name="💎 Deep Fungible Value 💎"/>
-                {/* <Image className='w-75' src={process.env.PUBLIC_URL+"/images/wide.png"}/> */}
-                <h2>Trending Collections</h2>
+                <HomeBanner />
+                <SectionHeader name="Trending Collections"/>
                 <Row md={5} className="g-4">
                 { this.getCollections() }
                 </Row>

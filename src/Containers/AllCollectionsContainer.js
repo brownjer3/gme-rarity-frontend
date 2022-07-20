@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
-import PageHeader from '../Components/PageHeader';
+import SectionHeader from '../Components/SectionHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort } from '@fortawesome/free-solid-svg-icons';
 
@@ -150,7 +150,7 @@ class AllCollectionsContainer extends Component {
     render() {
         return (
             <Container>
-                <PageHeader name="All Collections"/>
+                <SectionHeader name="All Collections"/>
                 <Table striped bordered responsive hover className='align-middle' variant="dark">
                     <thead>
                         <tr>

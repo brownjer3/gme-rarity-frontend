@@ -4,13 +4,13 @@ import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from "react-bootstrap/Container";
-import PageHeader from "../Components/PageHeader";
+import SectionHeader from "../Components/SectionHeader";
 
 class ContactContainer extends Component {
     render() {
         return (
             <Container className='px-5'>
-                <PageHeader name='Contact Us'/>
+                <SectionHeader name='Contact Us'/>
                 <Form className="text-start" >
                     <Row>
                         <Col>
