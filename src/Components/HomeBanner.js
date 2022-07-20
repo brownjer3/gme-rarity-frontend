@@ -9,13 +9,10 @@ class HomeBanner extends Component {
             <div class="p-5 rounded-lg m-3 d-flex">
                 <Row className='align-items-center'>
                     <Col>
-                        <Image className='w-50' src={process.env.PUBLIC_URL+"/images/OrdinaryMoon.gif"} />
+                        <Image fluid src={process.env.PUBLIC_URL+"/images/dfv-moon.gif"} />
                     </Col>
                     <Col>
-                        <h1 class="display-3">Deep Fungible Value</h1>
-                        <p class="lead">
-                            The #1 rarity tool for the Gamestop NFT Marketplace
-                        </p>
+                        <h1 class="display-4">The #1 rarity tool for the Gamestop NFT Marketplace</h1>
                     </Col>
                 </Row>
             </div>

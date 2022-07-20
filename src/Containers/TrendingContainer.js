@@ -59,7 +59,7 @@ class TrendingContainer extends Component {
             <Container >
                 <HomeBanner />
                 <SectionHeader name="Trending Collections"/>
-                <Row md={5} className="g-4">
+                <Row md={5} className="g-4 my-4">
                 { this.getCollections() }
                 </Row>
             </Container>

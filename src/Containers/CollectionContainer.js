@@ -120,7 +120,7 @@ export default function CollectionContainer() {
     }
 
     const testData = {
-        banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12?img-width=expanded&img-format=WebP",
+        banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12",
         name: collectionName,
         description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
         supply: '10,000',
