@@ -15,7 +15,7 @@ class TopNav extends Component {
                 <Container fluid>
                   <NavLink to='/' className="nav-link">
                       <Navbar.Brand>
-                        <img width="50" src={process.env.PUBLIC_URL+"/images/dfv-moon.gif"} />
+                        <img width="75" src={process.env.PUBLIC_URL+"/images/12fps-slower-moon.gif"} />
                       </Navbar.Brand>
                   </NavLink>
                   <Nav

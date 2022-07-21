@@ -102,6 +102,7 @@ export default function CollectionContainer() {
 
     const handleTraitSelect = (e) => {
         const name = e.target.value;
+        console.log(name)
         if (isTraitSelected(name)) {
             setSelectedTraits(selectedTraits.filter(trait => trait != name ));
         } else {
@@ -138,7 +139,7 @@ export default function CollectionContainer() {
             "Weapon": {"Axe and Shield": "832", "Sword": "832", "Medusa Head": "832", "Bomb": "832", "Phonebook": "832"},
             "Background": {"Apocalypse": "7322", "Space": "7322", "Field": "7322", "Video Game": "7322", "Haunted House": "7322"}
         }
-    }
+    } 
 
     return(
             <Row className='w-100'>
