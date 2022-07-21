@@ -148,7 +148,9 @@ export default function CollectionContainer() {
                 </Col>
                 <Col>
                     <Card bg='dark' text='white' border='light'>
-                        <Card.Img variant="top" src={testData.banner}/>
+                        <div className='w-100 overflow-hidden' style={{height: "220px"}}>
+                            <Card.Img className='position-relative top-50 start-50 translate-middle' variant="top" src={testData.banner} />
+                        </div>
                         <Card.Body style={{textAlign: "left"}}>
                             <Card.Title>{testData.name}</Card.Title>
                             <Card.Text>{testData.description}</Card.Text>
