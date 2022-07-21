@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import SortDropdown from '../Components/SortDropdown';
 import NftDetailsCard from '../Components/NftDetailsCard';
 import TraitBadges from '../Components/TraitBadges';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 export default function CollectionContainer() {
@@ -120,17 +121,44 @@ export default function CollectionContainer() {
         return selectedTraits.includes(name);
     }
 
+    const createStats = () => {
+        return (
+            <ListGroup horizontal >
+                <ListGroup.Item className='bg-dark text-white border'>
+                    <div className='lead fw-bolder'>{testData.supply}</div> 
+                    <div>items</div>
+                </ListGroup.Item>
+                <ListGroup.Item className='bg-dark text-white border'>
+                    <div className='lead fw-bolder'>{testData.ownerCount}</div> 
+                    <div>owners</div>
+                </ListGroup.Item>
+                <ListGroup.Item className='bg-dark text-white border'>
+                    <div className='lead fw-bolder'>{testData.stats.dayVolume}</div>
+                    <div>24hr volume</div>
+                </ListGroup.Item>
+                <ListGroup.Item className='bg-dark text-white border'>
+                    <div className='lead fw-bolder'>{testData.stats.totalVolume}</div>
+                    <div>total volume</div>
+                </ListGroup.Item>
+            </ListGroup>
+        )
+        // return Object.keys(testData.stats).map((stat) => {
+        //     return <ListGroup.Item className='bg-dark text-white border'>{testData.stats[stat]}</ListGroup.Item>
+        // })
+    }
+
     const testData = {
         banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12",
         name: collectionName,
-        description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
+        ownerCount: '6392',
         supply: '10,000',
+        description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
         gmeLink: 'https://nft.gamestop.com/collection/MetaBoy',
         avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
         stats: {
-            dayVolume: '44 ETH',
-            weekVolume: '1.1k ETH',
-            totalVolume: '1.1k ETH'
+            dayVolume: '44.6',
+            weekVolume: '1.1k',
+            totalVolume: '2.1k'
         }, 
         traits: {
             "Hat": {"Beret Hat": "5", "Halo": "100", "Crown": "5514", "Santa": "928", "Helmet": "8242"},
@@ -152,11 +180,23 @@ export default function CollectionContainer() {
                             <Card.Img className='position-relative top-50 start-50 translate-middle' variant="top" src={testData.banner} />
                         </div>
                         <Card.Body style={{textAlign: "left"}}>
-                            <Card.Title>{testData.name}</Card.Title>
-                            <Card.Text>{testData.description}</Card.Text>
-                            <a href={testData.gmeLink} target="_blank">
-                                <Button variant="primary" >View on GameStop</Button>
-                            </a>
+                            <Row>
+                                <Col>
+                                    <Card.Title className='display-6'>{testData.name}</Card.Title>
+                                    <Card.Text>{testData.description}</Card.Text>
+                                </Col>
+                                <Col>
+                                    <Row className='float-end text-center'>
+                                        {createStats()}   
+                                    </Row>
+                                    <Row className='mt-2 float-end'>
+                                        <a href={testData.gmeLink} target="_blank">
+                                            <Button variant="outline-primary">View on GameStop</Button>
+                                        </a>
+                                    </Row>
+                                </Col>
+                            </Row>
+
                         </Card.Body>
                     </Card>
                     <NftDetailsCard
