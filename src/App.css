@@ -37,6 +37,12 @@
   }
 }
 
-.tableRow{
+.tableRow {
   align-self: center;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: white !important;
+  box-shadow: none !important;
 }
