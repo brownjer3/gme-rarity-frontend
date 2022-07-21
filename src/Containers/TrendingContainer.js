@@ -33,7 +33,7 @@ class TrendingContainer extends Component {
 
     weiToEth = (wei) => {
         const num = parseInt(wei)
-        return (num / (10**18)).toFixed(2)
+        return Math.round(num / (10**18))
     }
 
     makeCollectionCards = () => {
@@ -42,14 +42,9 @@ class TrendingContainer extends Component {
         })
     }
 
-    testState = () => {
-        console.log(this.state);
-    }
-
     render() {
         return (
             <Container >
-                <div onClick={this.testState}>TEST STATE</div>
                 <HomeBanner />
                 <SectionHeader name="Trending Collections"/>
                 <Row md={5} className="g-4 my-4">
