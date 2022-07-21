@@ -45,15 +45,6 @@ class TopNav extends Component {
                     />
                   </InputGroup>
                 </Form>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Find a Collection"
-                    className="me-2 bg-dark text-white"
-                    aria-label="Search"
-                  />
-                </Form> */}
-
             </Container>
           </Navbar>
         )
