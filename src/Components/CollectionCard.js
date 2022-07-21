@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 class CollectionCard extends Component {
@@ -23,7 +23,7 @@ class CollectionCard extends Component {
                 <Card.Body>
                     <Link className='text-white text-decoration-none' to={`/collections/${this.props.slug}`}>
                         Collection Details
-                        <FontAwesomeIcon icon={faUpRightFromSquare} className='mx-2' />
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='mx-2' />
                     </Link>
                 </Card.Body>
                 </Card>

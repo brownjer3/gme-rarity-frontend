@@ -15,7 +15,7 @@ class TopNav extends Component {
                 <Container fluid>
                   <NavLink to='/' className="nav-link">
                       <Navbar.Brand>
-                        <img width="75" src={process.env.PUBLIC_URL+"/images/12fps-slower-moon.gif"} />
+                        <img width="75" src={process.env.PUBLIC_URL+"/images/18-moon.gif"} />
                       </Navbar.Brand>
                   </NavLink>
                   <Nav
@@ -32,7 +32,7 @@ class TopNav extends Component {
                     </NavLink>
                 </Nav>
                 <Form className="d-flex">
-                  <InputGroup className="mb-3">
+                  <InputGroup>
                     <InputGroup.Text id="basic-addon1" className='bg-dark text-white'>
                       <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </InputGroup.Text>

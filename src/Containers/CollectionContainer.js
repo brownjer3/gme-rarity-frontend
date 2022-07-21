@@ -11,6 +11,8 @@ import SortDropdown from '../Components/SortDropdown';
 import NftDetailsCard from '../Components/NftDetailsCard';
 import TraitBadges from '../Components/TraitBadges';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function CollectionContainer() {
@@ -191,7 +193,10 @@ export default function CollectionContainer() {
                                     </Row>
                                     <Row className='mt-2 float-end'>
                                         <a href={testData.gmeLink} target="_blank">
-                                            <Button variant="outline-primary">View on GameStop</Button>
+                                            <Button variant="outline-primary">
+                                                View on GameStop
+                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='mx-2' />
+                                            </Button>
                                         </a>
                                     </Row>
                                 </Col>
