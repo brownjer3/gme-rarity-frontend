@@ -2,7 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
-import TopNav from './Components/Navbar';
+import TopNav from './Components/TopNav';
 import Footer from './Components/Footer';
 import ContactContainer from './Containers/ContactContainer';
 import NotFound from './Components/NotFound';

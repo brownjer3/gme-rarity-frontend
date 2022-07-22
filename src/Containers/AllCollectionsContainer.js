@@ -8,148 +8,42 @@ import { faSort, faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons
 
 class AllCollectionsContainer extends Component {
 
+    COLLECTIONS_URL = "http://localhost:3001/collections"
+
     state = {
-        testData: [
-            { 
-                name: "really really really really long name example", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc", 
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            },
-            { 
-                name: "MetaBoy", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            },
-            { 
-                name: "MetaBoy", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            },
-            { 
-                name: "MetaBoy", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            },
-            { 
-                name: "MetaBoy", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            },
-            { 
-                name: "MetaBoy", 
-                collectionSize: "10,000",
-                volume: "88.15 eth",
-                avatarUri: "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
-                ownerCount: '6666'
-            },
-            { 
-                name: "CYBER CREW", 
-                collectionSize: "7",
-                volume: "71.4 eth",
-                avatarUri: "https://static.gstop-content.com/2e4e707a-5f7f-4e00-8608-4b9c40a2fa6e",
-                ownerCount: '6666'
-            },
-            { 
-                name: "Bombatomics", 
-                collectionSize: "5,000",
-                volume: "68.96 eth",
-                avatarUri: "https://static.gstop-content.com/15f5937e-2d17-4e5a-ac1c-c5e79c285df6",
-                ownerCount: '6666'
-            }
-        ], 
+        collections: [], 
         sortOptions: ["Collection", "Total Supply", "Owner Count",  "Lifetime Volume", "7-day Volume", "24hr Volume"],
         sortSelection: "Lifetime Volume",
         sortOrder: "Descending"
     }
-    
 
-    slugifyName = (name) => {
-        return name.replaceAll(" ", "-").toLowerCase();
+    componentDidMount() {
+        fetch(this.COLLECTIONS_URL)
+        .then(res => res.json())
+        .then(res => this.setState({collections: res}))
+        .catch(err => console.log(err))
     }
+
+
+    transformUri = (uri) => {
+        return uri.replace("public", "https://static.gstop-content.com");
+    }
+
+    weiToEth = (wei) => {
+        const num = parseInt(wei)
+        return Math.round(num / (10**18))
+    }
+
+    // handleFilter = (e) => {
+    //     const query = e.target.value
+    //     this.setState({collections: () => {
+    //         this.state.collections.filter(collection => collection.name.includes(query))
+    //     }})
+    // }
     
     makeTableRows = () => {
-        return this.state.testData.map((item, index) => {
-            return <CollectionTableRow key={index} index={index} slug={this.slugifyName(item.name)} name={item.name} volume={item.volume} collectionSize={item.collectionSize} image={item.avatarUri} ownerCount={item.ownerCount}/>
+        return this.state.collections.map((item, index) => {
+            return <CollectionTableRow index={index} slug={item.slug} name={item.name} volume={this.weiToEth(item.volume)} collectionSize={item.items} image={this.transformUri(item.avatarUri)} ownerCount="TBD"/>
         })
     }
 

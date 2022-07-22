@@ -21,9 +21,18 @@ class CollectionTableRow extends Component {
                 </td>
                 <td >{this.props.collectionSize}</td>
                 <td>{this.props.ownerCount}</td>
-                <td>{this.props.volume}</td>
-                <td>{this.props.volume}</td>
-                <td>{this.props.volume}</td>
+                <td>
+                    {/* <Image width="5%" className='mx-1' src={process.env.PUBLIC_URL+"/images/eth-glyph.png"} /> */}
+                    {this.props.volume}
+                </td>
+                <td>
+                    {/* <Image width="5%" className='mx-1' src={process.env.PUBLIC_URL+"/images/eth-glyph.png"} /> */}
+                    {this.props.volume}
+                    </td>
+                <td>
+                    {/* <Image width="5%" className='mx-1' src={process.env.PUBLIC_URL+"/images/eth-glyph.png"} /> */}
+                    {this.props.volume}
+                </td>
             </tr>
         )
     }

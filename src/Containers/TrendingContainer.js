@@ -4,22 +4,24 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import SectionHeader from '../Components/SectionHeader';
 import HomeBanner from '../Components/HomeBanner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 class TrendingContainer extends Component {
 
-    COLLECTIONS_URL = "http://localhost:3001/collections"
+    // COLLECTIONS_URL = "http://localhost:3001/collections"
     TOP_FIVE_URL = "http://localhost:3001/topFive"
 
     state = {
-        collections: [],
+        // collections: [],
         topFive: []
     }
 
     componentDidMount() {
-        fetch(this.COLLECTIONS_URL)
-        .then(res => res.json())
-        .then(res => this.setState({collections: res}))
-        .catch(err => console.log(err))
+        // fetch(this.COLLECTIONS_URL)
+        // .then(res => res.json())
+        // .then(res => this.setState({collections: res}))
+        // .catch(err => console.log(err))
 
         fetch(this.TOP_FIVE_URL)
         .then(res => res.json())

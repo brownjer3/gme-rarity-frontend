@@ -9,7 +9,7 @@ class HomeBanner extends Component {
             <div class="p-5 rounded-lg m-3 d-flex">
                 <Row className='align-items-center'>
                     <Col>
-                        <Image fluid className='w-75' src={process.env.PUBLIC_URL+"/images/dfv-moon.gif"} />
+                        <Image fluid width="85%" src={process.env.PUBLIC_URL+"/images/moon-half-speed.gif"} />
                     </Col>
                     <Col>
                         <h1 class="display-4">The #1 rarity tool for the Gamestop NFT Marketplace</h1>

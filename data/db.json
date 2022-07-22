@@ -10,7 +10,81 @@
             "items": 10010,
             "floor": "110000000000000000",
             "volume": "1344269930000000000000",
-            "percentChange": 0
+            "percentChange": 0, 
+            "Nfts" : [
+              { 
+                "id": "3422",
+                "image": "https://www.gstop-content.com/ipfs/QmVjCB7fiPkq9fwzBVFgU6cvu4YkiY6KH5eA3J5sqDQeQJ",
+                "rarityRank": "1", 
+                "traits": {
+                    "Hat": "Dark Hoodie",
+                    "Body": "Schoolboy",
+                    "Face": "Smiling Zombie",
+                    "Weapon": "Neon Transparent",
+                    "Background": "Track"
+                }
+              },
+              { 
+                  "id": "722",
+                  "image": "https://www.gstop-content.com/ipfs/QmdVHYfZkG6bD6e7cEJity6doz5baxvJjELd6fwVSeyTxS",
+                  "rarityRank": "55",
+                  "traits": {
+                      "Hat": "Dark Hoodie",
+                      "Body": "Schoolboy",
+                      "Face": "Smiling Zombie",
+                      "Weapon": "Neon Transparent",
+                      "Background": "Track"
+                  }
+              },
+              { 
+                  "id": "1035",
+                  "image": "https://www.gstop-content.com/ipfs/QmVq8TM5AvDFVAscMnkVauDRUZb5Ufw53xPy3EQFizZ9hp",
+                  "rarityRank": "3355",
+                  "traits": {
+                      "Hat": "Dark Hoodie",
+                      "Body": "Schoolboy",
+                      "Face": "Smiling Zombie",
+                      "Weapon": "Neon Transparent",
+                      "Background": "Track"
+                  }
+              },
+              { 
+                  "id": "23",
+                  "image": "https://www.gstop-content.com/ipfs/QmZ6grDxxNDrjyEYgFjy3MhXDAaxyJJDrViiRjRfiu4FEJ",
+                  "rarityRank": "11",
+                  "traits": {
+                      "Hat": "Dark Hoodie",
+                      "Body": "Schoolboy",
+                      "Face": "Smiling Zombie",
+                      "Weapon": "Neon Transparent",
+                      "Background": "Track"
+                  }
+              },
+              { 
+                  "id": "7222",
+                  "image": "https://www.gstop-content.com/ipfs/QmQy6g1iD2gCJJXDKTDcYx541RbcpaBbrxupkXNh5Tuzbi",
+                  "rarityRank": "420.69",
+                  "traits": {
+                      "Hat": "Dark Hoodie",
+                      "Body": "Schoolboy",
+                      "Face": "Smiling Zombie",
+                      "Weapon": "Neon Transparent",
+                      "Background": "Track"
+                  }
+              },
+              { 
+                  "id": "431",
+                  "image": "https://www.gstop-content.com/ipfs/Qmc9fimbCCN9oCHcffA5HepqwSt9JNatPn6513ZaXrih61",
+                  "rarityRank": "9999",
+                  "traits": {
+                      "Hat": "Dark Hoodie",
+                      "Body": "Schoolboy",
+                      "Face": "Smiling Zombie",
+                      "Weapon": "Neon Transparent",
+                      "Background": "Track"
+                  }
+              }
+            ]
           },
           {
             "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
