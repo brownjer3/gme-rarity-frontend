@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
@@ -8,20 +9,11 @@ import { faSort, faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons
 
 class AllCollectionsContainer extends Component {
 
-    COLLECTIONS_URL = "http://localhost:3001/collections"
-
     state = {
         collections: [], 
         sortOptions: ["Collection", "Total Supply", "Owner Count",  "Lifetime Volume", "7-day Volume", "24hr Volume"],
         sortSelection: "Lifetime Volume",
         sortOrder: "Descending"
-    }
-
-    componentDidMount() {
-        fetch(this.COLLECTIONS_URL)
-        .then(res => res.json())
-        .then(res => this.setState({collections: res}))
-        .catch(err => console.log(err))
     }
 
 
@@ -42,7 +34,7 @@ class AllCollectionsContainer extends Component {
     // }
     
     makeTableRows = () => {
-        return this.state.collections.map((item, index) => {
+        return this.props.collections.map((item, index) => {
             return <CollectionTableRow index={index} slug={item.slug} name={item.name} volume={this.weiToEth(item.volume)} collectionSize={item.items} image={this.transformUri(item.avatarUri)} ownerCount="TBD"/>
         })
     }
@@ -103,4 +95,12 @@ class AllCollectionsContainer extends Component {
     }
 }
 
-export default AllCollectionsContainer;
+const mapStateToProps = (state) => {
+    return {
+        collections: state.collections.data
+        // loading: state.loading
+    }
+}
+
+
+export default connect(mapStateToProps)(AllCollectionsContainer);
