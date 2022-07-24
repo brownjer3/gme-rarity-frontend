@@ -10,12 +10,10 @@ import { faSort, faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons
 class AllCollectionsContainer extends Component {
 
     state = {
-        collections: [], 
         sortOptions: ["Collection", "Total Supply", "Owner Count",  "Lifetime Volume", "7-day Volume", "24hr Volume"],
         sortSelection: "Lifetime Volume",
         sortOrder: "Descending"
     }
-
 
     transformUri = (uri) => {
         return uri.replace("public", "https://static.gstop-content.com");

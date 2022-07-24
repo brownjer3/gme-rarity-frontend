@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const COLLECTIONS_URL = "http://localhost:3001/collections";
-const TOP_FIVE_URL = "http://localhost:3001/topFive";
+// const TOP_FIVE_URL = "http://localhost:3001/topFive";
 
 const initialState = {
     data: [],

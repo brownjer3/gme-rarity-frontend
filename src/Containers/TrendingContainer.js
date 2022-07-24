@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CollectionCard from '../Components/CollectionCard'
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
@@ -9,25 +10,18 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 class TrendingContainer extends Component {
 
-    // COLLECTIONS_URL = "http://localhost:3001/collections"
-    TOP_FIVE_URL = "http://localhost:3001/topFive"
+    // TOP_FIVE_URL = "http://localhost:3001/topFive"
 
-    state = {
-        // collections: [],
-        topFive: []
-    }
+    // state = {
+    //     topFive: []
+    // }
 
-    componentDidMount() {
-        // fetch(this.COLLECTIONS_URL)
-        // .then(res => res.json())
-        // .then(res => this.setState({collections: res}))
-        // .catch(err => console.log(err))
-
-        fetch(this.TOP_FIVE_URL)
-        .then(res => res.json())
-        .then(res => this.setState({topFive: res}))
-        .catch(err => console.log(err))
-    }
+    // componentDidMount() {
+    //     fetch(this.TOP_FIVE_URL)
+    //     .then(res => res.json())
+    //     .then(res => this.setState({topFive: res}))
+    //     .catch(err => console.log(err))
+    // }
 
     transformUri = (uri) => {
         return uri.replace("public", "https://static.gstop-content.com");
@@ -39,7 +33,7 @@ class TrendingContainer extends Component {
     }
 
     makeCollectionCards = () => {
-        return this.state.topFive.map((item) => {
+        return this.props.topFive.map((item) => {
             return <CollectionCard slug={item.slug} name={item.name} volume={this.weiToEth(item.volume)} collectionSize={item.items} image={this.transformUri(item.avatarUri)}/>
         })
     }
@@ -57,4 +51,12 @@ class TrendingContainer extends Component {
     }
 }
 
-export default TrendingContainer;
+const mapStateToProps = (state) => {
+    const topFive = state.collections.data.slice(0, 5);
+    return {
+        topFive: topFive
+        // loading: state.loading
+    }
+}
+
+export default connect(mapStateToProps)(TrendingContainer);
