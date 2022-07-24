@@ -1,5 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import TraitFilterContainer from '../Containers/TraitFilterContainer';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -16,11 +17,16 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function CollectionContainer() {
-    const { collectionName } = useParams();
+    const { collectionSlug } = useParams();
     const [modalShow, setModalShow] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
     const [selectedTraits, setSelectedTraits] = useState([]);
     const [filteredItemsLength, setFilteredItemsLength] = useState(10000);
+
+    const collection = useSelector(state =>
+        state.collections.data.find(collection => collection.slug === collectionSlug)
+      )
+
     const [items, setItems] = useState([
         { 
             id: '3422',
@@ -151,7 +157,7 @@ export default function CollectionContainer() {
 
     const testData = {
         banner: "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12",
-        name: collectionName,
+        name: collection,
         ownerCount: '6392',
         supply: '10,000',
         description: "A collection of 10,000 unique algorithmically generated MetaBoy's that brings the love of gaming, pixelart and technology together.",
@@ -206,7 +212,7 @@ export default function CollectionContainer() {
                     </Card>
                     <NftDetailsCard
                         item={selectedItem}
-                        collectionName={collectionName}
+                        collectionName={collectionSlug}
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />
