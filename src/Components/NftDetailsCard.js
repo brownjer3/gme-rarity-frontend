@@ -10,10 +10,6 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function NftDetailsCard(props) {
-    // useEffect(() => {
-    //         const closeButton = document.querySelector('.btn-close');
-    //         closeButton.classList.add('btn-close-white');
-    //   });
 
       const makeTraitRows = (traits) => {
         return Object.keys(traits).map((category) => {
@@ -21,7 +17,7 @@ export default function NftDetailsCard(props) {
                 <tr>
                     <td>{category}</td>
                     <td>{traits[category]}</td>
-                    <td className='text-center'>231</td>
+                    <td className='text-center'>21</td>
                 </tr>
             )
         })
@@ -50,7 +46,7 @@ export default function NftDetailsCard(props) {
                         </Card>
                     </Col>
                     <Col>
-                        <p>Rarity Rank #TBD</p>
+                        <p>Rarity Rank {props.item.rarityRank}</p>
                         <Table hover variant="dark" size="sm">
                             <thead>
                                 <tr>
@@ -61,6 +57,10 @@ export default function NftDetailsCard(props) {
                             </thead>
                             <tbody>
                                 {makeTraitRows(props.item.metadataJson.properties)}
+                                <tr className='fw-bold text-danger'>
+                                    <td colSpan={2}>Total Rarity Score</td>
+                                    <td className='text-center'>352</td>
+                                </tr>
                             </tbody>
                         </Table>
                     </Col>

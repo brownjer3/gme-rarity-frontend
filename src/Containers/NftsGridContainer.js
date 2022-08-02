@@ -28,7 +28,7 @@ export default function NftsGridContainer(props) {
                                 <Card bg='dark' text='white' border='light' index={index} className='detailsCard' onClick={props.handleItemSelect}>
                                     <Card.Img variant="top" src={transformUri(nft.metadataJson.image)} />
                                     <Card.Body>
-                                    <Card.Title>Rarity Rank: TBD</Card.Title>
+                                    <Card.Title>Rarity Rank: {nft.rarityRank}</Card.Title>
                                     <Card.Text>{nft.name}</Card.Text>
                                     </Card.Body>
                                 </Card>

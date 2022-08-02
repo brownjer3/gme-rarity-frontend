@@ -252,11 +252,11 @@ export default function CollectionContainer2() {
                         </Col>
                     </Row>
                     <NftsGridContainer 
-                    nfts={nfts} 
-                    // loading={loading} 
-                    handleItemSelect={handleItemSelect} 
-                    // setLastElement={setLastElement}
-                    // hasMore={hasMore}
+                        nfts={nfts} 
+                        // loading={loading} 
+                        handleItemSelect={handleItemSelect} 
+                        // setLastElement={setLastElement}
+                        // hasMore={hasMore}
                     />
                     {renderLoadMoreButton()}
                 </Col>
