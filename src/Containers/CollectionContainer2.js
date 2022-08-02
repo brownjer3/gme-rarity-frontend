@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import TraitFilterContainer from './TraitFilterContainer';
 import NftsGridContainer from './NftsGridContainer';
@@ -177,11 +177,11 @@ export default function CollectionContainer2() {
                 </Col>
                 <Col md={10}>
                     <CollectionBanner collection={collection} />
-                    <NftDetailsCard
+                    {/* <NftDetailsCard
                         nft={selectedItem}
                         show={modalShow}
                         onHide={() => setModalShow(false)}
-                    />
+                    /> */}
                     <br />
                     <Row className='align-middle my-2'>
                         <Col md={2} className='text-start text-muted align-self-center'>
@@ -203,6 +203,7 @@ export default function CollectionContainer2() {
                     />
                     {renderLoadMoreSpinner()}
                 </Col>
+                <Outlet />
             </Row>   
     )
 }

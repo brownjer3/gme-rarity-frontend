@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Routes, Route, useLocation } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCollections } from './Store/Slices/collectionsSlice';
@@ -9,14 +9,17 @@ import Footer from './Components/Footer';
 import HomeContainer from './Containers/HomeContainer';
 import ContactContainer from './Containers/ContactContainer';
 import AllCollectionsContainer from './Containers/AllCollectionsContainer';
-import CollectionContainer from './Containers/CollectionContainer';
+// import CollectionContainer from './Containers/CollectionContainer';
 import CollectionContainer2 from './Containers/CollectionContainer2';
+import NftModalContainer from './Containers/NftModalContainer';
 import { NotFound, LoadingScreen, Stars } from './Components/Components';
 
 const App = () => {
-
   const dispatch = useDispatch();
   const {loading} = useSelector((state) => state.collections);
+
+  let location = useLocation();
+  const background = location.state && location.state.background;
 
   useEffect(() => {
     dispatch(fetchCollections())
@@ -30,22 +33,26 @@ const App = () => {
 
   const appContent = () => {
     return (
-      <Router>
+      <div>
         <TopNav />
         <Stars />
-          <Routes>
+          <Routes location={background || location}>
             <Route path="/" element={<HomeContainer />} />
             <Route path="collections" element={<AllCollectionsContainer />} />
-            <Route path="collections/:collectionSlug" element={<CollectionContainer2 />} />
-            {/* <Route path="collections" element={<AllCollections />}>
-              <Route index element={<AllCollectionsContainer />} />
-              <Route path=":collectionSlug" element={<CollectionContainer2 />} />
-            </Route> */}
+            <Route path="collections/:collectionSlug" element={<CollectionContainer2 />} >
+              <Route path=":nftId" element={<NftModalContainer />} />
+            </Route>
             <Route path='contact' element={<ContactContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+
+          {background && (
+            <Routes>
+              <Route path="/collections/:collectionSlug/:nftId" element={<NftModalContainer />} />
+            </Routes>
+          )}
           <Footer />
-      </Router>
+      </div>
     )
   }
 
