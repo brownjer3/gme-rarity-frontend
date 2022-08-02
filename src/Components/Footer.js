@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-import Overlay from 'react-bootstrap/Overlay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,10 +16,6 @@ class Footer extends Component {
     handleAddressCopy = () => {
         this.setState({clicked: true})
         navigator.clipboard.writeText(this.state.gmeDonationAddress)
-    }
-
-    resetClickState = () => {
-        this.setState({clicked: false})
     }
     
     render() {
@@ -48,7 +43,6 @@ class Footer extends Component {
                                     alt="Buy Me a Coffe Button for Honeycrisp"
                                 />
                             </a>
-                            {/* <p class="fw-lighter">GME Wallet: 0x61942db583EC58f61e7635f40514247E68312625</p> */}
                         </Col>
                         <Col>
                             <p className='font-monospace lh-1 pt-3'>

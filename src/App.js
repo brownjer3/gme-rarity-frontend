@@ -8,7 +8,6 @@ import TopNav from './Components/TopNav';
 import Footer from './Components/Footer';
 import HomeContainer from './Containers/HomeContainer';
 import ContactContainer from './Containers/ContactContainer';
-import AllCollections from './Containers/AllCollections';
 import AllCollectionsContainer from './Containers/AllCollectionsContainer';
 import CollectionContainer from './Containers/CollectionContainer';
 import CollectionContainer2 from './Containers/CollectionContainer2';
@@ -36,10 +35,12 @@ const App = () => {
         <Stars />
           <Routes>
             <Route path="/" element={<HomeContainer />} />
-            <Route path="collections" element={<AllCollections />}>
+            <Route path="collections" element={<AllCollectionsContainer />} />
+            <Route path="collections/:collectionSlug" element={<CollectionContainer2 />} />
+            {/* <Route path="collections" element={<AllCollections />}>
               <Route index element={<AllCollectionsContainer />} />
               <Route path=":collectionSlug" element={<CollectionContainer2 />} />
-            </Route>
+            </Route> */}
             <Route path='contact' element={<ContactContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
