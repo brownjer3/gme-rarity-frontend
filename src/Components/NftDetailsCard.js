@@ -13,9 +13,9 @@ import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 export default function NftDetailsCard(props) {
 
       const makeTraitRows = (traits) => {
-        return Object.keys(traits).map((category) => {
+        return Object.keys(traits).map((category, index) => {
             return (
-                <tr>
+                <tr key={index.toString()}>
                     <td>{category}</td>
                     <td>{traits[category]}</td>
                     <td className='text-center'>21</td>
@@ -104,7 +104,7 @@ export default function NftDetailsCard(props) {
             }
             
         } else 
-            return <div>loading</div>
+            return <></>
       }
 
     return(

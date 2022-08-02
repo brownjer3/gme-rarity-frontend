@@ -13,7 +13,7 @@ export default function NftsGridContainer(props) {
                 {props.nfts.length > 0 && props.nfts.map((nft, index) => {
                     return index === props.nfts.length - 1 && !props.loading && !!props.hasMore ?
                      (
-                        <Col >
+                        <Col key={nft.id}>
                             <Card bg='dark' text='white' border='light' index={index} className='detailsCard' onClick={props.handleItemSelect}>
                                 <Card.Img 
                                     variant="top" 
@@ -27,7 +27,7 @@ export default function NftsGridContainer(props) {
                             </Card>
                         </Col>
                     ) : (
-                            <Col>
+                            <Col key={nft.id}>
                                 <Card bg='dark' text='white' border='light' index={index} className='detailsCard' onClick={props.handleItemSelect}>
                                     <Card.Img 
                                         variant="top" 

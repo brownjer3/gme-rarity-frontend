@@ -6,7 +6,6 @@ import CollectionTableRow from '../Components/CollectionTableRow';
 import { SectionHeader } from '../Components/Components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
-import { transformUri } from '../Components/DataFormats';
 
 class AllCollectionsContainer extends Component {
 
@@ -45,8 +44,19 @@ class AllCollectionsContainer extends Component {
     }
     
     makeTableRows = () => {
-        return this.state.collections.map((item, index) => {
-            return <CollectionTableRow index={index} slug={item.slug} name={item.name} volume={item.volume} collectionSize={item.items} image={item.avatarUri} ownerCount="TBD"/>
+        return this.state.collections.map((collection, index) => {
+            return (
+                <CollectionTableRow
+                    key={collection.id}
+                    index={index} 
+                    slug={collection.slug} 
+                    name={collection.name} 
+                    volume={collection.volume} 
+                    collectionSize={collection.items} 
+                    image={collection.avatarUri} 
+                    ownerCount="TBD"
+                />
+            )
         })
     }
 
@@ -83,17 +93,17 @@ class AllCollectionsContainer extends Component {
     }
 
     makeTableHeaders = () => {
-        return this.state.sortOptions.map((option) => {
+        return this.state.sortOptions.map((option, index) => {
             if (this.state.sortSelection == option) {
                 return (
-                    <th>
+                    <th key={index.toString()}>
                         <span className="name text-warning" id={option}>{option}</span>
                         {this.handleSortIcon(option)}
                     </th>
                 )
             } else {
                 return (
-                    <th>
+                    <th key={index.toString()}>
                         <span className="name" id={option}>{option}</span>
                         {this.handleSortIcon(option)}
                     </th>

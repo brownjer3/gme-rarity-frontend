@@ -13,7 +13,7 @@ class TraitFilterContainer extends Component {
         return Object.keys(category).map((trait, index) => {
             return ( 
                 <ListGroup.Item key={index.toString()} className='bg-dark text-white d-flex justify-content-between'>
-                    <label for={trait}>{trait} ({category[trait]})</label>
+                    <label htmlFor={trait}>{trait} ({category[trait]})</label>
                     <input className='ms-1' id={trait} type='checkbox' value={`${categoryName}-${trait}`} checked={this.props.isTraitSelected(trait)} onChange={this.props.handleTraitSelect}/>
                 </ListGroup.Item>
             )
