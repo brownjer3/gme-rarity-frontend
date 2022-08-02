@@ -62,17 +62,12 @@ export default function CollectionContainer2() {
     useEffect(() => {
         const loader = loadRef;
         const currentObserver = observer.current;
-
-        if (loader) {
-            currentObserver.observe(loader);
-        }
-
+        if (loader) currentObserver.observe(loader);
         return () => {
             if (loader) {
                 currentObserver.unobserve(loader);
             }
         }
-
     }, [loadRef])
 
     const loadMore = async () => {
@@ -155,7 +150,7 @@ export default function CollectionContainer2() {
         return selectedTraits.includes(name);
     }
 
-    const renderLoadMoreButton = () => {
+    const renderLoadMoreSpinner = () => {
         if (!!hasMore) {
             return (
                 <div ref={setLoadRef}>
@@ -172,16 +167,16 @@ export default function CollectionContainer2() {
                 <Col md={2}>
                     <TraitFilterContainer 
                         name={collection.name}
+                        traits={collection.traits} 
                         image={transformUri(collection.avatarUri)} 
                         isTraitSelected={isTraitSelected} 
                         handleTraitSelect={handleTraitSelect} 
-                        traits={collection.traits} 
                         handleQueryInput={handleQueryInput}
                         handleSearch={handleSearch}
                     />
                 </Col>
                 <Col md={10}>
-                    <CollectionBanner collection={collection}/>
+                    <CollectionBanner collection={collection} />
                     <NftDetailsCard
                         nft={selectedItem}
                         show={modalShow}
@@ -206,7 +201,7 @@ export default function CollectionContainer2() {
                         // setLastElement={setLastElement}
                         // hasMore={hasMore}
                     />
-                    {renderLoadMoreButton()}
+                    {renderLoadMoreSpinner()}
                 </Col>
             </Row>   
     )
