@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import TrendingContainer from '../Containers/TrendingContainer';
+import HomeBanner from '../Components/HomeBanner';
+import { SectionHeader } from '../Components/Components';
+import Container from 'react-bootstrap/Container';
+
 
 class HomeContainer extends Component {
 
-    handleLoading = () => {
-        if (this.props.loading) {
-            return <FontAwesomeIcon className='fa-spin' icon={faCircleNotch} size='10x'/>
-        } else {
-            return <div>Not loading</div>
-        }
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
 
     render() {
         return (
-            <div>
-                
-            </div>
+            <Container >
+                <HomeBanner />
+                <SectionHeader name="Trending Container"/>
+                <TrendingContainer />
+            </Container>
         )
     }
 }

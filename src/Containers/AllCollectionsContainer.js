@@ -3,37 +3,50 @@ import { connect } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import CollectionTableRow from '../Components/CollectionTableRow';
-import SectionHeader from '../Components/SectionHeader';
+import { SectionHeader } from '../Components/Components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSort, faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { transformUri } from '../Components/DataFormats';
 
 class AllCollectionsContainer extends Component {
 
     state = {
+        collections: [...this.props.collections],
         sortOptions: ["Collection", "Total Supply", "Owner Count",  "Lifetime Volume", "7-day Volume", "24hr Volume"],
+        sortTriggers: {"Collection": "name", "Total Supply": "items", "Owner Count": "TBD",  "Lifetime Volume": "volume", "7-day Volume": "volume", "24hr Volume": "volume"},
         sortSelection: "Lifetime Volume",
         sortOrder: "Descending"
     }
 
-    transformUri = (uri) => {
-        return uri.replace("public", "https://static.gstop-content.com");
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
 
-    weiToEth = (wei) => {
-        const num = parseInt(wei)
-        return Math.round(num / (10**18))
-    }
+    sortTable = (sortBy) => {
+        let sorted = [...this.props.collections]
 
-    // handleFilter = (e) => {
-    //     const query = e.target.value
-    //     this.setState({collections: () => {
-    //         this.state.collections.filter(collection => collection.name.includes(query))
-    //     }})
-    // }
+        const sortValue = this.state.sortTriggers[sortBy];
+        
+        if (sortValue === "name") {
+            return sorted.sort((a, b) => {
+                const nameA = a[sortValue].toUpperCase()
+                const nameB = b[sortValue].toUpperCase()
+                return nameA < nameB ? -1 : 1
+            })
+        } else if (sortValue !== "items") {
+            return sorted.sort((a, b) => {
+                return parseInt(b[sortValue]) - parseInt(a[sortValue])
+            })
+        } else {
+            return sorted.sort((a, b) => {
+                return b[sortValue] - a[sortValue]
+            })
+        }
+    }
     
     makeTableRows = () => {
-        return this.props.collections.map((item, index) => {
-            return <CollectionTableRow index={index} slug={item.slug} name={item.name} volume={this.weiToEth(item.volume)} collectionSize={item.items} image={this.transformUri(item.avatarUri)} ownerCount="TBD"/>
+        return this.state.collections.map((item, index) => {
+            return <CollectionTableRow index={index} slug={item.slug} name={item.name} volume={item.volume} collectionSize={item.items} image={item.avatarUri} ownerCount="TBD"/>
         })
     }
 
@@ -41,21 +54,28 @@ class AllCollectionsContainer extends Component {
         const name = e.target.previousSibling || e.target.parentElement.previousSibling;
         if (this.state.sortSelection == name.id) {
             if (this.state.sortOrder == "Descending") {
-                this.setState({sortOrder: "Ascending"})
+                this.setState((prevState) => ({
+                    sortOrder: "Ascending", 
+                    collections: [...prevState.collections].reverse()
+                }))
             } else {
-                this.setState({sortOrder: "Descending"})
+                this.setState((prevState) => ({
+                    sortOrder: "Descending",
+                    collections: [...prevState.collections].reverse()
+                }))
             }
         } else {
-            this.setState({sortSelection: name.id, sortOrder: "Descending"})
+            const sortedCollections = this.sortTable(name.id)
+            this.setState({collections: sortedCollections, sortSelection: name.id, sortOrder: "Descending"})
         }
     }
 
     handleSortIcon = (name) => {
         if (this.state.sortSelection == name) {
             if (this.state.sortOrder == "Descending"){
-                return <FontAwesomeIcon icon={faCaretDown} className='mx-2' onClick={this.handleSortChange}/>
+                return <FontAwesomeIcon icon={faCaretDown} className='mx-2 text-warning' onClick={this.handleSortChange}/>
             } else {
-                return <FontAwesomeIcon icon={faSortUp} className='mx-2' onClick={this.handleSortChange}/>
+                return <FontAwesomeIcon icon={faSortUp} className='mx-2 text-warning' onClick={this.handleSortChange}/>
             }
         } else {
             return <FontAwesomeIcon icon={faSort} className='mx-2' onClick={this.handleSortChange}/>
@@ -64,39 +84,48 @@ class AllCollectionsContainer extends Component {
 
     makeTableHeaders = () => {
         return this.state.sortOptions.map((option) => {
-            return (
-            <th>
-                <span class='name' id={option}>{option}</span>
-                {this.handleSortIcon(option)}
-            </th>
-            )
+            if (this.state.sortSelection == option) {
+                return (
+                    <th>
+                        <span className="name text-warning" id={option}>{option}</span>
+                        {this.handleSortIcon(option)}
+                    </th>
+                )
+            } else {
+                return (
+                    <th>
+                        <span className="name" id={option}>{option}</span>
+                        {this.handleSortIcon(option)}
+                    </th>
+                )
+            }
         })
     }
 
     render() {
         return (
             <Container>
-                <SectionHeader name="All Collections"/>
-                <Table striped bordered responsive hover className='align-middle' variant="dark">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            {this.makeTableHeaders()}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.makeTableRows()}
-                    </tbody>
-                </Table>
-            </Container>
+                    <SectionHeader name="All Collections"/>
+                    <Table striped bordered responsive hover className='align-middle' variant="dark">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                {this.makeTableHeaders()}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.makeTableRows()}
+                        </tbody>
+                    </Table>
+                </Container>
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        collections: state.collections.data
-        // loading: state.loading
+        collections: state.collections.data,
+        loading: state.collections.loading
     }
 }
 

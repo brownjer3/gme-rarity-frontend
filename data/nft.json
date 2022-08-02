@@ -1,0 +1,422 @@
+[
+  {
+    "id": "bb2199e0-c614-460c-ba95-54593eb8caff",
+    "tokenId": "0x160a5dcb59ac1fc7f5962add8409ccdca0c61fb35e1e94ab3b6f20764f75c5aa",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] LOADING LEVEL - ID:G14",
+    "description": "LOADING LEVEL… is an artpiece created by Engwind displaying a Cyber Crew Clone in the ZONE. He’s ready to go in whatever direction or planet he is needed.\nGeared up and ready to go!\n\nLOADING LEVEL... is a collaboration between ENGWIND and the amazing DJ from Miami PLS&TY who has made custom music and sound design for the artwork. PLS&TY and ENGWIND have a long history together creating graphics for Bitcoin, LAYER3 and more…\n\nNote: this is an art piece first and foremost, however, in the future we may plan to reward collectors of limited edition pieces like this one.\n",
+    "amount": "1000",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmPpgr5TuHgew5sbUDG3pmA5izP2qYfhZQKQcqwLqS7mn9",
+    "metadataJson": {
+      "name": "[C4] LOADING LEVEL - ID:G14",
+      "image": "ipfs://QmPyTf2ACnaFbxinN7To4mJN5YZMABFLbAuFrKe8UYrQ4x",
+      "attributes": [
+        {
+          "value": "ENGWIND x PLS&TY",
+          "trait_type": "ART"
+        },
+        {
+          "value": "Experimental",
+          "trait_type": "Metaverse"
+        },
+        {
+          "value": "Black",
+          "trait_type": "Tier"
+        }
+      ],
+      "properties": {
+        "ART": "ENGWIND x PLS&TY",
+        "Tier": "Black",
+        "Metaverse": "Experimental"
+      },
+      "description": "LOADING LEVEL… is an artpiece created by Engwind displaying a Cyber Crew Clone in the ZONE. He’s ready to go in whatever direction or planet he is needed.\nGeared up and ready to go!\n\nLOADING LEVEL... is a collaboration between ENGWIND and the amazing DJ from Miami PLS&TY who has made custom music and sound design for the artwork. PLS&TY and ENGWIND have a long history together creating graphics for Bitcoin, LAYER3 and more…\n\nNote: this is an art piece first and foremost, however, in the future we may plan to reward collectors of limited edition pieces like this one.\n",
+      "animation_url": "ipfs://QmQcvvKo37rzv7brNpYaAeHPzgqSGuGTrHNjkTknt9iGCH",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmQcvvKo37rzv7brNpYaAeHPzgqSGuGTrHNjkTknt9iGCH",
+    "mediaThumbnailUri": "ipfs://QmPyTf2ACnaFbxinN7To4mJN5YZMABFLbAuFrKe8UYrQ4x",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:43:21.099Z",
+    "likeCount": 1326,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x0d1a4f4d19f4aaaaf01cfc1eee2c24294653ab376fb0daf319ae6fdb2063c4a3"
+      ]
+    },
+    "createdAt": "2022-03-15T14:43:21.104Z",
+    "updatedAt": "2022-03-15T14:43:21.104Z"
+  },
+  {
+    "id": "d43ed539-1ba8-40ac-a05e-da566f0d1cc9",
+    "tokenId": "0xb8d81226153e11a707ddd2ffd12f480e60d7a625f5c832c4512eebf1d9a554d9",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] 10WORLDS - ID:G12",
+    "description": "An artpiece crafted from 10 of the BADDEST worlds of ENGWIND. For the last 4 years ENGWIND has been creating MASSIVE  futuristic environments using the UE4 game engine. Featured  in this piece is a CYBER CLONE traveling through all these distant and detailed worlds. With the CYBER CLONE there is an endless amount of  worlds to be explored.\n\n10WORLDS is a collaboration between ENGWIND and the amazing DJ from Miami PLS&TY who has made custom music and sound design for the artwork. PLS&TY and ENGWIND have a long history together creating graphics for Bitcoin, LAYER3 and more…\n\nNote: this is an art piece first and foremost, however, in the future we may plan to reward collectors of limited edition pieces like this one.\n",
+    "amount": "100",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmanCpX8p3t5yqk6nZTWvDpr4tfBKLu5yBCeaTHVuGZMjN",
+    "metadataJson": {
+      "name": "[C4] 10WORLDS - ID:G12",
+      "image": "ipfs://QmXipkbMkDGjLScDFT2bqmRToAfbiKXFgqHNgVg7asmgt5",
+      "attributes": [
+        {
+          "value": "ENGWIND x PLS&TY",
+          "trait_type": "ART"
+        },
+        {
+          "value": "Experimental",
+          "trait_type": "Metaverse"
+        },
+        {
+          "value": "Black",
+          "trait_type": "Tier"
+        }
+      ],
+      "properties": {
+        "ART": "ENGWIND x PLS&TY",
+        "Tier": "Black",
+        "Metaverse": "Experimental"
+      },
+      "description": "An artpiece crafted from 10 of the BADDEST worlds of ENGWIND. For the last 4 years ENGWIND has been creating MASSIVE  futuristic environments using the UE4 game engine. Featured  in this piece is a CYBER CLONE traveling through all these distant and detailed worlds. With the CYBER CLONE there is an endless amount of  worlds to be explored.\n\n10WORLDS is a collaboration between ENGWIND and the amazing DJ from Miami PLS&TY who has made custom music and sound design for the artwork. PLS&TY and ENGWIND have a long history together creating graphics for Bitcoin, LAYER3 and more…\n\nNote: this is an art piece first and foremost, however, in the future we may plan to reward collectors of limited edition pieces like this one.\n",
+      "animation_url": "ipfs://QmQWiaSms7pVDNqBtH3rwJUhqQUire1CzhBgURpbpVqecM",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmQWiaSms7pVDNqBtH3rwJUhqQUire1CzhBgURpbpVqecM",
+    "mediaThumbnailUri": "ipfs://QmXipkbMkDGjLScDFT2bqmRToAfbiKXFgqHNgVg7asmgt5",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:43:13.232Z",
+    "likeCount": 761,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x20c7f321f7d800f38f3fb62fd89cbfc28072feea226c0bc9bde0efc2ce008f01"
+      ]
+    },
+    "createdAt": "2022-03-15T14:43:13.237Z",
+    "updatedAt": "2022-03-15T14:43:13.238Z"
+  },
+  {
+    "id": "a0e4d94f-13cf-4c78-8014-5e95071110ff",
+    "tokenId": "0x27c27cc825e7791664c10d7012b9ba9a6e2b1ded166a4e1bd49158fecc7e14cf",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] CYBER CLONE - ID:G09",
+    "description": "Over a period lasting several months, the Cyber Crew Forge has been observed using up vast amounts of power. The owner, the ever secretive Gauge,  has been developing a sophisticated and extremely tech-centric project that’s been absorbing his full attention.\n\nThe Cyber Crew Clone \nC3||Atom-regeneration Slayer-6 model\n\nCyber Clones will  be METAVERSE-READY 3D rigged playable characters. This means you can import them into ANY compatible metaverse or game. You will also get all the 3D files and licenses to your individual PFP. All clones will also come with a lifetime subscription to Gauges Cyber Subscription (owner only!).\n\nGauge @ the Cyber Forge has done it again!\nNote: This special item has increased utility that will qualify its owner to exclusive Airdrops and perks.\nAll the newest Crew Clones come with a  \"Gauge's Gear and Mayhem Subscription\" for weapons and wearables. For every new ROUND of Cyber Crew, members will get one or more FREE limited weapon(s) or wearable(s). \n\nAdditional info on the Subscription:\n\nGauge develops the best gear in Cybercity and anyone who works the front lines knows his stuff is tops. \n\nEx. For Cybercrew Round 5, if Gauge makes a new gun, item, skin, or vehicle, you will get it delivered free of charge!\n\n“If you ain’t equipped with the latest gear from the Cyber Forge, you ain’t a real pro.” -Gauge\n",
+    "amount": "5000",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmR1rceXDSTGHVFMm2CtthNTvoj4fBZp73NRaCyZEaLVpJ",
+    "metadataJson": {
+      "name": "[C4] CYBER CLONE - ID:G09",
+      "image": "ipfs://QmVhXy6Rcg2BFRTA6JxThw9FR4VAPPjh7b3BG1kS4esdEv",
+      "attributes": [
+        {
+          "value": "Clone Prototype",
+          "trait_type": "CYBER FORGE"
+        },
+        {
+          "value": "Black",
+          "trait_type": "Tier"
+        },
+        {
+          "value": "[1.0]",
+          "trait_type": "Metaverse"
+        },
+        {
+          "value": "[1] Cyber Clone Gen.1",
+          "trait_type": "PFP"
+        },
+        {
+          "value": "Subscription",
+          "trait_type": "CYBER FORGE"
+        }
+      ],
+      "properties": {
+        "PFP": "[1] Cyber Clone Gen.1",
+        "Tier": "Black",
+        "Metaverse": "[1.0]",
+        "CYBER FORGE": "Subscription"
+      },
+      "description": "Over a period lasting several months, the Cyber Crew Forge has been observed using up vast amounts of power. The owner, the ever secretive Gauge,  has been developing a sophisticated and extremely tech-centric project that’s been absorbing his full attention.\n\nThe Cyber Crew Clone \nC3||Atom-regeneration Slayer-6 model\n\nCyber Clones will  be METAVERSE-READY 3D rigged playable characters. This means you can import them into ANY compatible metaverse or game. You will also get all the 3D files and licenses to your individual PFP. All clones will also come with a lifetime subscription to Gauges Cyber Subscription (owner only!).\n\nGauge @ the Cyber Forge has done it again!\nNote: This special item has increased utility that will qualify its owner to exclusive Airdrops and perks.\nAll the newest Crew Clones come with a  \"Gauge's Gear and Mayhem Subscription\" for weapons and wearables. For every new ROUND of Cyber Crew, members will get one or more FREE limited weapon(s) or wearable(s). \n\nAdditional info on the Subscription:\n\nGauge develops the best gear in Cybercity and anyone who works the front lines knows his stuff is tops. \n\nEx. For Cybercrew Round 5, if Gauge makes a new gun, item, skin, or vehicle, you will get it delivered free of charge!\n\n“If you ain’t equipped with the latest gear from the Cyber Forge, you ain’t a real pro.” -Gauge\n",
+      "animation_url": "ipfs://QmdgnvUiHPFyhWyRwwAoQJ7bm9DH9KLzcJ9fUz9fWJAx11",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmdgnvUiHPFyhWyRwwAoQJ7bm9DH9KLzcJ9fUz9fWJAx11",
+    "mediaThumbnailUri": "ipfs://QmVhXy6Rcg2BFRTA6JxThw9FR4VAPPjh7b3BG1kS4esdEv",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:43:04.636Z",
+    "likeCount": 2175,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x2c4b4edd628bcffffbf4a9d434ce83e4737889b65eee922f00d3c2b2d82b3394"
+      ]
+    },
+    "createdAt": "2022-03-15T14:43:04.641Z",
+    "updatedAt": "2022-03-15T14:43:04.642Z"
+  },
+  {
+    "id": "52a47d6c-5fc0-42fe-a7aa-38a4cb4a99cd",
+    "tokenId": "0x9fa35b10fd77628db18adf4132dc16c14f55d7f6d464e3fb4233f677fbd21f37",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] CAN-D - ID:G13",
+    "description": "An affectionate name for such an efficient killing device.\nEverybody these days has some sort of electronic device; be you a robot, or a PRO decked out with the latest Cyber enhancements , your worlds’ gonna get flatlined when this thing gets thrown your way.\n\nControlled Attack Network-Device\n\n It’s   named “Candy” because everyone’s gotta have it and you throw it out to all the boys and girls. The more technically inclined will scoff because “you can’t control attack a local network anymore”. Or so they thought…\n\nGauge is a Maestro of destruction and his specialized Nano-tower-splits  on the CAN-D will create and mimic an existing local network before it implements a multi level  DdoS attack. All this happens while simultaneously Trojanning (it’s a word trust me) a fast learning neural interface that will encapsulate ANY A.I. in an impenetrable and inescapable mirrorverse.\n\nTLDR;? “This thing’ll blow some freakin’ gaskets!”\n\nNote: This item has increased utility that includes cross-platform interoperability, exclusive Airdrops, perks and includes  AAA video game quality 3D Models/Files.",
+    "amount": "2000",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmZ5p1JpvBPTUBDRPhKFfGUHF36qybpPaEZHmb2Ev9jJyt",
+    "metadataJson": {
+      "name": "[C4] CAN-D - ID:G13",
+      "image": "ipfs://QmS1UHU1GAjohb9hn2evZQfTQ4YA3b6CkAo8YqJ6BMtLDp",
+      "attributes": [
+        {
+          "value": "Equipment",
+          "trait_type": "CYBER FORGE"
+        },
+        {
+          "value": "Orange",
+          "trait_type": "Tier"
+        },
+        {
+          "value": "[1.0]",
+          "trait_type": "Metaverse"
+        }
+      ],
+      "properties": {
+        "Tier": "Orange",
+        "Metaverse": "[1.0]",
+        "CYBER FORGE": "Equipment"
+      },
+      "description": "An affectionate name for such an efficient killing device.\nEverybody these days has some sort of electronic device; be you a robot, or a PRO decked out with the latest Cyber enhancements , your worlds’ gonna get flatlined when this thing gets thrown your way.\n\nControlled Attack Network-Device\n\n It’s   named “Candy” because everyone’s gotta have it and you throw it out to all the boys and girls. The more technically inclined will scoff because “you can’t control attack a local network anymore”. Or so they thought…\n\nGauge is a Maestro of destruction and his specialized Nano-tower-splits  on the CAN-D will create and mimic an existing local network before it implements a multi level  DdoS attack. All this happens while simultaneously Trojanning (it’s a word trust me) a fast learning neural interface that will encapsulate ANY A.I. in an impenetrable and inescapable mirrorverse.\n\nTLDR;? “This thing’ll blow some freakin’ gaskets!”\n\nNote: This item has increased utility that includes cross-platform interoperability, exclusive Airdrops, perks and includes  AAA video game quality 3D Models/Files.",
+      "animation_url": "ipfs://QmP8cTjkmWFTc88LoZPo8VVJ5ZzrnQgim2G3fRNFCuZsBY",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmP8cTjkmWFTc88LoZPo8VVJ5ZzrnQgim2G3fRNFCuZsBY",
+    "mediaThumbnailUri": "ipfs://QmS1UHU1GAjohb9hn2evZQfTQ4YA3b6CkAo8YqJ6BMtLDp",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:42:53.734Z",
+    "likeCount": 1163,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x230d40e35852948fe84d3a4077aefb3c1ae11297b94a55bafc9c8fc1793585ca"
+      ]
+    },
+    "createdAt": "2022-03-15T14:42:53.739Z",
+    "updatedAt": "2022-03-15T14:42:53.740Z"
+  },
+  {
+    "id": "91994321-dcaf-44e6-88df-2f6dad3df801",
+    "tokenId": "0xb85cc999379b37840015165b70265c6eea00b5b257b0dbfaff0b0a9bd6f38adb",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] CYBER CYCLE - ID:G11",
+    "description": "Faster than light travel?\nA myth, however, this thing gets pretty damn close on an open road. Can you really call it a cycle without wheels?\nYes.\n 0-100mph in 1.5s\n(that’s 160.98* km for all you more worldly people…)\nOverkill? You bet!\nFun as hell? That’s right.\nAggressively and stupidly stylish?\nHeyyy, you are getting the hang of this!\n\nThe ultimate Cybercity vehicle.\n\nGauge… please stop… enough is enough, said no one ever!\n\nNote: This item has increased utility that includes cross-platform interoperability, exclusive Airdrops, perks and includes  AAA video game quality 3D Models/Files.",
+    "amount": "2500",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmakKndvohwVk3RUDjtnxSYSiNUELgZeiPHHvWpdR6kemg",
+    "metadataJson": {
+      "name": "[C4] CYBER CYCLE - ID:G11",
+      "image": "ipfs://QmNuGaN4jfAAkQuJazkTM6bNTcZnyaEq6bsB97eobpb9Jb",
+      "attributes": [
+        {
+          "value": "Vehicle",
+          "trait_type": "CYBER FORGE"
+        },
+        {
+          "value": "Black",
+          "trait_type": "Tier"
+        },
+        {
+          "value": "[1.0]",
+          "trait_type": "Metaverse"
+        }
+      ],
+      "properties": {
+        "Tier": "Black",
+        "Metaverse": "[1.0]",
+        "CYBER FORGE": "Vehicle"
+      },
+      "description": "Faster than light travel?\nA myth, however, this thing gets pretty damn close on an open road. Can you really call it a cycle without wheels?\nYes.\n 0-100mph in 1.5s\n(that’s 160.98* km for all you more worldly people…)\nOverkill? You bet!\nFun as hell? That’s right.\nAggressively and stupidly stylish?\nHeyyy, you are getting the hang of this!\n\nThe ultimate Cybercity vehicle.\n\nGauge… please stop… enough is enough, said no one ever!\n\nNote: This item has increased utility that includes cross-platform interoperability, exclusive Airdrops, perks and includes  AAA video game quality 3D Models/Files.",
+      "animation_url": "ipfs://QmP7yRy7eBKdAuEtSUjDzKgGEKRXjN6uNvDA7NHuT1RM3q",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmP7yRy7eBKdAuEtSUjDzKgGEKRXjN6uNvDA7NHuT1RM3q",
+    "mediaThumbnailUri": "ipfs://QmNuGaN4jfAAkQuJazkTM6bNTcZnyaEq6bsB97eobpb9Jb",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:42:45.330Z",
+    "likeCount": 1474,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x057047417d4aaf63a083ed0b379d8b8d44f7a9edf6252dced73be6147928eaaf"
+      ]
+    },
+    "createdAt": "2022-03-15T14:42:45.337Z",
+    "updatedAt": "2022-03-15T14:42:45.338Z"
+  },
+  {
+    "id": "01eb2193-81d8-4546-9a40-da3f317341c7",
+    "tokenId": "0x578f5698c68e1d435d6e7757529b54bb7c28c553a30e171906a854d2b00cd996",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] CHROME CANNON - ID:G08",
+    "description": "An aptly named micro-railgun, part quantum fission propulsion mixed with  just a smidge of nanotech. This  breathtaking instrument of death has “Obscene Levels of  Propulsion”. Tech with a unique nanite-course correction aiming ability that makes for  an unmatched level of precision. \n\nGauge from the Cybercrew Forge crafted these in limited quantities  then destroyed the blueprints, Making  these an extremely sought after piece of equipment.\n\nNote From The Crew:\nThese Limited edition NFT items come as assets fully rigged and ready for import into any Metaverse game or world. You also get full rights to your items  within reason, however, we maintain the right to remove said use if it is deemed detrimental to the brand or image at any point now or in the future .\n\nWe probably won’t but just don’t do anything stupid or illegal is all we are saying.",
+    "amount": "750",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmUESwxT69zWJJ8Kgskw965A28Z7ja9VFoyygGgYf2EDND",
+    "metadataJson": {
+      "name": "[C4] CHROME CANNON - ID:G08",
+      "image": "ipfs://QmQ3FFG7ME2KwMpqZPti6R7LwizTWh1BCk9ixJtKpTC6SR",
+      "attributes": [
+        {
+          "value": "Weapon",
+          "trait_type": "CYBER FORGE"
+        },
+        {
+          "value": "Chrome",
+          "trait_type": "Tier"
+        },
+        {
+          "value": "[1.0]",
+          "trait_type": "Metaverse"
+        }
+      ],
+      "properties": {
+        "Tier": "Chrome",
+        "Metaverse": "[1.0]",
+        "CYBER FORGE": "Weapon"
+      },
+      "description": "An aptly named micro-railgun, part quantum fission propulsion mixed with  just a smidge of nanotech. This  breathtaking instrument of death has “Obscene Levels of  Propulsion”. Tech with a unique nanite-course correction aiming ability that makes for  an unmatched level of precision. \n\nGauge from the Cybercrew Forge crafted these in limited quantities  then destroyed the blueprints, Making  these an extremely sought after piece of equipment.\n\nNote From The Crew:\nThese Limited edition NFT items come as assets fully rigged and ready for import into any Metaverse game or world. You also get full rights to your items  within reason, however, we maintain the right to remove said use if it is deemed detrimental to the brand or image at any point now or in the future .\n\nWe probably won’t but just don’t do anything stupid or illegal is all we are saying.",
+      "animation_url": "ipfs://QmPAXptGG4jbdLch8jbaipAkTWBUwXnon9bLQ25UjwyYVA",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmPAXptGG4jbdLch8jbaipAkTWBUwXnon9bLQ25UjwyYVA",
+    "mediaThumbnailUri": "ipfs://QmQ3FFG7ME2KwMpqZPti6R7LwizTWh1BCk9ixJtKpTC6SR",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:42:36.874Z",
+    "likeCount": 897,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x09eb5d265456b098fa29ca27a63da34a3756d888838cbc8f17e4ccda256adcd3"
+      ]
+    },
+    "createdAt": "2022-03-15T14:42:36.879Z",
+    "updatedAt": "2022-03-15T14:42:36.880Z"
+  },
+  {
+    "id": "7bebfd17-005e-4fca-b9bb-08dacba8677e",
+    "tokenId": "0xd2fb1ad9308803ea4df2ba6b1fe0930ad4d6443b3ac6468eaedbc9e2c214e57a",
+    "contractAddress": "0x50f7c99091522898b3e0b8a5b4bd2d48385fe99e",
+    "creatorEthAddress": "0x9b944a5f2f90ba9f8a8c375be8b076b8361bff15",
+    "name": "[C4] CLONE CARD - ID:G10",
+    "description": "The Cyber Crew Clone Card is the flagship item in this series: it will give the owner one free MINT of the upcoming semi-generative METAVERSE-READY 3D rigged playable character. You will be able to bring it  with you to ANY compatible metaverse or game. You will also get all the 3D files and licenses to your individual PFP. \n\nAll the newest Crew Clones come with a  \"Gauge's Gear and Mayhem Subscription\" for weapons and wearables. For every new ROUND of Cyber Crew, members will get one or more FREE limited weapon(s) or wearable(s). \n\nGauge @ the Cyber Forge has done it again.\nNote: This special item has increased utility that will qualify its owner to exclusive Airdrops and perks.",
+    "amount": "5000",
+    "royaltyFeeBips": 10,
+    "copyright": null,
+    "nftType": "ERC1155",
+    "mutable": false,
+    "metadataUri": "ipfs://QmcYEQQyB7FiaaVRvDQCfz1zebyc3GfQLQgszA8jn5aXb7",
+    "metadataJson": {
+      "name": "[C4] CLONE CARD - ID:G10",
+      "image": "ipfs://QmRbqHUqotVjqTbAhGQNUYw2YVW8MGvrNygoNpNGoi3bus",
+      "attributes": [
+        {
+          "value": "Orange",
+          "trait_type": "Tier"
+        },
+        {
+          "value": "[1.0]",
+          "trait_type": "Metaverse"
+        },
+        {
+          "value": "[1] Cyber Clone Gen.2 Mint",
+          "trait_type": "PFP"
+        },
+        {
+          "value": "Subscription",
+          "trait_type": "CYBER FORGE"
+        }
+      ],
+      "properties": {
+        "PFP": "[1] Cyber Clone Gen.2 Mint",
+        "Tier": "Orange",
+        "Metaverse": "[1.0]",
+        "CYBER FORGE": "Subscription"
+      },
+      "description": "The Cyber Crew Clone Card is the flagship item in this series: it will give the owner one free MINT of the upcoming semi-generative METAVERSE-READY 3D rigged playable character. You will be able to bring it  with you to ANY compatible metaverse or game. You will also get all the 3D files and licenses to your individual PFP. \n\nAll the newest Crew Clones come with a  \"Gauge's Gear and Mayhem Subscription\" for weapons and wearables. For every new ROUND of Cyber Crew, members will get one or more FREE limited weapon(s) or wearable(s). \n\nGauge @ the Cyber Forge has done it again.\nNote: This special item has increased utility that will qualify its owner to exclusive Airdrops and perks.",
+      "animation_url": "ipfs://QmTfHHArkywEhoZLRRWLjFefZz8rL2TrnfD2A433rWFkmT",
+      "royalty_percentage": 10
+    },
+    "mediaType": "video/mp4",
+    "mediaUri": "ipfs://QmTfHHArkywEhoZLRRWLjFefZz8rL2TrnfD2A433rWFkmT",
+    "mediaThumbnailUri": "ipfs://QmRbqHUqotVjqTbAhGQNUYw2YVW8MGvrNygoNpNGoi3bus",
+    "preRevealMediaType": null,
+    "preRevealMediaUri": null,
+    "preRevealMediaThumbnailUri": null,
+    "collectionId": "f6ff0ed8-277a-4039-9c53-18d66b4c2dac",
+    "revealed": true,
+    "state": "Active",
+    "firstMintedAt": "2022-03-15T14:42:28.054Z",
+    "likeCount": 2106,
+    "loopringNftInfo": {
+      "nftData": [
+        "0x27665297fab3c72a472f81e6a734ffe81c8c1940a82164aca76476ca2b506724"
+      ]
+    },
+    "createdAt": "2022-03-15T14:42:28.060Z",
+    "updatedAt": "2022-03-15T14:42:28.061Z"
+  }
+]

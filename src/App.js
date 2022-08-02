@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,48 +6,51 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCollections } from './Store/Slices/collectionsSlice';
 import TopNav from './Components/TopNav';
 import Footer from './Components/Footer';
+import HomeContainer from './Containers/HomeContainer';
 import ContactContainer from './Containers/ContactContainer';
-import NotFound from './Components/NotFound';
 import AllCollections from './Containers/AllCollections';
 import AllCollectionsContainer from './Containers/AllCollectionsContainer';
 import CollectionContainer from './Containers/CollectionContainer';
-import TrendingContainer from './Containers/TrendingContainer';
+import CollectionContainer2 from './Containers/CollectionContainer2';
+import { NotFound, LoadingScreen, Stars } from './Components/Components';
 
-
-function App() {
+const App = () => {
 
   const dispatch = useDispatch();
-  const {data} = useSelector((state) => state.collections);
+  const {loading} = useSelector((state) => state.collections);
 
   useEffect(() => {
     dispatch(fetchCollections())
   }, [])
 
-  const renderItems = () => {
-    if (data.length > 0) {
-      return data.map(collection => 
-        <p className='text-white'>{collection.name}</p>
-      )
-    } else {
-      return <div>nothing yet</div>
-    }
+  const loadingContent = () => {
+    return (
+      <LoadingScreen />
+    )
   }
 
-  return (
-    <div className="App bg-dark text-white d-flex flex-column min-vh-100">
+  const appContent = () => {
+    return (
       <Router>
         <TopNav />
+        <Stars />
           <Routes>
-            <Route path="/" element={<TrendingContainer />} />
+            <Route path="/" element={<HomeContainer />} />
             <Route path="collections" element={<AllCollections />}>
               <Route index element={<AllCollectionsContainer />} />
-              <Route path=":collectionName" element={<CollectionContainer />} />
+              <Route path=":collectionSlug" element={<CollectionContainer2 />} />
             </Route>
             <Route path='contact' element={<ContactContainer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
       </Router>
+    )
+  }
+
+  return (
+    <div className="App bg-dark text-white d-flex flex-column min-vh-100">
+      {loading ? loadingContent() : appContent()}
     </div>
   );
 }
