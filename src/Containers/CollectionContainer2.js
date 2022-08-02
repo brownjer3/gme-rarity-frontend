@@ -6,16 +6,11 @@ import NftsGridContainer from './NftsGridContainer';
 import SortDropdown from '../Components/SortDropdown';
 import NftDetailsCard from '../Components/NftDetailsCard';
 import TraitBadges from '../Components/TraitBadges';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ListGroup from 'react-bootstrap/ListGroup';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { EthData, makeCollectionGmeLink, transformUri, roundNumbers } from '../Components/DataFormats';
+import { transformUri, roundNumbers } from '../Components/DataFormats';
 import { Loading } from '../Components/Components';
-// import { faEthereum } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import CollectionBanner from '../Components/CollectionBanner';
 
 
 export default function CollectionContainer2() {
@@ -33,7 +28,6 @@ export default function CollectionContainer2() {
     const [nfts, setNfts] = useState([]);
     const [pageNum, setPageNum] = useState(1);
     const [query, setQuery] = useState("");
-    const [searchFound, setSearchFound] = useState(false);
     const [hasMore, setHasMore] = useState(true);
 
     const [loadRef, setLoadRef] = useState(null);
@@ -47,6 +41,23 @@ export default function CollectionContainer2() {
     useEffect(() => {
         window.scrollTo(0, 0);
     },[])
+
+    useEffect(() => {
+        loadMore();
+    }, [pageNum, selectedTraits]);
+
+    useEffect(() => {
+        if (traitsQuery.length == 0) {
+            setFilteredItemsLength(collection.items)
+        } else {
+            let count = 0;
+            traitsQuery.forEach(query => {
+                let num = parseInt(collection.traits[query.category][query.trait])
+                count += num
+            })
+            setFilteredItemsLength(count)
+        }
+    }, [traitsQuery]);
 
     useEffect(() => {
         const loader = loadRef;
@@ -92,25 +103,6 @@ export default function CollectionContainer2() {
             setNfts([...all]);
     }
 
-    useEffect(() => {
-        loadMore();
-    }, [pageNum, selectedTraits]);
-
-    useEffect(() => {
-        if (traitsQuery.length == 0) {
-            setFilteredItemsLength(collection.items)
-        } else {
-            let count = 0;
-            traitsQuery.forEach(query => {
-                let num = parseInt(collection.traits[query.category][query.trait])
-                count += num
-            })
-            setFilteredItemsLength(count)
-        }
-    }, [traitsQuery]);
-
-
-
     const handleSearch = async (e) => {
         e.preventDefault();
         let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
@@ -118,11 +110,9 @@ export default function CollectionContainer2() {
         const data = await res.json();
 
         if (data.length == 0) {
-            setSearchFound(false);
             setSelectedItem("NFT Not Found!");
             setModalShow(true);
         } else {
-            setSearchFound(true);
             setSelectedItem(data[0]);
             setModalShow(true);
         }
@@ -173,35 +163,8 @@ export default function CollectionContainer2() {
                 </div>
             )
         } else {
-            return <div></div>
+            return <></>
         }
-    }
-
-    const createStats = () => {
-        return (
-            <ListGroup horizontal >
-                <ListGroup.Item className='bg-dark text-white border'>
-                    <div className='lead fw-bolder'>{roundNumbers(collection.items)}</div> 
-                    <div>items</div>
-                </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
-                    <div className='lead fw-bolder'>TBD</div> 
-                    <div>owners</div>
-                </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
-                    <div className='lead fw-bolder'>
-                        <EthData weiVal={collection.volume} round/>
-                    </div>
-                    <div>24hr volume</div>
-                </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
-                    <div className='lead fw-bolder'>
-                        <EthData weiVal={collection.volume} round/>
-                    </div>
-                    <div>total volume</div>
-                </ListGroup.Item>
-            </ListGroup>
-        )
     }
 
     return (
@@ -218,38 +181,7 @@ export default function CollectionContainer2() {
                     />
                 </Col>
                 <Col md={10}>
-                    <Card bg='dark' text='white' border='light'>
-                        <div className='w-100 overflow-hidden' style={{height: "220px"}}>
-                            <Card.Img 
-                                className='position-relative top-50 start-50 translate-middle' 
-                                variant="top" 
-                                src={collection.banner_uri} 
-                                alt={`GameStop NFT Collection Banner - ${collection.name}`}
-                            />
-                        </div>
-                        <Card.Body style={{textAlign: "left"}}>
-                            <Row>
-                                <Col md={7}>
-                                    <Card.Title className='display-6'>{collection.name}</Card.Title>
-                                    <Card.Text>{collection.description}</Card.Text>
-                                </Col>
-                                <Col md={5}>
-                                    <Row className='float-end text-center'>
-                                        {createStats()}
-                                    </Row>
-                                    <Row className='mt-2 float-end'>                                        
-                                        <a href={makeCollectionGmeLink(collection.slug)} target="_blank">
-                                            <Button variant="outline-primary">
-                                                View on GameStop
-                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='mx-2' />
-                                            </Button>
-                                        </a>
-                                    </Row>
-                                </Col>
-                            </Row>
-
-                        </Card.Body>
-                    </Card>
+                    <CollectionBanner collection={collection}/>
                     <NftDetailsCard
                         nft={selectedItem}
                         show={modalShow}
