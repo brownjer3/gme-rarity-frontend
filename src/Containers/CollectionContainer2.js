@@ -52,7 +52,7 @@ export default function CollectionContainer2() {
         const currentObserver = observer.current;
 
         if (loader) {
-            currentObserver.observe(loader)
+            currentObserver.observe(loader);
         }
 
         return () => {
@@ -110,7 +110,7 @@ export default function CollectionContainer2() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        let url = `http://localhost:3001/collections/${collection.id}/nfts?name_like=${query}`
+        let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
         const res = await fetch(url);
         const data = await res.json();
         const selected = data[0];
