@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import NftDetailsCard from '../Components/NftDetailsCard';
 // import TestModal from '../Components/TestModal';
 
 const NftModalContainer = () => {
+    const location = useLocation();
+    const { nftData } = location.state;
     const { nftId } = useParams();
     const navigate = useNavigate();
     const handleClose = () => navigate(-1);
@@ -14,7 +16,13 @@ const NftModalContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-       fetchNft();
+        if (nftData) {
+            setLoading(false);
+            setIsNftFound(true);
+            setNft(nftData);
+        } else {
+            fetchNft();
+        }
     }, [])
 
     const fetchNft = async () => {

@@ -15,8 +15,9 @@ export default function NftsGridContainer(props) {
                 {props.nfts.length > 0 && props.nfts.map((nft, index) => {
                     return index === props.nfts.length - 1 && !props.loading && !!props.hasMore ?
                      (<Link 
-                        to={`/collections/Metaboy/${nft.serialNum}`} 
-                        state={{ background: location }}
+                        to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
+                        state={{ background: location, nftData: nft }}
+                        className='text-white text-decoration-none'
                      >
                         <Col key={nft.id}>
                             <Card 
@@ -41,8 +42,9 @@ export default function NftsGridContainer(props) {
                         </Link>
                     ) : (
                         <Link  
-                            to={`/collections/Metaboy/${nft.serialNum}`} 
-                            state={{ background: location }}
+                            to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
+                            state={{ background: location, nftData: nft }}
+                            className='text-white text-decoration-none'
                         >
                         <Col key={nft.id}>
                             <Card 
