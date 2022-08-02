@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 class TrendingContainer extends Component {
 
     makeCollectionCards = () => {
-        return this.props.topFive.map((collection) => {
-            return <TrendingCollectionCard collection={collection} />
+        return this.props.topFive.map((collection, index) => {
+            return <TrendingCollectionCard key={index.toString()} collection={collection} />
         })
     }
 
