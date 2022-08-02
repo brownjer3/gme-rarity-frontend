@@ -38,8 +38,13 @@ class TopNav extends Component {
                 <Container fluid>
                   <NavLink to='/' className="nav-link">
                       <Navbar.Brand>
-                        {/* <img width="60" src={process.env.PUBLIC_URL+"/images/DFV-moon-initials.gif"} /> */}
-                        <video width="60" height="45" autoPlay loop muted playsInline src={process.env.PUBLIC_URL+"/images/final.moon.initials only.24fps0001-0356.webm"} >
+                        <video 
+                          width="60" 
+                          height="45" 
+                          autoPlay loop muted playsInline 
+                          src={process.env.PUBLIC_URL+"/images/final.moon.initials only.24fps0001-0356.webm"} 
+                          alt="Deep Fungible Value Small Logo - GameStop NFT Rarity Tool"
+                        >
                             <source src="/videos/testing.webm"  type="video/webm" />
                             <source src="movie.ogg" type="video/ogg" />
                                 Your browser does not support the video tag.

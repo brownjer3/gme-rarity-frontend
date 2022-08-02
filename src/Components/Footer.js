@@ -25,7 +25,11 @@ class Footer extends Component {
                         </Col>
                         <Col>
                             <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
-                                <Image  style={{width: '20%'}} src={process.env.PUBLIC_URL+"/images/bmc.png"} />
+                                <Image 
+                                    style={{width: '20%'}} 
+                                    src={process.env.PUBLIC_URL+"/images/bmc.png"} 
+                                    alt="Buy Me a Coffe Button for Honeycrisp"
+                                />
                             </a>
                             {/* <p class="fw-lighter">GME Wallet: 0x61942db583EC58f61e7635f40514247E68312625</p> */}
                         </Col>

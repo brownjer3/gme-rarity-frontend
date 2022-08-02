@@ -198,18 +198,24 @@ export default function CollectionContainer2() {
             <Row className='w-100'>
                 <Col md={2}>
                     <TraitFilterContainer 
+                        name={collection.name}
                         image={transformUri(collection.avatarUri)} 
                         isTraitSelected={isTraitSelected} 
                         handleTraitSelect={handleTraitSelect} 
                         traits={collection.traits} 
                         handleQueryInput={handleQueryInput}
                         handleSearch={handleSearch}
-                        />
+                    />
                 </Col>
                 <Col md={10}>
                     <Card bg='dark' text='white' border='light'>
                         <div className='w-100 overflow-hidden' style={{height: "220px"}}>
-                            <Card.Img className='position-relative top-50 start-50 translate-middle' variant="top" src={collection.banner_uri} />
+                            <Card.Img 
+                                className='position-relative top-50 start-50 translate-middle' 
+                                variant="top" 
+                                src={collection.banner_uri} 
+                                alt={`GameStop NFT Collection Banner - ${collection.name}`}
+                            />
                         </div>
                         <Card.Body style={{textAlign: "left"}}>
                             <Row>

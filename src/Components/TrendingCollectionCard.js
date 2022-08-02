@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { faEthereum } from '@fortawesome/free-brands-svg-icons';
 import { transformUri, EthData } from '../Components/DataFormats';
 
 
@@ -18,7 +17,7 @@ class TrendingCollectionCard extends Component {
         return (
             <Col>
                 <Card bg='dark' border="light" >
-                <Card.Img variant="top" src={transformUri(avatarUri)} />
+                <Card.Img variant="top" src={transformUri(avatarUri)} alt={`Trending GameStop NFT Collection - ${name}`}/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <ListGroup className="list-group-flush">

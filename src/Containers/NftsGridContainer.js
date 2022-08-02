@@ -2,7 +2,6 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Loading } from '../Components/Components';
 import { transformUri } from '../Components/DataFormats';
 
 
@@ -16,7 +15,11 @@ export default function NftsGridContainer(props) {
                      (
                         <Col >
                             <Card bg='dark' text='white' border='light' index={index} className='detailsCard' onClick={props.handleItemSelect}>
-                                <Card.Img variant="top" src={transformUri(nft.metadataJson.image)} />
+                                <Card.Img 
+                                    variant="top" 
+                                    src={transformUri(nft.metadataJson.image)} 
+                                    alt={`GameStop NFT - ${nft.name}`}
+                                />
                                 <Card.Body>
                                 <Card.Title>Rarity Rank: TBD</Card.Title>
                                 <Card.Text>{nft.name}</Card.Text>
@@ -26,7 +29,11 @@ export default function NftsGridContainer(props) {
                     ) : (
                             <Col>
                                 <Card bg='dark' text='white' border='light' index={index} className='detailsCard' onClick={props.handleItemSelect}>
-                                    <Card.Img variant="top" src={transformUri(nft.metadataJson.image)} />
+                                    <Card.Img 
+                                        variant="top" 
+                                        src={transformUri(nft.metadataJson.image)} 
+                                        alt={`GameStop NFT - ${nft.name}`}
+                                    />
                                     <Card.Body>
                                     <Card.Title>Rarity Rank: {nft.rarityRank}</Card.Title>
                                     <Card.Text>{nft.name}</Card.Text>

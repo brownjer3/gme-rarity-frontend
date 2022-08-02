@@ -48,7 +48,12 @@ class TraitFilterContainer extends Component {
     render() {
         return (
             <div>
-                <Image fluid thumbnail className="ms-2 mb-2" src={this.props.image}/>
+                <Image 
+                    fluid thumbnail 
+                    className="ms-2 mb-2" 
+                    src={this.props.image}
+                    alt={`GameStop NFT Collection Avatar - ${this.props.name}`}
+                />
                 <h3>Find your NFT</h3>
                 <Form className="d-flex px-2" onSubmit={this.props.handleSearch}>
                   <Form.Control
