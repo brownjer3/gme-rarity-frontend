@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link, useLocation } from 'react-router-dom';
 import { transformUri } from '../Components/DataFormats';
+import NftBasicDetailsCard from '../Components/NftBasicDetailsCard';
 
 
 export default function NftsGridContainer(props) {
@@ -20,24 +21,7 @@ export default function NftsGridContainer(props) {
                         className='text-white text-decoration-none'
                      >
                         <Col key={nft.id}>
-                            <Card 
-                                bg='dark' 
-                                text='white' 
-                                border='light' 
-                                index={index} 
-                                className='detailsCard' 
-                                // onClick={props.handleItemSelect}
-                            >
-                                <Card.Img 
-                                    variant="top" 
-                                    src={transformUri(nft.metadataJson.image)} 
-                                    alt={`GameStop NFT - ${nft.name}`}
-                                />
-                                <Card.Body>
-                                <Card.Title>Rarity Rank: TBD</Card.Title>
-                                <Card.Text>{nft.name}</Card.Text>
-                                </Card.Body>
-                            </Card>
+                            <NftBasicDetailsCard index={index} image={transformUri(nft.metadataJson.image)} name={nft.name} rarityRank={nft.rarityRank}/>
                         </Col>
                         </Link>
                     ) : (
@@ -47,24 +31,7 @@ export default function NftsGridContainer(props) {
                             className='text-white text-decoration-none'
                         >
                         <Col key={nft.id}>
-                            <Card 
-                                bg='dark' 
-                                text='white' 
-                                border='light' 
-                                index={index} 
-                                className='detailsCard' 
-                                // onClick={props.handleItemSelect}
-                            >
-                                <Card.Img 
-                                    variant="top" 
-                                    src={transformUri(nft.metadataJson.image)} 
-                                    alt={`GameStop NFT - ${nft.name}`}
-                                />
-                                <Card.Body>
-                                <Card.Title>Rarity Rank: {nft.rarityRank}</Card.Title>
-                                <Card.Text>{nft.name}</Card.Text>
-                                </Card.Body>
-                            </Card>
+                            <NftBasicDetailsCard index={index} image={transformUri(nft.metadataJson.image)} name={nft.name} rarityRank={nft.rarityRank}/>
                         </Col>
                         </Link>
                     )

@@ -12,7 +12,7 @@ class TraitFilterContainer extends Component {
     createTraits = (category, categoryName) => {
         return Object.keys(category).map((trait, index) => {
             return ( 
-                <ListGroup.Item key={index.toString()} className='bg-dark text-white d-flex justify-content-between'>
+                <ListGroup.Item key={index.toString()} className='bg-transparent text-white d-flex justify-content-between'>
                     <label htmlFor={trait}>{trait} ({category[trait]})</label>
                     <input className='ms-1' id={trait} type='checkbox' value={`${categoryName}-${trait}`} checked={this.props.isTraitSelected(trait)} onChange={this.props.handleTraitSelect}/>
                 </ListGroup.Item>
@@ -23,7 +23,7 @@ class TraitFilterContainer extends Component {
     createTraitMenu = (traits) => {
         return Object.keys(traits).map((category, index) => {
             return ( 
-                <ListGroup.Item key={index.toString()} className='dropdown-btn bg-dark text-white'>
+                <ListGroup.Item key={index.toString()} className='dropdown-btn bg-transparent text-white'>
                     <span onClick={this.handleClick}>
                         {category}
                         <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>

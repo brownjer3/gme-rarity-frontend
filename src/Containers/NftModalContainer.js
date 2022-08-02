@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import NftDetailsCard from '../Components/NftDetailsCard';
+import NftModal from '../Components/NftModal';
 // import TestModal from '../Components/TestModal';
 
 const NftModalContainer = () => {
@@ -45,23 +45,8 @@ const NftModalContainer = () => {
         setLoading(false);
     }
 
-    // const renderModal = () => {
-    //     if (loading) {
-    //         return <div>loading</div>
-    //     } else {
-    //         return <NftDetailsCard nft={nft} loading={loading} show={modalShow} onHide={handleClose}/>
-    //     }
-    // }
-
     return (
-        // <TestModal
-        //     loading={loading}
-        //     nft={nft}
-        //     isNftFound={isNftFound}
-        //     show={modalShow}
-        //     onHide={handleClose}
-        // />
-        <NftDetailsCard 
+        <NftModal 
             nft={nft} 
             isNftFound={isNftFound}
             loading={loading} 

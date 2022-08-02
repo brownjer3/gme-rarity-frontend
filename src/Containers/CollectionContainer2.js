@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import TraitFilterContainer from './TraitFilterContainer';
 import NftsGridContainer from './NftsGridContainer';
 import SortDropdown from '../Components/SortDropdown';
-import NftDetailsCard from '../Components/NftDetailsCard';
 import TraitBadges from '../Components/TraitBadges';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -117,12 +116,12 @@ export default function CollectionContainer2() {
         setQuery(e.target.value);
     }
 
-    const handleItemSelect = (e) => {
-        const index = e.target.closest('.detailsCard').getAttribute('index');
-        const selected = nfts[index];
-        setSelectedItem(selected);
-        setModalShow(true);
-    }
+    // const handleItemSelect = (e) => {
+    //     const index = e.target.closest('.detailsCard').getAttribute('index');
+    //     const selected = nfts[index];
+    //     setSelectedItem(selected);
+    //     setModalShow(true);
+    // }
 
     const handleTraitSelect = (e) => {
         const categoryAndTrait = e.target.value.split("-");
@@ -198,7 +197,6 @@ export default function CollectionContainer2() {
                         nfts={nfts}
                         collectionSlug={collection.slug}
                         // loading={loading} 
-                        handleItemSelect={handleItemSelect} 
                         // setLastElement={setLastElement}
                         // hasMore={hasMore}
                     />

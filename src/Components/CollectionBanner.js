@@ -13,22 +13,22 @@ class CollectionBanner extends Component {
 
     createStats = (itemCount, ownerCount, volume) => {
         return (
-            <ListGroup horizontal >
-                <ListGroup.Item className='bg-dark text-white border'>
+            <ListGroup horizontal className='' >
+                <ListGroup.Item className='bg-transparent text-white border'>
                     <div className='lead fw-bolder'>{roundNumbers(itemCount)}</div> 
                     <div>items</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
-                    <div className='lead fw-bolder'>{ownerCount}</div> 
+                <ListGroup.Item className='bg-transparent text-white border'>
+                    <div className='lead fw-bolder'>{roundNumbers(ownerCount)}</div> 
                     <div>owners</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
+                <ListGroup.Item className='bg-transparent text-white border'>
                     <div className='lead fw-bolder'>
                         <EthData weiVal={volume} round/>
                     </div>
                     <div>24hr volume</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-dark text-white border'>
+                <ListGroup.Item className='bg-transparent text-white border'>
                     <div className='lead fw-bolder'>
                         <EthData weiVal={volume} round/>
                     </div>

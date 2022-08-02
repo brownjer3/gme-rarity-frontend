@@ -12,7 +12,7 @@ import { Loading } from './Components';
 
 
 
-export default function NftDetailsCard(props) {
+export default function NftModal(props) {
 
     const makeTraitRows = (traits) => {
         return Object.keys(traits).map((category, index) => {
@@ -68,8 +68,8 @@ export default function NftDetailsCard(props) {
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
                     >
-                    <Modal.Header className='bg-dark text-white'>
-                        <Modal.Title>
+                    <Modal.Header className='bg-dark text-white text-center'>
+                        <Modal.Title className='w-100'>
                             {props.nft.name}
                         </Modal.Title>
                         <button onClick={props.onHide} type="button" className="btn btn-close btn-close-white" aria-label="Close"></button>

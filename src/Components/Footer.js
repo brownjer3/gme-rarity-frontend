@@ -20,9 +20,9 @@ class Footer extends Component {
     
     render() {
         return (
-            <Navbar bg="dark" text='white' className='mt-auto mb-3 bg-transparent'>
+            <Navbar bg="transparent" text='white' className='mt-auto mb-3'>
                 <Container className="justify-content-center">
-                    <Row className="align-items-center w-100">
+                    <Row className="w-100">
                         <Col>
                             <p className='font-monospace lh-1'>Made with 🚀 by 
                                 <a className="text-decoration-none text-white" href='https://twitter.com/honey_crisp_' target='_blank'> @honeycrisp </a>
@@ -37,6 +37,7 @@ class Footer extends Component {
                         <Col md="auto">
                             <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
                                 <Image 
+                                    fluid
                                     width="125px"
                                     height="auto"
                                     src={process.env.PUBLIC_URL+"/images/bmc.png"} 

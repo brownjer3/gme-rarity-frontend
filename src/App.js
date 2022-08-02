@@ -33,7 +33,7 @@ const App = () => {
 
   const appContent = () => {
     return (
-      <div>
+      <>
         <TopNav />
         <Stars />
           <Routes location={background || location}>
@@ -52,7 +52,7 @@ const App = () => {
             </Routes>
           )}
           <Footer />
-      </div>
+      </>
     )
   }
 
