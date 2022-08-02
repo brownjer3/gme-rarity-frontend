@@ -33,6 +33,7 @@ export default function CollectionContainer2() {
     const [nfts, setNfts] = useState([]);
     const [pageNum, setPageNum] = useState(1);
     const [query, setQuery] = useState("");
+    const [searchFound, setSearchFound] = useState(false);
     const [hasMore, setHasMore] = useState(true);
 
     const [loadRef, setLoadRef] = useState(null);
@@ -108,14 +109,23 @@ export default function CollectionContainer2() {
         }
     }, [traitsQuery]);
 
+
+
     const handleSearch = async (e) => {
         e.preventDefault();
         let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
         const res = await fetch(url);
         const data = await res.json();
-        const selected = data[0];
-        setSelectedItem(selected);
-        setModalShow(true);
+
+        if (data.length == 0) {
+            setSearchFound(false);
+            setSelectedItem("NFT Not Found!");
+            setModalShow(true);
+        } else {
+            setSearchFound(true);
+            setSelectedItem(data[0]);
+            setModalShow(true);
+        }
     }
 
     const handleQueryInput = (e) => {
@@ -241,7 +251,7 @@ export default function CollectionContainer2() {
                         </Card.Body>
                     </Card>
                     <NftDetailsCard
-                        item={selectedItem}
+                        nft={selectedItem}
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />

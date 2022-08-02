@@ -13,7 +13,7 @@ export const NotFound = () => {
     return (
         <Container>
             <SectionHeader name="Page Not Found!" />
-            <Image width="30%" src='https://m.media-amazon.com/images/I/81nho65ESrL._AC_SY879_.jpg' />
+            <Image width="30%" src='https://m.media-amazon.com/images/I/81nho65ESrL._AC_SY879_.jpg' alt="Page Not Found" />
         </Container>
     )
 }
