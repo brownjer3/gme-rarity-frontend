@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import NftModal from '../Components/NftModal';
-// import TestModal from '../Components/TestModal';
+// import TestModal from '../Components/TestModal'; 
 
 const NftModalContainer = () => {
     const location = useLocation();
-    const { nftData } = location.state;
+    let nftData;
     const { nftId } = useParams();
     const navigate = useNavigate();
     const handleClose = () => navigate(-1);
@@ -16,18 +16,19 @@ const NftModalContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (nftData) {
+        if (location.state) {
+            nftData = location.state.nftData;
             setLoading(false);
             setIsNftFound(true);
             setNft(nftData);
         } else {
+            setLoading(true);
             fetchNft();
+            setLoading(false);
         }
     }, [])
 
     const fetchNft = async () => {
-        setLoading(true);
-
         let collectionId = "36fab6f7-1e51-49d9-a0be-39343abafd0f"
         let url = `http://localhost:3001/collections/${collectionId}/nfts?serialNum=${nftId}`
         const res = await fetch(url);
@@ -41,8 +42,6 @@ const NftModalContainer = () => {
             setNft(data[0]);
             setModalShow(true);
         }
-
-        setLoading(false);
     }
 
     return (

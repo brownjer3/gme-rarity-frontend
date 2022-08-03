@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import TraitFilterContainer from './TraitFilterContainer';
 import NftsGridContainer from './NftsGridContainer';
@@ -17,6 +17,8 @@ export default function CollectionContainer2() {
     const collection = useSelector(state =>
         state.collections.data.find(collection => collection.slug === collectionSlug)
     )
+
+    const navigate = useNavigate();
 
     const [modalShow, setModalShow] = useState(false);
     const [selectedItem, setSelectedItem] = useState('');
@@ -97,19 +99,21 @@ export default function CollectionContainer2() {
             setNfts([...all]);
     }
 
-    const handleSearch = async (e) => {
+    const handleSearch = (e) => {
         e.preventDefault();
-        let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
-        const res = await fetch(url);
-        const data = await res.json();
+        navigate(`/collections/${collection.slug}/${query}`)
 
-        if (data.length == 0) {
-            setSelectedItem("NFT Not Found!");
-            setModalShow(true);
-        } else {
-            setSelectedItem(data[0]);
-            setModalShow(true);
-        }
+        // let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
+        // const res = await fetch(url);
+        // const data = await res.json();
+
+        // if (data.length == 0) {
+        //     setSelectedItem("NFT Not Found!");
+        //     setModalShow(true);
+        // } else {
+        //     setSelectedItem(data[0]);
+        //     setModalShow(true);
+        // }
     }
 
     const handleQueryInput = (e) => {

@@ -15,7 +15,7 @@ class HomeContainer extends Component {
         return (
             <Container >
                 <HomeBanner />
-                <SectionHeader name="Trending Container"/>
+                <SectionHeader name="Trending Collections"/>
                 <TrendingContainer />
             </Container>
         )

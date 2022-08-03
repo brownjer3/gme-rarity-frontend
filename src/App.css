@@ -79,4 +79,5 @@ input:focus {
 
 .beat-once {
   --fa-animation-iteration-count: 1;
+  cursor: pointer;
 }

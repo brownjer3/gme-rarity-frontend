@@ -8,8 +8,7 @@ import Image from 'react-bootstrap/Image';
 import { transformUri, makeNftGmeLink } from './DataFormats';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { Loading } from './Components';
-
+import { Loading } from './Components'; 
 
 
 export default function NftModal(props) {
