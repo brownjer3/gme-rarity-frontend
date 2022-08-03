@@ -102,30 +102,11 @@ export default function CollectionContainer2() {
     const handleSearch = (e) => {
         e.preventDefault();
         navigate(`/collections/${collection.slug}/${query}`)
-
-        // let url = `http://localhost:3001/collections/${collection.id}/nfts?serialNum=${query}`
-        // const res = await fetch(url);
-        // const data = await res.json();
-
-        // if (data.length == 0) {
-        //     setSelectedItem("NFT Not Found!");
-        //     setModalShow(true);
-        // } else {
-        //     setSelectedItem(data[0]);
-        //     setModalShow(true);
-        // }
     }
 
     const handleQueryInput = (e) => {
         setQuery(e.target.value);
     }
-
-    // const handleItemSelect = (e) => {
-    //     const index = e.target.closest('.detailsCard').getAttribute('index');
-    //     const selected = nfts[index];
-    //     setSelectedItem(selected);
-    //     setModalShow(true);
-    // }
 
     const handleTraitSelect = (e) => {
         const categoryAndTrait = e.target.value.split("-");
@@ -166,48 +147,43 @@ export default function CollectionContainer2() {
     }
 
     return (
-            <Row className='w-100'>
-                <Col md={2}>
-                    <TraitFilterContainer 
-                        name={collection.name}
-                        traits={collection.traits} 
-                        image={transformUri(collection.avatarUri)} 
-                        isTraitSelected={isTraitSelected} 
-                        handleTraitSelect={handleTraitSelect} 
-                        handleQueryInput={handleQueryInput}
-                        handleSearch={handleSearch}
-                    />
-                </Col>
-                <Col md={10}>
-                    <CollectionBanner collection={collection} />
-                    {/* <NftDetailsCard
-                        nft={selectedItem}
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                    /> */}
-                    <br />
-                    <Row className='align-middle my-2'>
-                        <Col md={2} className='text-start text-muted align-self-center'>
-                            <div>{roundNumbers(filteredItemsLength)} items</div>
-                        </Col>
-                        <Col className='d-flex flex-wrap justify-content-flex-start'>
-                            <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
-                        </Col>
-                        <Col md={2} className='text-end pe-5'>
-                            <SortDropdown />
-                        </Col>
-                    </Row>
-                    <NftsGridContainer 
-                        nfts={nfts}
-                        collectionSlug={collection.slug}
-                        // loading={loading} 
-                        // setLastElement={setLastElement}
-                        // hasMore={hasMore}
-                    />
-                    {renderLoadMoreSpinner()}
-                </Col>
-                <Outlet />
-            </Row>   
+        <Row className='w-100 vh-100'>
+            <Col md={2} className='sidebar'>
+                <TraitFilterContainer 
+                    name={collection.name}
+                    traits={collection.traits} 
+                    image={transformUri(collection.avatarUri)} 
+                    isTraitSelected={isTraitSelected} 
+                    handleTraitSelect={handleTraitSelect} 
+                    handleQueryInput={handleQueryInput}
+                    handleSearch={handleSearch}
+                />
+            </Col>
+            <Col md={10} className="collection-main-view">
+                <CollectionBanner collection={collection} />
+                <br />
+                <Row className='align-middle my-2'>
+                    <Col md={2} className='text-start text-muted align-self-center'>
+                        <div>{roundNumbers(filteredItemsLength)} items</div>
+                    </Col>
+                    <Col className='d-flex flex-wrap justify-content-flex-start'>
+                        <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
+                    </Col>
+                    <Col md={2} className='text-end pe-5'>
+                        <SortDropdown />
+                    </Col>
+                </Row>
+                <NftsGridContainer 
+                    nfts={nfts}
+                    collectionSlug={collection.slug}
+                    // loading={loading} 
+                    // setLastElement={setLastElement}
+                    // hasMore={hasMore}
+                />
+                {renderLoadMoreSpinner()}
+            </Col>
+            <Outlet />
+        </Row>   
     )
 }
 
