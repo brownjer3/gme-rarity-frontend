@@ -9,8 +9,7 @@ import Footer from './Components/Footer';
 import HomeContainer from './Containers/HomeContainer';
 import ContactContainer from './Containers/ContactContainer';
 import AllCollectionsContainer from './Containers/AllCollectionsContainer';
-// import CollectionContainer from './Containers/CollectionContainer';
-import CollectionContainer2 from './Containers/CollectionContainer2';
+import CollectionContainer from './Containers/CollectionContainer';
 import NftModalContainer from './Containers/NftModalContainer';
 import { NotFound, LoadingScreen, Stars } from './Components/Components';
 
@@ -39,7 +38,7 @@ const App = () => {
           <Routes location={background || location}>
             <Route path="/" element={<HomeContainer />} />
             <Route path="collections" element={<AllCollectionsContainer />} />
-            <Route path="collections/:collectionSlug" element={<CollectionContainer2 />} >
+            <Route path="collections/:collectionSlug" element={<CollectionContainer />} >
               <Route path=":nftId" element={<NftModalContainer />} />
             </Route>
             <Route path='contact' element={<ContactContainer />} />
