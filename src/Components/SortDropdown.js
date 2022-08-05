@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 // import Dropdown from 'react-bootstrap/Dropdown'
 
-class SortDropdown extends Component {
+class SortDropdown extends PureComponent {
     render() {
         return (
             <div>Sorted by: Rarity</div>

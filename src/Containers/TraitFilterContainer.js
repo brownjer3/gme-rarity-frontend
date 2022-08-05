@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -7,7 +7,7 @@ import { faCaretDown, faSortUp } from '@fortawesome/free-solid-svg-icons';
 import Image from 'react-bootstrap/Image';
 
 
-class TraitFilterContainer extends Component {
+class TraitFilterContainer extends PureComponent {
 
     createTraits = (category, categoryName) => {
         return Object.keys(category).map((trait, index) => {

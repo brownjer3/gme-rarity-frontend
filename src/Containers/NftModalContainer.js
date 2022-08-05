@@ -24,7 +24,6 @@ const NftModalContainer = () => {
         } else {
             setLoading(true);
             fetchNft();
-            setLoading(false);
         }
     }, [])
 
@@ -42,6 +41,7 @@ const NftModalContainer = () => {
             setNft(data[0]);
             setModalShow(true);
         }
+        setLoading(false);
     }
 
     return (

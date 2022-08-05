@@ -42,8 +42,8 @@ export default function NftModal(props) {
         } else if (!props.isNftFound) {
             return (
                 <Modal
-                show={props.show} 
-                onHide={props.onHide} 
+                    show={props.show} 
+                    onHide={props.onHide} 
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
@@ -63,8 +63,8 @@ export default function NftModal(props) {
         } else {
             return (
                 <Modal
-                show={props.show} 
-                onHide={props.onHide} 
+                    show={props.show} 
+                    onHide={props.onHide} 
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered

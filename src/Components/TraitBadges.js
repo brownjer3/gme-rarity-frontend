@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
 
-class TraitBadges extends Component {
+class TraitBadges extends PureComponent {
 
     createBadges = (traits) => {
         return traits.map(combo => {

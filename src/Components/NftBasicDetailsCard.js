@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Card from 'react-bootstrap/Card';
 
 const NftBasicDetailsCard = (props) => {
@@ -13,6 +13,8 @@ const NftBasicDetailsCard = (props) => {
             className='details-card' 
         >
             <Card.Img 
+                width="100%"
+                height="100%"
                 variant="top" 
                 src={image} 
                 alt={`GameStop NFT - ${name}`}
@@ -25,4 +27,4 @@ const NftBasicDetailsCard = (props) => {
     )
 }
 
-export default NftBasicDetailsCard;
+export default memo(NftBasicDetailsCard);
