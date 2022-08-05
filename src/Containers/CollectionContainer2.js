@@ -69,6 +69,7 @@ export default function CollectionContainer2() {
     }, [loadRef])
 
     const loadMore = async () => {
+        console.log('fetching')
             let url = `http://localhost:3001/collections/${collection.id}/nfts?`
 
             if (traitsQuery.length > 0) {

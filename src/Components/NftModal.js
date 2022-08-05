@@ -103,9 +103,9 @@ export default function NftModal(props) {
                             </Col>
                         </Row>
                     </Modal.Body>
-                    <Modal.Footer className='bg-dark text-white'>
+                    <Modal.Footer className='bg-dark'>
                         <a 
-                            className='text-decoration-none' 
+                            className='text-decoration-none text-danger' 
                             href={makeNftGmeLink(props.nft.contractAddress, props.nft.tokenId)}
                             target="_blank"
                         >

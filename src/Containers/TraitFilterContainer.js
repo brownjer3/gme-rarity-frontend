@@ -63,7 +63,7 @@ class TraitFilterContainer extends PureComponent {
                     aria-label="Search"
                     onInput={this.props.handleQueryInput}
                   />
-                  <Button type='submit' variant="outline-success">Search</Button>
+                  <Button type='submit' variant="outline-danger">Search</Button>
                 </Form>
                 <br />
                 <h3>Traits</h3>

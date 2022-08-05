@@ -16,8 +16,9 @@ export default function NftsGridContainer(props) {
                     to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
                     state={{ background: location, nftData: nft }}
                     className='text-white text-decoration-none'
+                    key={nft.id}
                 >
-                    <Col key={nft.id}>
+                    <Col >
                         <NftBasicDetailsCard 
                             index={index} 
                             image={transformUri(nft.metadataJson.image)} 

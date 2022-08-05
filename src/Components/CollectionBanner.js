@@ -62,7 +62,7 @@ class CollectionBanner extends PureComponent {
                             </Row>
                             <Row className='mt-2 float-end'>                                        
                                 <a href={makeCollectionGmeLink(slug)} target="_blank">
-                                    <Button variant="outline-primary">
+                                    <Button variant="outline-danger">
                                         View on GameStop
                                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='mx-2' />
                                     </Button>

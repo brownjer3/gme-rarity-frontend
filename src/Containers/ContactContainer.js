@@ -36,7 +36,7 @@ class ContactContainer extends Component {
                         <Form.Label>Your message</Form.Label>
                         <Form.Control as="textarea" rows={3} placeholder="We're going to the moon..."/>
                     </Form.Group>
-                    <Button variant="primary" type="submit" className="float-end">
+                    <Button variant="danger" type="submit" className="float-end">
                         Send
                     </Button>
                 </Form>

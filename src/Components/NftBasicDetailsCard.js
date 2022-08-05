@@ -27,4 +27,4 @@ const NftBasicDetailsCard = (props) => {
     )
 }
 
-export default memo(NftBasicDetailsCard);
+export default NftBasicDetailsCard;
