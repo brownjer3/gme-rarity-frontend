@@ -12,7 +12,7 @@ class TraitBadges extends Component {
                     <Badge className='mx-2' bg="light" text='dark'>
                         <span className='d-flex align-items-center trait-badge' id={combo.trait} >
                             {combo.category}: {combo.trait}
-                            <button type="button" class="btn-close btn-xs ms-1" aria-label="Close" onClick={this.props.handleTraitDeselect}></button> 
+                            <button type="button" className="btn-close btn-xs ms-1" aria-label="Close" onClick={this.props.handleTraitDeselect}></button> 
                         </span>
                     </Badge>
                 </Col>

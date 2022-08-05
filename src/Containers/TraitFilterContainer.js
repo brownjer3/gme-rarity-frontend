@@ -29,7 +29,7 @@ class TraitFilterContainer extends Component {
                         <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
                     </span>
                     <ListGroup variant="flush" className='dropdown-container d-none text-start'>
-                    {this.createTraits(traits[category], category)}
+                        {this.createTraits(traits[category], category)}
                     </ListGroup>
                 </ListGroup.Item>  
             )
