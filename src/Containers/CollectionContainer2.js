@@ -26,12 +26,13 @@ export default function CollectionContainer2() {
     const [nfts, setNfts] = useState([]);
     const [pageNum, setPageNum] = useState(1);
     const [query, setQuery] = useState("");
-    const [hasMore, setHasMore] = useState(true);
+    const [hasMore, setHasMore] = useState(false);
 
     const [loadRef, setLoadRef] = useState(null);
     const observer = useRef(new IntersectionObserver((entries) => {
         const first = entries[0];
         if (first.isIntersecting) {
+            console.log('intersecting!')
             setPageNum(current => current + 1)
         }
     }, {threshold: 1}));

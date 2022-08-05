@@ -6,7 +6,7 @@ export const transformUri = (uri) => {
     let link = '';
     if (uri.includes("public/")) {
         link = uri.replace("public/", "https://static.gstop-content.com/");
-        link += "?img-width=550&img-format=WebP"
+        link += "?img-format=WebP"
     } else if (uri.includes("ipfs://")) {
         link = uri.replace("ipfs://", "https://www.gstop-content.com/ipfs/");
         link += "?img-width=550&image-format=WebP"

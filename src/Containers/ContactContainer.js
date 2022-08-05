@@ -25,18 +25,18 @@ class ContactContainer extends Component {
                     <Row>
                         <Col>
                             <Form.Label>Your name</Form.Label>
-                            <Form.Control type='text' placeholder="Ryan Cohen" />
+                            <Form.Control type='text' placeholder="Ryan Cohen" className='text-white bg-transparent' />
                         </Col>
                         <Col>
                             <Form.Label>Your email</Form.Label>
-                            <Form.Control type="email" placeholder="ryan@gamestop.com" />
+                            <Form.Control type="email" placeholder="ryan@gamestop.com" className='text-white bg-transparent'/>
                         </Col>
                     </Row>
                     <Form.Group className="my-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Your message</Form.Label>
-                        <Form.Control as="textarea" rows={3} placeholder="We're going to the moon..."/>
+                        <Form.Control as="textarea" rows={3} placeholder="We're going to the moon..." className='text-white bg-transparent'/>
                     </Form.Group>
-                    <Button variant="danger" type="submit" className="float-end">
+                    <Button variant="outline-danger" type="submit" className="float-end">
                         Send
                     </Button>
                 </Form>
