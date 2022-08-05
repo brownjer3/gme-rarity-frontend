@@ -86,3 +86,11 @@ input:focus {
   --fa-animation-iteration-count: 1;
   cursor: pointer;
 }
+
+.details-card {
+  transition: all .2s ease-in-out;
+}
+
+.details-card:hover {
+  transform: scale(1.03);
+}

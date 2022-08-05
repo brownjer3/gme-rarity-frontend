@@ -10,7 +10,7 @@ const NftBasicDetailsCard = (props) => {
             text='white' 
             border='light' 
             index={index} 
-            className='detailsCard' 
+            className='details-card' 
             // onClick={props.handleItemSelect}
         >
             <Card.Img 
