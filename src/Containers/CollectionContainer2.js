@@ -20,9 +20,6 @@ export default function CollectionContainer2() {
 
     const navigate = useNavigate();
 
-    const [modalShow, setModalShow] = useState(false);
-    const [selectedItem, setSelectedItem] = useState('');
-    const [selectedTraits, setSelectedTraits] = useState([]);
     const [traitsQuery, setTraitsQuery] = useState([]);
     const [filteredItemsLength, setFilteredItemsLength] = useState(collection.items);
 
@@ -45,7 +42,7 @@ export default function CollectionContainer2() {
 
     useEffect(() => {
         loadMore();
-    }, [pageNum, selectedTraits]);
+    }, [pageNum, traitsQuery]);
 
     useEffect(() => {
         if (traitsQuery.length == 0) {
@@ -74,7 +71,7 @@ export default function CollectionContainer2() {
     const loadMore = async () => {
             let url = `http://localhost:3001/collections/${collection.id}/nfts?`
 
-            if (selectedTraits.length > 0) {
+            if (traitsQuery.length > 0) {
                 traitsQuery.forEach((combo) => {
                     let category = combo["category"];
                     let trait = combo["trait"];
@@ -112,11 +109,9 @@ export default function CollectionContainer2() {
         const categoryAndTrait = e.target.value.split("-");
         const category = categoryAndTrait[0];
         const name = categoryAndTrait[1];
-        if (isTraitSelected(name)) {
+        if (isTraitSelected(category, name)) {
             setTraitsQuery(traitsQuery.filter(item => item.trait !== name ));
-            setSelectedTraits(selectedTraits.filter(trait => trait != name ));
         } else {
-            setSelectedTraits(selectedTraits => [...selectedTraits, name]);
             setTraitsQuery(currentQuery => {
                 return [...currentQuery, {trait: name, category: category}]
             });
@@ -126,12 +121,11 @@ export default function CollectionContainer2() {
 
     const handleTraitDeselect = (e) => {
         const name = e.target.closest('.trait-badge').id;
-        setSelectedTraits(selectedTraits.filter(trait => trait != name ));
         setTraitsQuery(traitsQuery.filter(item => item.trait !== name ));
     }
 
-    const isTraitSelected = (name) => {
-        return selectedTraits.includes(name);
+    const isTraitSelected = (category, trait) => {
+        return traitsQuery.some((combo) => combo.trait == trait && combo.category == category)
     }
 
     const renderLoadMoreSpinner = () => {
@@ -167,7 +161,7 @@ export default function CollectionContainer2() {
                         <div>{roundNumbers(filteredItemsLength)} items</div>
                     </Col>
                     <Col className='d-flex flex-wrap justify-content-flex-start'>
-                        <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={selectedTraits}/>
+                        <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={traitsQuery}/>
                     </Col>
                     <Col md={2} className='text-end pe-5'>
                         <SortDropdown />

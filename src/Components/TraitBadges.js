@@ -6,12 +6,12 @@ import Badge from 'react-bootstrap/Badge';
 class TraitBadges extends Component {
 
     createBadges = (traits) => {
-        return traits.map(trait => {
+        return traits.map(combo => {
             return (
                 <Col className='mb-2'>
                     <Badge className='mx-2' bg="light" text='dark'>
-                        <span className='d-flex align-items-center trait-badge' id={trait} >
-                            {trait}
+                        <span className='d-flex align-items-center trait-badge' id={combo.trait} >
+                            {combo.category}: {combo.trait}
                             <button type="button" class="btn-close btn-xs ms-1" aria-label="Close" onClick={this.props.handleTraitDeselect}></button> 
                         </span>
                     </Badge>
