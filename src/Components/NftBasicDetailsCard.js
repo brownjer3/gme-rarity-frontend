@@ -11,7 +11,6 @@ const NftBasicDetailsCard = (props) => {
             border='light' 
             index={index} 
             className='details-card' 
-            // onClick={props.handleItemSelect}
         >
             <Card.Img 
                 variant="top" 
@@ -19,8 +18,8 @@ const NftBasicDetailsCard = (props) => {
                 alt={`GameStop NFT - ${name}`}
             />
             <Card.Body>
-            <Card.Title>Rarity Rank: {rarityRank}</Card.Title>
-            <Card.Text>{name}</Card.Text>
+                <Card.Title>Rarity Rank: {rarityRank}</Card.Title>
+                <Card.Text>{name}</Card.Text>
             </Card.Body>
         </Card>
     )

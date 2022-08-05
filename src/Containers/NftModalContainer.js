@@ -50,7 +50,7 @@ const NftModalContainer = () => {
             isNftFound={isNftFound}
             loading={loading} 
             show={modalShow} 
-            onHide={handleClose}
+            onHide={handleClose} 
         />
     )
 }

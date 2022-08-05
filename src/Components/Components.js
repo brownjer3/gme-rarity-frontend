@@ -37,4 +37,4 @@ export const LoadingScreen = () => {
     )
 }
 
-export const Loading = () => <FontAwesomeIcon className='fa-spin mt-4' icon={faCircleNotch} size='2x'/>
+export const Loading = () => <FontAwesomeIcon className='fa-spin mt-4 py-4' icon={faCircleNotch} size='2x'/>

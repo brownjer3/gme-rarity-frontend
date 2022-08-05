@@ -29,7 +29,7 @@ export default function NftModal(props) {
         if (props.loading) {
             return (
                 <Modal
-                    {...props}
+                    
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
@@ -42,7 +42,8 @@ export default function NftModal(props) {
         } else if (!props.isNftFound) {
             return (
                 <Modal
-                    {...props}
+                show={props.show} 
+                onHide={props.onHide} 
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
@@ -62,7 +63,8 @@ export default function NftModal(props) {
         } else {
             return (
                 <Modal
-                    {...props}
+                show={props.show} 
+                onHide={props.onHide} 
                     size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
@@ -103,9 +105,9 @@ export default function NftModal(props) {
                     </Modal.Body>
                     <Modal.Footer className='bg-dark text-white'>
                         <a 
-                        className='text-decoration-none' 
-                        href={makeNftGmeLink(props.nft.contractAddress, props.nft.tokenId)}
-                        target="_blank"
+                            className='text-decoration-none' 
+                            href={makeNftGmeLink(props.nft.contractAddress, props.nft.tokenId)}
+                            target="_blank"
                         >
                             View on Gamestop
                             <FontAwesomeIcon icon={faUpRightFromSquare} className='mx-2' />

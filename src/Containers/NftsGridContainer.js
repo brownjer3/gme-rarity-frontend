@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link, useLocation } from 'react-router-dom';
@@ -14,26 +13,21 @@ export default function NftsGridContainer(props) {
         <div>
             <Row md={5} className="g-4">
                 {props.nfts.length > 0 && props.nfts.map((nft, index) => {
-                    return index === props.nfts.length - 1 && !props.loading && !!props.hasMore ?
-                     (<Link 
+                    return (
+                    <Link 
                         to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
                         state={{ background: location, nftData: nft }}
                         className='text-white text-decoration-none'
-                     >
+                    >
                         <Col key={nft.id}>
-                            <NftBasicDetailsCard index={index} image={transformUri(nft.metadataJson.image)} name={nft.name} rarityRank={nft.rarityRank}/>
+                            <NftBasicDetailsCard 
+                                index={index} 
+                                image={transformUri(nft.metadataJson.image)} 
+                                name={nft.name} 
+                                rarityRank={nft.rarityRank}
+                            />
                         </Col>
-                        </Link>
-                    ) : (
-                        <Link  
-                            to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
-                            state={{ background: location, nftData: nft }}
-                            className='text-white text-decoration-none'
-                        >
-                        <Col key={nft.id}>
-                            <NftBasicDetailsCard index={index} image={transformUri(nft.metadataJson.image)} name={nft.name} rarityRank={nft.rarityRank}/>
-                        </Col>
-                        </Link>
+                    </Link>
                     )
                 })}
             </Row>

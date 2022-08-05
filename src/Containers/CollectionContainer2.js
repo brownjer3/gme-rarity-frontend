@@ -170,9 +170,6 @@ export default function CollectionContainer2() {
                 <NftsGridContainer 
                     nfts={nfts}
                     collectionSlug={collection.slug}
-                    // loading={loading} 
-                    // setLastElement={setLastElement}
-                    // hasMore={hasMore}
                 />
                 {renderLoadMoreSpinner()}
             </Col>
