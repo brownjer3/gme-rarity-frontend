@@ -16,7 +16,7 @@ class TrendingCollectionCard extends Component {
 
         return (
             <Col>
-                <Card bg='dark' border="light" >
+                <Card bg='dark' border="light" className='details-card'>
                 <Card.Img variant="top" src={transformUri(avatarUri)} alt={`Trending GameStop NFT Collection - ${name}`}/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
