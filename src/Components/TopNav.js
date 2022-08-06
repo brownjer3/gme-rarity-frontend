@@ -51,38 +51,41 @@ class TopNav extends Component {
                         </video>
                       </Navbar.Brand>
                   </NavLink>
-                  <Nav
-                      className="me-auto my-2 my-lg-0"
-                      style={{ maxHeight: '100px' }}
-                      navbarScroll
-                  >
-                    <NavLink to='/collections' className="nav-link">
-                        All Collections
-                    </NavLink>
+                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                  <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav
+                        className="me-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        navbarScroll
+                    >
+                      <NavLink to='/collections' className="nav-link">
+                          All Collections
+                      </NavLink>
+                    
+                      <NavLink to='/contact' className="nav-link">
+                          Get in touch
+                      </NavLink>
+                  </Nav>
                   
-                    <NavLink to='/contact' className="nav-link">
-                        Get in touch
-                    </NavLink>
-                </Nav>
-                
-                <Form className="d-flex me-2">
-                    <InputGroup >
-                      <InputGroup.Text id="basic-addon1" className='bg-dark text-white'>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </InputGroup.Text>
-                      <Form.Control
-                        onChange={this.onChange}
-                        type="search"
-                        placeholder="Find a Collection"
-                        aria-label="Search"
-                        aria-describedby="basic-addon1"
-                        className="bg-dark text-white rounded-end"
-                      />
-                       <ListGroup className='collections-dropdown position-absolute text-start rounded w-100'>
-                        { this.filterNames() }
-                      </ListGroup>
-                    </InputGroup>
-                </Form>
+                  <Form className="d-flex me-2">
+                      <InputGroup >
+                        <InputGroup.Text id="basic-addon1" className='bg-dark text-white'>
+                          <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </InputGroup.Text>
+                        <Form.Control
+                          onChange={this.onChange}
+                          type="search"
+                          placeholder="Find a Collection"
+                          aria-label="Search"
+                          aria-describedby="basic-addon1"
+                          className="bg-dark text-white rounded-end"
+                        />
+                        <ListGroup className='collections-dropdown position-absolute text-start rounded w-100'>
+                          { this.filterNames() }
+                        </ListGroup>
+                      </InputGroup>
+                  </Form>
+                </Navbar.Collapse>
             </Container>
 
           </Navbar>
