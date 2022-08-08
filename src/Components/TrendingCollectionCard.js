@@ -16,8 +16,13 @@ class TrendingCollectionCard extends Component {
 
         return (
             <Col>
-                <Card bg='dark' border="light" className='details-card'>
-                <Card.Img variant="top" src={transformUri(avatarUri)} alt={`Trending GameStop NFT Collection - ${name}`}/>
+                <Card bg='dark' border="light" className='details-card h-100'> 
+                <Card.Img 
+                    className='trending-card-img-top'
+                    variant="top" 
+                    src={transformUri(avatarUri)} 
+                    alt={`Trending GameStop NFT Collection - ${name}`}
+                />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <ListGroup className="list-group-flush">
