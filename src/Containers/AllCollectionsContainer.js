@@ -55,7 +55,7 @@ class AllCollectionsContainer extends Component {
                     collectionSize={collection.items} 
                     image={collection.avatarUri} 
                     ownerCount="TBD"
-                />
+                /> 
             )
         })
     }
@@ -115,19 +115,19 @@ class AllCollectionsContainer extends Component {
     render() {
         return (
             <Container>
-                    <SectionHeader name="All Collections"/>
-                    <Table striped bordered responsive hover className='align-middle' variant="dark">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                {this.makeTableHeaders()}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.makeTableRows()}
-                        </tbody>
-                    </Table>
-                </Container>
+                <SectionHeader name="All Collections"/>
+                <Table striped bordered responsive hover className='align-middle' variant="dark">
+                    <thead className='align-middle'>
+                        <tr>
+                            <th>#</th>
+                            {this.makeTableHeaders()}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.makeTableRows()}
+                    </tbody>
+                </Table>
+            </Container>
         )
     }
 }

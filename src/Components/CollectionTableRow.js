@@ -12,8 +12,8 @@ class CollectionTableRow extends Component {
                 <td>{this.props.index+1}</td>
                 <td>
                     <Link className='text-white text-decoration-none' to={`/collections/${this.props.slug}`}>
-                        <Row>
-                            <Col md={2}>
+                        <Row className='text-start'>
+                            <Col className='' xs={12} md={2}>
                                 <Image 
                                     fluid rounded 
                                     src={transformUri(this.props.image)} 
@@ -21,7 +21,7 @@ class CollectionTableRow extends Component {
                                     alt={`GameStop NFT Collection Avatar - ${this.props.name}`}
                                 />
                             </Col>
-                            <Col className='pt-2 pe-0 text-wrap text-start'>{this.props.name}</Col>  
+                            <Col className='pt-2 text-wrap'>{this.props.name}</Col>  
                         </Row>
                     </Link>
                 </td>
