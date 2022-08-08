@@ -34,7 +34,7 @@ class Footer extends Component {
                                 <a className="text-decoration-none text-white" href='https://twitter.com/_ordinarypat' target='_blank'> @ordinarypat </a>
                             </div>
                         </Col>
-                        <Col className="mb-2 border">
+                        <Col className="mb-2">
                             <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
                                 <Image 
                                     fluid
@@ -45,7 +45,7 @@ class Footer extends Component {
                                 />
                             </a>
                         </Col>
-                        <Col className="mb-2 border">
+                        <Col className="mb-2">
                             <p className='font-monospace lh-1 pt-3'>
                                 <span className='me-1'>GME Wallet: {this.state.gmeDonationAddress}</span>
                                 <FontAwesomeIcon 

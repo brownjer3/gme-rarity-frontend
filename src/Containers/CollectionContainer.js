@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 import { transformUri, roundNumbers } from '../Components/DataFormats';
 import { Loading } from '../Components/Components';
 import CollectionBanner from '../Components/CollectionBanner';
+import CollectionSidebarContainer from './CollectionSidebarContainer';
 
 
 export default function CollectionContainer() {
@@ -144,7 +145,7 @@ export default function CollectionContainer() {
 
     return (
         <Row className='w-100 vh-100'>
-            <Col md={2} className='sidebar'>
+            <Col lg={2} className='sidebar d-none d-lg-block'>
                 <TraitFilterContainer 
                     name={collection.name}
                     traits={collection.traits} 
@@ -155,7 +156,19 @@ export default function CollectionContainer() {
                     handleSearch={handleSearch}
                 />
             </Col>
-            <Col md={10} className="collection-main-view">
+            <div className='d-block d-lg-none'>
+                <CollectionSidebarContainer
+                    name={collection.name}
+                    traits={collection.traits} 
+                    image={transformUri(collection.avatarUri)} 
+                    isTraitSelected={isTraitSelected} 
+                    handleTraitSelect={handleTraitSelect} 
+                    handleQueryInput={handleQueryInput}
+                    handleSearch={handleSearch}
+                />
+            </div>
+                
+            <Col xs={12} lg={10} className="collection-main-view d-lg-block">
                 <CollectionBanner collection={collection} />
                 <br />
                 <Row className='align-middle my-2'>
