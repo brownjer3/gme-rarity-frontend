@@ -13,7 +13,7 @@ class TrendingContainer extends Component {
 
     render() {
         return (
-            <Row xs={1} md={5} className="g-4 m-4">
+            <Row sm={1} md={2} lg={5} className="g-4 m-4">
                 { this.makeCollectionCards() }
             </Row> 
         )

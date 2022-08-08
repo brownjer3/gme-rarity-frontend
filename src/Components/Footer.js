@@ -21,9 +21,9 @@ class Footer extends Component {
     render() {
         return (
             <Navbar bg="transparent" text='white' className='mt-auto mb-3'>
-                <Container className="justify-content-center">
-                    <Row className="w-100">
-                        <Col>
+                <Container fluid className="justify-content-center ">
+                    <Row className="w-100 align-items-center" xs={1} lg={3}>
+                        <Col className="mb-2">
                             <p className='font-monospace lh-1'>Made with 🚀 by 
                                 <a className="text-decoration-none text-white" href='https://twitter.com/honey_crisp_' target='_blank'> @honeycrisp </a>
                                 and 
@@ -34,7 +34,7 @@ class Footer extends Component {
                                 <a className="text-decoration-none text-white" href='https://twitter.com/_ordinarypat' target='_blank'> @ordinarypat </a>
                             </div>
                         </Col>
-                        <Col md="auto">
+                        <Col className="mb-2 border">
                             <a href='https://www.buymeacoffee.com/honeycrisp' target="_blank">
                                 <Image 
                                     fluid
@@ -45,7 +45,7 @@ class Footer extends Component {
                                 />
                             </a>
                         </Col>
-                        <Col>
+                        <Col className="mb-2 border">
                             <p className='font-monospace lh-1 pt-3'>
                                 <span className='me-1'>GME Wallet: {this.state.gmeDonationAddress}</span>
                                 <FontAwesomeIcon 
