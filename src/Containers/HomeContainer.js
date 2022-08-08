@@ -13,7 +13,7 @@ class HomeContainer extends Component {
 
     render() {
         return (
-            <Container >
+            <Container fluid>
                 <HomeBanner />
                 <SectionHeader name="Trending Collections"/>
                 <TrendingContainer />

@@ -5,22 +5,24 @@ import Col from 'react-bootstrap/Col';
 class HomeBanner extends Component {
     render() {
         return(
-            <div className="p-5 rounded-lg m-3 d-flex">
+            <div className="p-5 m-3">
                 <Row className='align-items-center'>
-                    <Col className="main-logo">
-                        <video 
-                            width="640" 
-                            height="480" 
-                            autoPlay loop muted playsInline 
-                            src={process.env.PUBLIC_URL+"/images/final.moon.name.24fps0001-0356.webm"} 
-                            alt="Deep Fungible Value Logo - GameStop NFT Rarity Tool"
-                        >
-                            <source src="/videos/testing.webm"  type="video/webm" />
-                            <source src="movie.ogg" type="video/ogg" />
-                                Your browser does not support the video tag.
-                        </video>
+                    <Col className="main-logo" sm={12} md={6}>
+                        <div className='ratio ratio-1x1'>
+                            <video 
+                                // width="640" 
+                                // height="480" 
+                                autoPlay loop muted playsInline 
+                                src={process.env.PUBLIC_URL+"/images/final.moon.name.24fps0001-0356.webm"} 
+                                alt="Deep Fungible Value Logo - GameStop NFT Rarity Tool"
+                            >
+                                <source src="/videos/testing.webm"  type="video/webm" />
+                                <source src="movie.ogg" type="video/ogg" />
+                                    Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </Col>
-                    <Col>
+                    <Col sm={12} md={6}>
                         <h1 className="display-4">The #1 rarity tool for the Gamestop NFT Marketplace</h1>
                     </Col>
                 </Row>
