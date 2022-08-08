@@ -13,22 +13,22 @@ class CollectionBanner extends PureComponent {
 
     createStats = (itemCount, ownerCount, volume) => {
         return (
-            <ListGroup horizontal className='' >
-                <ListGroup.Item className='bg-transparent text-white border'>
-                    <div className='lead fw-bolder'>{roundNumbers(itemCount)}</div> 
+            <ListGroup horizontal>
+                <ListGroup.Item className='bg-transparent text-white border collection-stats h-100'>
+                    <div className='lead fw-bolder collection-stats'>{roundNumbers(itemCount)}</div> 
                     <div>items</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-transparent text-white border'>
+                <ListGroup.Item className='bg-transparent text-white border collection-stats h-100'>
                     <div className='lead fw-bolder'>{roundNumbers(ownerCount)}</div> 
                     <div>owners</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-transparent text-white border'>
+                <ListGroup.Item className='bg-transparent text-white border collection-stats h-100'>
                     <div className='lead fw-bolder'>
                         <EthData weiVal={volume} round/>
                     </div>
                     <div>24hr volume</div>
                 </ListGroup.Item>
-                <ListGroup.Item className='bg-transparent text-white border'>
+                <ListGroup.Item className='bg-transparent text-white border collection-stats h-100'>
                     <div className='lead fw-bolder'>
                         <EthData weiVal={volume} round/>
                     </div>
@@ -42,7 +42,7 @@ class CollectionBanner extends PureComponent {
         const { name, banner_uri, description, slug, items, volume } = this.props.collection
         return (
             <Card bg='dark' text='white' border='light'>
-                <div className='w-100 overflow-hidden' style={{height: "220px"}}>
+                <div className='collection-banner-img' >
                     <Card.Img 
                         className='position-relative top-50 start-50 translate-middle' 
                         variant="top" 
@@ -52,12 +52,12 @@ class CollectionBanner extends PureComponent {
                 </div>
                 <Card.Body style={{textAlign: "left"}}>
                     <Row>
-                        <Col md={7}>
+                        <Col xs={12} lg={7}>
                             <Card.Title className='display-6'>{name}</Card.Title>
                             <Card.Text>{description}</Card.Text>
                         </Col>
-                        <Col md={5}>
-                            <Row className='float-end text-center'>
+                        <Col lg={5}>
+                            <Row className='float-end text-center d-none d-lg-block'>
                                 {this.createStats(items, "7374", volume)}
                             </Row>
                             <Row className='mt-2 float-end'>                                        

@@ -19,7 +19,7 @@ function CollectionSidebarContainer(props) {
     <FontAwesomeIcon 
         icon={faSliders} 
         size="2x" 
-        className='fa-border filter-icon d-lg-none bg-white text-dark' 
+        className='fa-border filter-icon bg-white text-dark' 
         onClick={handleShow}
     />
 

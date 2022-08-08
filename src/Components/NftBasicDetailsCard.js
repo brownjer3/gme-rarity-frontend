@@ -13,9 +13,8 @@ const NftBasicDetailsCard = (props) => {
             className='details-card' 
         >
             <Card.Img 
-                width="100%"
-                height="100%"
                 variant="top" 
+                className='nft-card-img'
                 src={image} 
                 alt={`GameStop NFT - ${name}`}
             />

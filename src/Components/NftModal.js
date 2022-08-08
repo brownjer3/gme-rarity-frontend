@@ -77,12 +77,12 @@ export default function NftModal(props) {
                     </Modal.Header>
                     <Modal.Body className='bg-dark text-white'>
                         <Row>
-                            <Col>
+                            <Col xs={12} lg={6}>
                                 <Card>
                                     <Card.Img src={transformUri(props.nft.metadataJson.image)} />
                                 </Card>
                             </Col>
-                            <Col>
+                            <Col xs={12} lg={6}>
                                 <p>Rarity Rank {props.nft.rarityRank}</p>
                                 <Table hover variant="dark" size="sm">
                                     <thead>

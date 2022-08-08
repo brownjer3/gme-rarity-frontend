@@ -32,7 +32,7 @@ export default function NftsGridContainer(props) {
     }
 
     return (
-        <Row md={5} className="g-4">
+        <Row xs={2} lg={5} className="g-4">
             {props.nfts.length > 0 && makeGrid()}
         </Row>
     )

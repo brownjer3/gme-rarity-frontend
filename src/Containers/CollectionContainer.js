@@ -11,6 +11,7 @@ import { transformUri, roundNumbers } from '../Components/DataFormats';
 import { Loading } from '../Components/Components';
 import CollectionBanner from '../Components/CollectionBanner';
 import CollectionSidebarContainer from './CollectionSidebarContainer';
+import { Container } from 'react-bootstrap';
 
 
 export default function CollectionContainer() {
@@ -144,52 +145,56 @@ export default function CollectionContainer() {
     }
 
     return (
-        <Row className='w-100 vh-100'>
-            <Col lg={2} className='sidebar d-none d-lg-block'>
-                <TraitFilterContainer 
-                    name={collection.name}
-                    traits={collection.traits} 
-                    image={transformUri(collection.avatarUri)} 
-                    isTraitSelected={isTraitSelected} 
-                    handleTraitSelect={handleTraitSelect} 
-                    handleQueryInput={handleQueryInput}
-                    handleSearch={handleSearch}
-                />
-            </Col>
-            <div className='d-block d-lg-none'>
-                <CollectionSidebarContainer
-                    name={collection.name}
-                    traits={collection.traits} 
-                    image={transformUri(collection.avatarUri)} 
-                    isTraitSelected={isTraitSelected} 
-                    handleTraitSelect={handleTraitSelect} 
-                    handleQueryInput={handleQueryInput}
-                    handleSearch={handleSearch}
-                />
-            </div>
-                
-            <Col xs={12} lg={10} className="collection-main-view d-lg-block">
-                <CollectionBanner collection={collection} />
-                <br />
-                <Row className='align-middle my-2'>
-                    <Col md={2} className='text-start text-muted align-self-center'>
-                        <div>{roundNumbers(filteredItemsLength)} items</div>
-                    </Col>
-                    <Col className='d-flex flex-wrap justify-content-flex-start'>
-                        <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={traitsQuery}/>
-                    </Col>
-                    <Col md={2} className='text-end pe-5'>
-                        <SortDropdown />
-                    </Col>
-                </Row>
-                <NftsGridContainer 
-                    nfts={nfts}
-                    collectionSlug={collection.slug}
-                />
-                {renderLoadMoreSpinner()}
-            </Col>
-            <Outlet />
-        </Row>   
+        <Container fluid className='pe-0'>
+            <Row className='w-100 vh-100'>
+                <Col lg={2} className='sidebar d-none d-lg-block'>
+                    <TraitFilterContainer 
+                        name={collection.name}
+                        traits={collection.traits} 
+                        image={transformUri(collection.avatarUri)} 
+                        isTraitSelected={isTraitSelected} 
+                        handleTraitSelect={handleTraitSelect} 
+                        handleQueryInput={handleQueryInput}
+                        handleSearch={handleSearch}
+                    />
+                </Col>
+                <div className='d-block d-lg-none'>
+                    <CollectionSidebarContainer
+                        name={collection.name}
+                        traits={collection.traits} 
+                        image={transformUri(collection.avatarUri)} 
+                        isTraitSelected={isTraitSelected} 
+                        handleTraitSelect={handleTraitSelect} 
+                        handleQueryInput={handleQueryInput}
+                        handleSearch={handleSearch}
+                    />
+                </div>
+                    
+                <Col xs={12} lg={10} className="collection-main-view">
+                    <CollectionBanner collection={collection} />
+                    <br />
+                    <Row className='my-2 justify-content-space-between'>
+                        <Col className='text-muted text-start'>
+                            <div>{roundNumbers(filteredItemsLength)} items</div>
+                        </Col>
+                        <Col className='text-end'>
+                            <SortDropdown />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <div className='d-flex flex-wrap justify-content-center'>
+                            <TraitBadges handleTraitDeselect={handleTraitDeselect} selectedTraits={traitsQuery}/>
+                        </div>
+                    </Row>
+                    <NftsGridContainer 
+                        nfts={nfts}
+                        collectionSlug={collection.slug}
+                    />
+                    {renderLoadMoreSpinner()}
+                </Col>
+                <Outlet />
+            </Row>   
+        </Container>
     )
 }
 

@@ -72,6 +72,24 @@ input:focus {
   overflow-y: auto;
 }
 
+.collection-banner-img {
+  width: 100%;
+  height: 15vw;
+  /* height: 220px; */
+  overflow: hidden;
+}
+
+.nft-card-img {
+  width: 100%;
+  height: 100%;
+  /* height: 220px; */
+}
+
+.collection-stats {
+  text-align: center;
+  font-size: smaller;
+}
+
 .main-logo {
   z-index: 999 !important;
 }
