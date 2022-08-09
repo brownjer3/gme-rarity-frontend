@@ -15,7 +15,7 @@ class TraitFilterContainer extends PureComponent {
                 <ListGroup.Item key={index.toString()} className='bg-transparent text-white d-flex justify-content-between'>
                     <label htmlFor={trait}>{trait} ({category[trait]})</label>
                     <input className='ms-1' id={trait} type='checkbox' value={`${categoryName}-${trait}`} checked={this.props.isTraitSelected(categoryName, trait)} onChange={this.props.handleTraitSelect}/>
-                </ListGroup.Item>
+                </ListGroup.Item> 
             )
         }); 
     }
@@ -24,7 +24,7 @@ class TraitFilterContainer extends PureComponent {
         return Object.keys(traits).map((category, index) => {
             return ( 
                 <ListGroup.Item key={index.toString()} className='dropdown-btn bg-transparent text-white'>
-                    <span onClick={this.handleClick}>
+                    <span onClick={this.handleClick} className='trait-category'>
                         {category}
                         <FontAwesomeIcon icon={faCaretDown} className='arrow mx-2'/>
                     </span>
@@ -38,10 +38,13 @@ class TraitFilterContainer extends PureComponent {
 
     handleClick(e) {
         const dropdownContent = e.target.closest('.dropdown-btn').querySelector('.dropdown-container');
+        const dropdownArrow = e.target.closest('.dropdown-btn').querySelector('.arrow');
         if (dropdownContent.classList.contains("d-none")) {
+            dropdownArrow.classList.add("flip-icon");
             dropdownContent.classList.remove("d-none");
           } else {
             dropdownContent.classList.add("d-none");
+            dropdownArrow.classList.remove("flip-icon");
           }
     }
 
