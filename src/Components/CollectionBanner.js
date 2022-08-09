@@ -56,11 +56,11 @@ class CollectionBanner extends PureComponent {
                             <Card.Title className='display-6'>{name}</Card.Title>
                             <Card.Text>{description}</Card.Text>
                         </Col>
-                        <Col lg={5}>
-                            <Row className='float-end text-center d-none d-lg-block'>
+                        <Col lg={5} className='d-flex flex-column align-items-end'>
+                            <Row className='text-center d-none d-lg-block mb-auto'>
                                 {this.createStats(items, "7374", volume)}
                             </Row>
-                            <Row className='mt-2 float-end'>                                        
+                            <Row className='mt-2'>                                        
                                 <a href={makeCollectionGmeLink(slug)} target="_blank">
                                     <Button variant="outline-danger">
                                         View on GameStop
