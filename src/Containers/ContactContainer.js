@@ -22,19 +22,22 @@ class ContactContainer extends Component {
     }
 
     handleOnSubmit = async (event) => {
-        event.preventDefault();
-        this.setState({formSubmitted: true})
-        console.log(this.state.name, this.state.email, this.state.message);
+        event.preventDefault();        
 
-        // const formData = new FormData(state);
-        // try {
-        //     const res = await fetch(this.formSparkUrl, {
-        //         method: 'post',
-        //         body: 'formData'
-        //     })
-        // } catch (error) {
-        //     console.log(error)
-        // }
+        try {
+            const res = await fetch(this.formSparkUrl, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                body: JSON.stringify(this.state)
+            })
+            console.log(res)
+            this.setState({formSubmitted: true})
+        } catch (error) {
+            alert(error)
+        }
     }
 
     resetForm = () => {
@@ -58,7 +61,7 @@ class ContactContainer extends Component {
                 >
                     Message Sent! 
                 </Alert>
-                <Form className="contact-form" onSubmit={this.handleOnSubmit} >
+                <Form className="contact-form" onSubmit={this.handleOnSubmit}>
                     <Row>
                         <Col>
                             <Form.Label>Your name</Form.Label>
