@@ -51,7 +51,7 @@ class ContactContainer extends Component {
 
     render() {
         return (
-            <Container>
+            <Container fluid>
                 <SectionHeader name='Contact Us'/>
                 <Alert 
                     variant="success" 
@@ -62,7 +62,7 @@ class ContactContainer extends Component {
                     Message Sent! 
                 </Alert>
                 <Form className="contact-form" onSubmit={this.handleOnSubmit}>
-                    <Row>
+                    <Row xs={1} lg={2}>
                         <Col>
                             <Form.Label>Your name</Form.Label>
                             <Form.Control 
