@@ -60,9 +60,9 @@ class TraitFilterContainer extends PureComponent {
                 <h3>Find your NFT</h3>
                 <Form className="d-flex px-2" onSubmit={this.props.handleSearch}>
                   <Form.Control
-                    type="search"
+                    type="number"
                     placeholder="ID.."
-                    className="me-2"
+                    className="me-2 bg-transparent text-white"
                     aria-label="Search"
                     onInput={this.props.handleQueryInput}
                   />

@@ -149,7 +149,7 @@ export default function CollectionContainer() {
             <Row className='w-100 vh-100'>
                 <Col lg={2} className='sidebar d-none d-lg-block'>
                     <TraitFilterContainer 
-                        name={collection.name}
+                        name={collection.name} 
                         traits={collection.traits} 
                         image={transformUri(collection.avatarUri)} 
                         isTraitSelected={isTraitSelected} 

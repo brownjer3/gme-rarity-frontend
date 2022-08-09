@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faCoffee } from '@fortawesome/free-solid-svg-icons';
-// import { faCupTogo } from '@fortawesome/fontawesome-svg-core'
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 class Footer extends Component {
     state = {
