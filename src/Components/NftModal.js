@@ -51,7 +51,7 @@ export default function NftModal(props) {
                     >
                     <Modal.Header className='bg-dark text-white text-center'>
                         <Modal.Title className='w-100'>
-                            {props.nft}
+                            Oops! We couldn't find your NFT
                         </Modal.Title>
                         <button onClick={props.onHide} type="button" className="btn btn-close btn-close-white" aria-label="Close"></button>
                     </Modal.Header>
