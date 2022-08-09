@@ -8,7 +8,7 @@ class HomeBanner extends Component {
             <div className="p-5 m-3 mt-0">
                 <Row className='align-items-center'>
                     <Col className="main-logo" sm={12} md={6}>
-                        <div className='ratio ratio-1x1'>
+                        <div className='ratio ratio-4x3'>
                             <video 
                                 // width="640" 
                                 // height="480" 

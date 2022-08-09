@@ -125,4 +125,6 @@ input:focus {
   right: 10%;
   bottom: 10%;
   z-index: 999;
+  /* box-shadow: rgba(254, 254, 255, 0.2) 0px 7px 29px 0px; */
+  box-shadow: 1px 0px 10px 0px gray;
 }

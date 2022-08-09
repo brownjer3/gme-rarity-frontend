@@ -116,6 +116,7 @@ class AllCollectionsContainer extends Component {
         return (
             <Container>
                 <SectionHeader name="All Collections"/>
+                <small class="text-muted mb-2">*Currently displaying the top 50 collections based on total volume, more to come</small>
                 <Table striped bordered responsive hover className='align-middle' variant="dark">
                     <thead className='align-middle'>
                         <tr>
