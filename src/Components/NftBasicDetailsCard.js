@@ -10,7 +10,7 @@ const NftBasicDetailsCard = (props) => {
             text='white' 
             border='light' 
             index={index} 
-            className='details-card' 
+            className='details-card h-100' 
         >
             <Card.Img 
                 variant="top" 

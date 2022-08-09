@@ -36,7 +36,7 @@ class TopNav extends Component {
         return (
             <Navbar bg="dark" variant="dark" expand="lg" className='mb-3'>
                 <Container fluid>
-                  <NavLink to='/' className="nav-link">
+                  <NavLink to='/' className="nav-link moon-logo-initials">
                       <Navbar.Brand>
                         <video 
                           width="60" 

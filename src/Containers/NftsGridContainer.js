@@ -12,21 +12,22 @@ export default function NftsGridContainer(props) {
     const makeGrid = () => {
         return props.nfts.map((nft, index) => {
             return (
-                <Link 
-                    to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
-                    state={{ background: location, nftData: nft }}
-                    className='text-white text-decoration-none'
-                    key={nft.id}
-                >
-                    <Col >
-                        <NftBasicDetailsCard 
-                            index={index} 
-                            image={transformUri(nft.metadataJson.image)} 
-                            name={nft.name} 
-                            rarityRank={nft.rarityRank}
-                        />
-                    </Col>
-                </Link>
+                <Col>
+                    <Link 
+                        to={`/collections/${props.collectionSlug}/${nft.serialNum}`} 
+                        state={{ background: location, nftData: nft }}
+                        className='text-white text-decoration-none'
+                        key={nft.id}
+                    >
+                        
+                            <NftBasicDetailsCard 
+                                index={index} 
+                                image={transformUri(nft.metadataJson.image)} 
+                                name={nft.name} 
+                                rarityRank={nft.rarityRank}
+                            />
+                    </Link>
+                </Col>
             )
         })
     }
