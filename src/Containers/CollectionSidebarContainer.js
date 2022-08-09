@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
-// import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSliders } from '@fortawesome/free-solid-svg-icons';
@@ -16,33 +14,12 @@ function CollectionSidebarContainer(props) {
 
   return (
     <>
-    <FontAwesomeIcon 
-        icon={faSliders} 
-        size="2x" 
-        className='fa-border filter-icon bg-white text-dark' 
-        onClick={handleShow}
-    />
-
-      {/* <div className="d-none d-lg-block">
-        <TraitFilterContainer 
-            name={name}
-            traits={traits} 
-            image={image} 
-            isTraitSelected={isTraitSelected} 
-            handleTraitSelect={handleTraitSelect} 
-            handleQueryInput={handleQueryInput}
-            handleSearch={handleSearch}
-        /> 
-      </div> */}
-    {/* <TraitFilterContainer 
-        name={collection.name}
-        traits={collection.traits} 
-        image={transformUri(collection.avatarUri)} 
-        isTraitSelected={isTraitSelected} 
-        handleTraitSelect={handleTraitSelect} 
-        handleQueryInput={handleQueryInput}
-        handleSearch={handleSearch}
-    />  */}
+      <FontAwesomeIcon 
+          icon={faSliders} 
+          size="2x" 
+          className='fa-border filter-icon bg-white text-dark' 
+          onClick={handleShow}
+      />
 
       <Offcanvas show={show} onHide={handleClose} responsive="lg" className='bg-dark text-white'>
         <Offcanvas.Header>
