@@ -158,7 +158,7 @@ class AllCollectionsContainer extends Component {
 
 	render() {
 		return (
-			<Container>
+			<Container className="">
 				<SectionHeader name="All Collections" />
 				<small class="text-muted mb-2">
 					*Currently displaying the top 50 collections based on total volume,

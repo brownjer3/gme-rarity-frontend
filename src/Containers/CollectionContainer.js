@@ -92,7 +92,6 @@ export default function CollectionContainer() {
 		}
 
 		url += `_page=${pageNum}&_limit=${pageLimit}`;
-		console.log(url);
 
 		const res = await fetch(url);
 		const data = await res.json();

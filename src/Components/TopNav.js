@@ -73,15 +73,14 @@ class TopNav extends Component {
 							navbarScroll
 						>
 							<NavLink to="/collections" className="nav-link">
-								All Collections
+								All collections
 							</NavLink>
 
 							<NavLink to="/contact" className="nav-link">
 								Get in touch
 							</NavLink>
 						</Nav>
-
-						<Form className="d-flex me-2">
+						<Form className="d-flex">
 							<InputGroup>
 								<InputGroup.Text
 									id="basic-addon1"
