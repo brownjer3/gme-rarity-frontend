@@ -12,7 +12,7 @@ class TrendingCollectionCard extends Component {
 		const { name, slug, volume, items, avatarUri } = this.props.collection;
 
 		return (
-			<Col>
+			<Col className="text-white">
 				<Card bg="dark" border="light" className="details-card h-100">
 					<Card.Img
 						className="trending-card-img-top"
@@ -23,10 +23,10 @@ class TrendingCollectionCard extends Component {
 					<Card.Body>
 						<Card.Title>{name}</Card.Title>
 						<ListGroup className="list-group-flush">
-							<ListGroup.Item className="bg-dark text-white">
+							<ListGroup.Item className="bg-dark text-white border-0 border-bottom border-top border-secondary">
 								Collection Size: {items}
 							</ListGroup.Item>
-							<ListGroup.Item className="bg-dark text-white">
+							<ListGroup.Item className="bg-dark text-white border-0 border-bottom border-secondary">
 								24hr Volume:
 								<EthData weiVal={volume} />
 							</ListGroup.Item>

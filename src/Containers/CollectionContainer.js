@@ -21,6 +21,7 @@ export default function CollectionContainer() {
 		)
 	);
 
+	const pageLimit = "25";
 	const navigate = useNavigate();
 
 	const [traitsQuery, setTraitsQuery] = useState([]);
@@ -80,7 +81,6 @@ export default function CollectionContainer() {
 	}, [loadRef]);
 
 	const loadMore = async () => {
-		console.log("fetching");
 		let url = `http://localhost:3001/collections/${collection.id}/nfts?`;
 
 		if (traitsQuery.length > 0) {
@@ -91,7 +91,7 @@ export default function CollectionContainer() {
 			});
 		}
 
-		url += `_page=${pageNum}&_limit=25`;
+		url += `_page=${pageNum}&_limit=${pageLimit}`;
 		console.log(url);
 
 		const res = await fetch(url);
