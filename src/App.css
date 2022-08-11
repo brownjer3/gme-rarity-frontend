@@ -158,3 +158,10 @@ input[type="number"] {
 .test-container {
 	height: 87vh;
 }
+
+.metadata-warning {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	cursor: pointer;
+}

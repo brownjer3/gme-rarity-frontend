@@ -5,6 +5,7 @@ import TraitFilterContainer from "./TraitFilterContainer";
 import NftsGridContainer from "./NftsGridContainer";
 import SortDropdown from "../Components/SortDropdown";
 import TraitBadges from "../Components/TraitBadges";
+import MetadataWarning from "../Components/MetadataWarning";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { transformUri, roundNumbers } from "../Components/DataFormats";
@@ -182,6 +183,7 @@ export default function CollectionContainer() {
 				<Col xs={12} lg={10} className="collection-main-view">
 					<CollectionBanner collection={collection} />
 					<br />
+					<MetadataWarning name={collection.name} />
 					<Row className="my-2 justify-content-space-between">
 						<Col className="text-muted text-start">
 							<div>{roundNumbers(filteredItemsLength)} items</div>
