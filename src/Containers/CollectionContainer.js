@@ -183,7 +183,9 @@ export default function CollectionContainer() {
 				<Col xs={12} lg={10} className="collection-main-view">
 					<CollectionBanner collection={collection} />
 					<br />
-					<MetadataWarning name={collection.name} />
+					{collection.metadataFlag && (
+						<MetadataWarning name={collection.name} />
+					)}
 					<Row className="my-2 justify-content-space-between">
 						<Col className="text-muted text-start">
 							<div>{roundNumbers(filteredItemsLength)} items</div>
