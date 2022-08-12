@@ -170,6 +170,6 @@ video::-internal-media-controls-overlay-cast-button {
 	cursor: pointer;
 }
 
-.no-name {
-	z-index: 9999;
+.main-collection-content {
+	height: 86vh;
 }

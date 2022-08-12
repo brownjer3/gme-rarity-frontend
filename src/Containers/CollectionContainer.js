@@ -155,9 +155,9 @@ export default function CollectionContainer() {
 	};
 
 	return (
-		<Container fluid className="pe-0">
-			<Row className="w-100 vh-100">
-				<Col lg={2} className="sidebar d-none d-lg-block">
+		<Container fluid className="pe-0 main-collection-content">
+			<Row className="w-100 h-100">
+				<Col lg={2} className="sidebar d-none d-lg-block h-100">
 					<TraitFilterContainer
 						name={collection.name}
 						traits={collection.traits}
@@ -180,7 +180,7 @@ export default function CollectionContainer() {
 					/>
 				</div>
 
-				<Col xs={12} lg={10} className="collection-main-view">
+				<Col xs={12} lg={10} className="collection-main-view h-100">
 					<CollectionBanner collection={collection} />
 					<br />
 					{collection.metadataFlag && (
