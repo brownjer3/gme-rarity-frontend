@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import CollectionTableRow from "../Components/CollectionTableRow";
+import { TableRowPlaceholder } from "../Components/Placeholders";
 import { SectionHeader } from "../Components/Components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -61,20 +62,26 @@ class AllCollectionsContainer extends Component {
 	};
 
 	makeTableRows = () => {
-		return this.state.collections.map((collection, index) => {
-			return (
-				<CollectionTableRow
-					key={collection.id}
-					index={index}
-					slug={collection.slug}
-					name={collection.name}
-					volume={collection.volume}
-					collectionSize={collection.items}
-					image={collection.avatarUri}
-					ownerCount="TBD"
-				/>
-			);
-		});
+		if (this.state.collections.length === 0) {
+			return Array.from({ length: 50 }).map((_, index) => {
+				return <TableRowPlaceholder index={index} key={index.toString()} />;
+			});
+		} else {
+			return this.state.collections.map((collection, index) => {
+				return (
+					<CollectionTableRow
+						key={collection.id}
+						index={index}
+						slug={collection.slug}
+						name={collection.name}
+						volume={collection.volume}
+						collectionSize={collection.items}
+						image={collection.avatarUri}
+						ownerCount="TBD"
+					/>
+				);
+			});
+		}
 	};
 
 	handleSortChange = (e) => {

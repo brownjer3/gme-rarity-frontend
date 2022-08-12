@@ -10,7 +10,7 @@ class CollectionTableRow extends Component {
 		return (
 			<tr>
 				<td>{this.props.index + 1}</td>
-				<td>
+				<td colSpan={4}>
 					<Link
 						className="text-white text-decoration-none"
 						to={`/collections/${this.props.slug}`}

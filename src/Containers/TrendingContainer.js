@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import TrendingCollectionCard from "../Components/TrendingCollectionCard";
-import CardPlaceholder from "../Components/CardPlaceholder";
+import { CardPlaceholder } from "../Components/Placeholders";
 import Row from "react-bootstrap/Row";
 
 class TrendingContainer extends Component {
