@@ -1,4 +1,5 @@
-import React, { PureComponent } from "react";
+import React, { useState } from "react";
+import { useMatch } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -6,21 +7,24 @@ import Col from "react-bootstrap/Col";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
-class Footer extends PureComponent {
-	state = {
-		gmeDonationAddress: "0x61942db583EC58f61e7635f40514247E68312625",
-		clicked: false,
+const Footer = () => {
+	let match = useMatch("/collections/:collectionSlug");
+
+	const [gmeDonationAddress, setGmedonationAddress] = useState(
+		"0x61942db583EC58f61e7635f40514247E68312625"
+	);
+	const [clicked, setClicked] = useState(false);
+
+	const handleAddressCopy = () => {
+		setClicked(true);
+		navigator.clipboard.writeText(gmeDonationAddress);
 	};
 
-	handleAddressCopy = () => {
-		this.setState({ clicked: true });
-		navigator.clipboard.writeText(this.state.gmeDonationAddress);
-	};
-
-	render() {
+	if (!match) {
 		return (
 			<Navbar bg="transparent" text="white" className="mt-auto">
 				<Container fluid className="justify-content-center">
+					{/* <div>{params}</div> */}
 					<Row className="w-100 align-items-center" xs={1} lg={2}>
 						<Col>
 							<small className="font-monospace ">
@@ -61,15 +65,13 @@ class Footer extends PureComponent {
 							<small className="font-monospace pt-3">
 								<p>Want to buy us a coffee?</p>
 								<p>
-									<span className="me-1">
-										GME Wallet: {this.state.gmeDonationAddress}
-									</span>
+									<span className="me-1">GME Wallet: {gmeDonationAddress}</span>
 									<FontAwesomeIcon
 										icon={faCopy}
-										beat={this.state.clicked}
+										beat={clicked}
 										className="beat-once"
-										onClick={this.handleAddressCopy}
-										onAnimationEnd={() => this.setState({ clicked: false })}
+										onClick={handleAddressCopy}
+										onAnimationEnd={() => setClicked(false)}
 									/>
 								</p>
 							</small>
@@ -79,6 +81,6 @@ class Footer extends PureComponent {
 			</Navbar>
 		);
 	}
-}
+};
 
 export default Footer;
