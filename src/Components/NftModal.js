@@ -92,7 +92,10 @@ export default function NftModal(props) {
 								</Card>
 							</Col>
 							<Col xs={12} lg={6}>
-								<p>Rarity Rank {props.nft.rarityRank}</p>
+								<p className="text-center">
+									<span className="fw-bold">Rarity Rank:</span>{" "}
+									{props.nft.rarityRank} out of {props.collectionSupply}
+								</p>
 								<Table hover variant="dark" size="sm">
 									<thead>
 										<tr>

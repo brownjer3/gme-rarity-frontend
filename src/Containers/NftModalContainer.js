@@ -54,6 +54,7 @@ const NftModalContainer = () => {
 	return (
 		<NftModal
 			nft={nft}
+			collectionSupply={collectionSupply}
 			isNftFound={isNftFound}
 			loading={loading}
 			show={modalShow}
