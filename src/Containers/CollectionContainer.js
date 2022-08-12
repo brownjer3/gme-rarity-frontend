@@ -202,7 +202,7 @@ export default function CollectionContainer() {
 							/>
 						</div>
 					</Row>
-					<NftsGridContainer nfts={nfts} collectionSlug={collection.slug} />
+					<NftsGridContainer nfts={nfts} collection={collection} />
 					{renderLoadMoreSpinner()}
 				</Col>
 				<Outlet />

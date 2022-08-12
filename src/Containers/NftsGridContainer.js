@@ -7,14 +7,20 @@ import NftBasicDetailsCard from "../Components/NftBasicDetailsCard";
 
 export default function NftsGridContainer(props) {
 	let location = useLocation();
+	const { slug, items, id } = props.collection;
 
 	const makeGrid = () => {
 		return props.nfts.map((nft, index) => {
 			return (
 				<Col>
 					<Link
-						to={`/collections/${props.collectionSlug}/${nft.serialNum}`}
-						state={{ background: location, nftData: nft }}
+						to={`/collections/${slug}/${nft.serialNum}`}
+						state={{
+							background: location,
+							nftData: nft,
+							collectionSupply: items,
+							collectionId: id,
+						}}
 						className="text-white text-decoration-none"
 						key={nft.id}
 					>

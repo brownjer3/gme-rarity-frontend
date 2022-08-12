@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import NftModal from "../Components/NftModal";
-// import TestModal from '../Components/TestModal';
+import { useSelector } from "react-redux";
 
 const NftModalContainer = () => {
 	const location = useLocation();
+	const { nftId, collectionSlug } = useParams();
+	const collection = useSelector((state) =>
+		state.collections.data.find(
+			(collection) => collection.slug === collectionSlug
+		)
+	);
+	const collectionId = collection.id;
+	const collectionSupply = collection.items;
 	let nftData;
-	const { nftId } = useParams();
+
 	const navigate = useNavigate();
 	const handleClose = () => navigate(-1);
 
@@ -28,7 +36,6 @@ const NftModalContainer = () => {
 	}, []);
 
 	const fetchNft = async () => {
-		let collectionId = "36fab6f7-1e51-49d9-a0be-39343abafd0f";
 		let url = `http://localhost:3001/collections/${collectionId}/nfts?serialNum=${nftId}`;
 		const res = await fetch(url);
 		const data = await res.json();
