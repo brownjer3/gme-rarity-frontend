@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export const MetadataWarning = (props) => {
+const MetadataWarning = (props) => {
 	const [showWarning, setShowWarning] = useState(false);
 
 	const toggleShow = () => {

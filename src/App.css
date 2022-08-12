@@ -150,6 +150,10 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
 	-moz-appearance: textfield;
 }
+/* Hide chromecast button for video files */
+video::-internal-media-controls-overlay-cast-button {
+	display: none;
+}
 
 .moon-logo-initials {
 	z-index: 999 !important;
@@ -164,4 +168,8 @@ input[type="number"] {
 	justify-content: start;
 	align-items: center;
 	cursor: pointer;
+}
+
+.no-name {
+	z-index: 9999;
 }

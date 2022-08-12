@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import TrendingCollectionCard from "../Components/TrendingCollectionCard";
+import CardPlaceholder from "../Components/CardPlaceholder";
 import Row from "react-bootstrap/Row";
 
 class TrendingContainer extends Component {
 	makeCollectionCards = () => {
-		return this.props.topFive.map((collection, index) => {
-			return (
-				<TrendingCollectionCard
-					key={index.toString()}
-					collection={collection}
-				/>
-			);
-		});
+		if (this.props.topFive.length === 0) {
+			return Array.from({ length: 5 }).map((_, index) => {
+				return <CardPlaceholder key={index.toString()} />;
+			});
+		} else {
+			return this.props.topFive.map((collection, index) => {
+				return (
+					<TrendingCollectionCard
+						key={index.toString()}
+						collection={collection}
+					/>
+				);
+			});
+		}
 	};
 
 	render() {
