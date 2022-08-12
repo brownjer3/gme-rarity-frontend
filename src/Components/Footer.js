@@ -24,7 +24,6 @@ const Footer = () => {
 		return (
 			<Navbar bg="transparent" text="white" className="mt-auto">
 				<Container fluid className="justify-content-center">
-					{/* <div>{params}</div> */}
 					<Row className="w-100 align-items-center" xs={1} lg={2}>
 						<Col>
 							<small className="font-monospace ">
