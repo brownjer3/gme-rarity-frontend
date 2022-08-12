@@ -76,7 +76,9 @@ export default function NftModal(props) {
 					centered
 				>
 					<Modal.Header className="bg-dark text-white text-center">
-						<Modal.Title className="w-100">{props.nft.name}</Modal.Title>
+						<Modal.Title className="w-100">
+							<h1 className="display-6">{props.nft.name}</h1>
+						</Modal.Title>
 						<button
 							onClick={props.onHide}
 							type="button"
