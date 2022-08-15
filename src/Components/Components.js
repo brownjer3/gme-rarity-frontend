@@ -1,4 +1,3 @@
-import React from "react";
 import "../Stars.css";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";

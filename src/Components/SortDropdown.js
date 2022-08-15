@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import { PureComponent } from "react";
 // import Dropdown from 'react-bootstrap/Dropdown'
 
 class SortDropdown extends PureComponent {

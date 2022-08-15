@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { SectionHeader } from "../Components/Components";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";

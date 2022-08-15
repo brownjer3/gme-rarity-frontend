@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { connect } from "react-redux";
 import TrendingCollectionCard from "../Components/TrendingCollectionCard";
 import { CardPlaceholder } from "../Components/Placeholders";

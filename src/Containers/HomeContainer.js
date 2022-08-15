@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import TrendingContainer from "../Containers/TrendingContainer";
 import HomeBanner from "../Components/HomeBanner";
 import { SectionHeader } from "../Components/Components";

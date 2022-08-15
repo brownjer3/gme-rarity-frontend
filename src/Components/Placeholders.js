@@ -1,4 +1,3 @@
-import React from "react";
 import Placeholder from "react-bootstrap/Placeholder";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
