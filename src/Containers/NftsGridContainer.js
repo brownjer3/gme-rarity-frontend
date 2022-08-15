@@ -11,7 +11,7 @@ export default function NftsGridContainer(props) {
 	const makeGrid = () => {
 		return props.nfts.map((nft, index) => {
 			return (
-				<Col>
+				<Col key={nft.id}>
 					<Link
 						to={`/collections/${slug}/${nft.serialNum}`}
 						state={{
@@ -21,7 +21,6 @@ export default function NftsGridContainer(props) {
 							collectionId: id,
 						}}
 						className="text-white text-decoration-none"
-						key={nft.id}
 					>
 						<NftBasicDetailsCard
 							index={index}
