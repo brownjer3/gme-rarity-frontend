@@ -180,7 +180,7 @@ export default function CollectionContainer() {
 					/>
 				</div>
 
-				<Col xs={12} lg={10} className="collection-main-view h-100">
+				<Col xs={12} lg={10} className="collection-main-view h-100 pb-4">
 					<CollectionBanner collection={collection} />
 					<br />
 					{collection.metadataFlag && (

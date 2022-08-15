@@ -19,6 +19,10 @@ class TopNav extends Component {
 		this.setState({ query: e.target.value });
 	};
 
+	handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	filterNames = () => {
 		if (this.state.query == "") {
 			return;
@@ -80,7 +84,7 @@ class TopNav extends Component {
 								Get in touch
 							</NavLink>
 						</Nav>
-						<Form className="d-flex">
+						<Form className="d-flex" onSubmit={this.handleSubmit}>
 							<InputGroup>
 								<InputGroup.Text
 									id="basic-addon1"
