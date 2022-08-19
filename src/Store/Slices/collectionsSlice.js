@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // const COLLECTIONS_URL = "http://localhost:3001/collections";
-const COLLECTIONS_URL = "https://gmeraritytool.herokuapp.com/Top50Collections";
+const COLLECTIONS_URL = "http://gmeraritytool.herokuapp.com/Top50Collections";
 // const NFTS_BY_COLLECTION_ID = "http://localhost:3001/collections?collectionId=";
 // const TOP_FIVE_URL = "http://localhost:3001/topFive";
 
