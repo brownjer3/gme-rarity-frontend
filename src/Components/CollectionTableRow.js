@@ -3,7 +3,7 @@ import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { EthData, transformUri } from "../Components/DataFormats";
+import { EthData, transformUrl } from "../Components/DataFormats";
 
 class CollectionTableRow extends Component {
 	render() {
@@ -20,7 +20,7 @@ class CollectionTableRow extends Component {
 								<Image
 									fluid
 									rounded
-									src={transformUri(this.props.image)}
+									src={transformUrl(this.props.image)}
 									style={{ height: "3rem" }}
 									alt={`GameStop NFT Collection Avatar - ${this.props.name}`}
 								/>

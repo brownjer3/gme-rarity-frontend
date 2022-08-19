@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
-export const transformUri = (uri) => {
+export const transformUrl = (url) => {
 	let link = "";
-	if (uri.includes("public/")) {
-		link = uri.replace("public/", "https://static.gstop-content.com/");
+	if (url.includes("https://static.gstop-content.com")) {
+		link = url + "?img-format=WebP";
+	} else if (url.includes("public/")) {
+		link = url.replace("public/", "https://static.gstop-content.com/");
 		link += "?img-format=WebP";
-	} else if (uri.includes("ipfs://")) {
-		link = uri.replace("ipfs://", "https://www.gstop-content.com/ipfs/");
+	} else if (url.includes("ipfs://")) {
+		link = url.replace("ipfs://", "https://www.gstop-content.com/ipfs/");
 		link += "?img-width=550&image-format=WebP";
 	}
 	return link;

@@ -74,15 +74,27 @@ class AllCollectionsContainer extends Component {
 						index={index}
 						slug={collection.slug}
 						name={collection.name}
-						volume={collection.volume}
-						collectionSize={collection.items}
-						image={collection.avatarUri}
+						volume={collection.total_volume}
+						collectionSize={collection.total_items}
+						image={collection.avatar_url}
 						ownerCount="TBD"
 					/>
 				);
 			});
 		}
 	};
+
+	// 	{
+	//     "total_volume": "1533964830000000000000",
+	//     "avatar_url": "https://static.gstop-content.com/d9fdd83b-5d72-4a32-a151-a8549efef1bc",
+	//     "banner_image_url": "https://static.gstop-content.com/6fa28178-8e9c-4f3b-8e0d-fa960d321d12",
+	//     "name": "MetaBoy",
+	//     "description": "A collection of 10,000 unique algorithmically generated MetaBoys that brings the love of gaming, pixelart and technology together.",
+	//     "id": "36fab6f7-1e51-49d9-a0be-39343abafd0f",
+	//     "contract_address": "0x1d006a27bd82e10f9194d30158d91201e9930420",
+	//     "total_items": "10010",
+	//     "slug": "MetaBoy"
+	//   },
 
 	handleSortChange = (e) => {
 		const name =
