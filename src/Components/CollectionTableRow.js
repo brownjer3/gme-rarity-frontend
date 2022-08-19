@@ -16,7 +16,7 @@ class CollectionTableRow extends Component {
 						to={`/collections/${this.props.slug}`}
 					>
 						<Row className="text-start">
-							<Col className="" xs={12} md={2}>
+							<Col xs={12} md={2}>
 								<Image
 									fluid
 									rounded
