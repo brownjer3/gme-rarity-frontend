@@ -118,9 +118,12 @@ class AllCollectionsContainer extends Component {
 
 	makeTableHeaders = () => {
 		return this.state.sortOptions.map((option, index) => {
-			if (this.state.sortSelection == option) {
+			if (this.state.sortSelection === option) {
 				return (
-					<th key={index.toString()}>
+					<th
+						key={index.toString()}
+						className={option === "Collection" ? "collection-column" : null}
+					>
 						<span className="name text-warning" id={option}>
 							{option}
 						</span>

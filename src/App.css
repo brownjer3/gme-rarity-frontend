@@ -173,3 +173,7 @@ video::-internal-media-controls-overlay-cast-button {
 .main-collection-content {
 	height: 86vh;
 }
+
+.collection-column {
+	width: 35%;
+}
