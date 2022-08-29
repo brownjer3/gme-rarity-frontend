@@ -1,17 +1,27 @@
 import { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import TrendingCollectionCard from "../Components/TrendingCollectionCard";
 import { CardPlaceholder } from "../Components/Placeholders";
 import Row from "react-bootstrap/Row";
 
 class TrendingContainer extends Component {
+	state = {
+		top5: [],
+	};
+
+	componentDidMount() {
+		fetch("https://gmeraritytool.herokuapp.com/Top5Collections")
+			.then((res) => res.json())
+			.then((data) => this.setState({ top5: data }));
+	}
+
 	makeCollectionCards = () => {
-		if (this.props.topFive.length === 0) {
+		if (this.state.top5.length === 0) {
 			return Array.from({ length: 5 }).map((_, index) => {
 				return <CardPlaceholder key={index.toString()} />;
 			});
 		} else {
-			return this.props.topFive.map((collection, index) => {
+			return this.state.top5.map((collection, index) => {
 				return (
 					<TrendingCollectionCard
 						key={index.toString()}
@@ -31,12 +41,13 @@ class TrendingContainer extends Component {
 	}
 }
 
-const mapStateToProps = (state) => {
-	const topFive = state.collections.data.slice(0, 5);
-	return {
-		topFive: topFive,
-		// loading: state.loading
-	};
-};
+// const mapStateToProps = (state) => {
+// 	const topFive = state.collections.data.slice(0, 5);
+// 	return {
+// 		topFive: topFive,
+// 		// loading: state.loading
+// 	};
+// };
 
-export default connect(mapStateToProps)(TrendingContainer);
+// export default connect(mapStateToProps)(TrendingContainer);
+export default TrendingContainer;
