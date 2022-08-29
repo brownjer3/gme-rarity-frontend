@@ -25,7 +25,7 @@ class AllCollectionsContainer extends Component {
 		],
 		sortTriggers: {
 			Collection: "name",
-			"Total Supply": "items",
+			"Total Supply": "total_items",
 			"Owner Count": "TBD",
 			"Lifetime Volume": "volume",
 			"7-day Volume": "volume",
@@ -50,15 +50,16 @@ class AllCollectionsContainer extends Component {
 				const nameB = b[sortValue].toUpperCase();
 				return nameA < nameB ? -1 : 1;
 			});
-		} else if (sortValue !== "items") {
+		} else {
 			return sorted.sort((a, b) => {
 				return parseInt(b[sortValue]) - parseInt(a[sortValue]);
 			});
-		} else {
-			return sorted.sort((a, b) => {
-				return b[sortValue] - a[sortValue];
-			});
 		}
+		// } else {
+		// 	return sorted.sort((a, b) => {
+		// 		return b[sortValue] - a[sortValue];
+		// 	});
+		// }
 	};
 
 	handleSortChange = (e) => {
