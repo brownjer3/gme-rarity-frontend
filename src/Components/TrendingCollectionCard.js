@@ -7,7 +7,7 @@ import { transformUrl, EthData } from "../Components/DataFormats";
 
 class TrendingCollectionCard extends Component {
 	render() {
-		const { name, slug, total_volume, total_items, avatar_url } =
+		const { name, slug, day_volume, total_items, avatar_url, floor_price } =
 			this.props.collection;
 
 		return (
@@ -31,11 +31,11 @@ class TrendingCollectionCard extends Component {
 								</ListGroup.Item>
 								<ListGroup.Item className="bg-dark text-white border-0 border-bottom border-secondary">
 									24hr Volume:
-									<EthData weiVal={total_volume} />
+									<EthData weiVal={day_volume} />
 								</ListGroup.Item>
 								<ListGroup.Item className="bg-dark text-white">
 									Floor price:
-									<EthData weiVal="79000000000000000" />
+									<EthData weiVal={floor_price} />
 								</ListGroup.Item>
 							</ListGroup>
 						</Card.Body>
