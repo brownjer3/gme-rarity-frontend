@@ -31,7 +31,7 @@ export default function CollectionContainer() {
 	);
 
 	const [nfts, setNfts] = useState([]);
-	const [pageNum, setPageNum] = useState(1);
+	const [pageNum, setPageNum] = useState(0);
 	const [query, setQuery] = useState("");
 	const [hasMore, setHasMore] = useState(false);
 
@@ -83,7 +83,7 @@ export default function CollectionContainer() {
 
 	const loadMore = async () => {
 		// let url = `http://localhost:3001/collections/${collection.id}/nfts?`;
-		let url = `https://gmeraritytool.herokuapp.com/Nft/CollectionID=${collection.id}`;
+		let url = `https://gmeraritytool.herokuapp.com/`;
 
 		// if (traitsQuery.length > 0) {
 		// 	traitsQuery.forEach((combo) => {
@@ -94,6 +94,9 @@ export default function CollectionContainer() {
 		// }
 
 		// url += `_page=${pageNum}&_limit=${pageLimit}`;
+		url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
+
+		url += `Nft/CollectionID=${collection.id}`;
 
 		const res = await fetch(url);
 		const data = await res.json();
@@ -101,7 +104,7 @@ export default function CollectionContainer() {
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
 		let all;
-		if (pageNum == 1) {
+		if (pageNum == 0) {
 			all = new Set([...data]);
 		} else {
 			all = new Set([...nfts, ...data]);
