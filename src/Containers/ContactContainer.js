@@ -69,7 +69,7 @@ class ContactContainer extends Component {
 								name="name"
 								value={this.state.name}
 								type="text"
-								placeholder="Ryan Cohen"
+								placeholder="Michael Scott"
 								className="text-white bg-transparent"
 								onChange={(e) => {
 									this.setState({ name: e.target.value });
@@ -82,7 +82,7 @@ class ContactContainer extends Component {
 								name="email"
 								value={this.state.email}
 								type="email"
-								placeholder="ryan@gamestop.com"
+								placeholder="michael@dundermifflin.com"
 								className="text-white bg-transparent"
 								onChange={(e) => {
 									this.setState({ email: e.target.value });
@@ -97,7 +97,7 @@ class ContactContainer extends Component {
 							name="message"
 							as="textarea"
 							rows={3}
-							placeholder="We're going to the moon..."
+							placeholder="I’m not superstitious but I am a little stitious."
 							className="text-white bg-transparent"
 							onChange={(e) => {
 								this.setState({ message: e.target.value });
