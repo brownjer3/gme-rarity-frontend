@@ -18,7 +18,7 @@ class AllCollectionsContainer extends Component {
 		sortOptions: [
 			"Collection",
 			"Total Supply",
-			"Owner Count",
+			"Floor Price",
 			"Lifetime Volume",
 			"7-day Volume",
 			"24hr Volume",
@@ -26,7 +26,7 @@ class AllCollectionsContainer extends Component {
 		sortTriggers: {
 			Collection: "name",
 			"Total Supply": "total_items",
-			"Owner Count": "TBD",
+			"Floor Price": "floor_price",
 			"Lifetime Volume": "volume",
 			"7-day Volume": "volume",
 			"24hr Volume": "volume",
@@ -169,7 +169,7 @@ class AllCollectionsContainer extends Component {
 						volume={collection.total_volume}
 						collectionSize={collection.total_items}
 						image={collection.avatar_url}
-						ownerCount="TBD"
+						floorPrice="79000000000000000"
 					/>
 				);
 			});
