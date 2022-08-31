@@ -4,12 +4,17 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { EthData, roundNumbers, makeCollectionGmeLink } from "./DataFormats";
+import {
+	EthData,
+	roundNumbers,
+	makeCollectionGmeLink,
+	roundDecimals,
+} from "./DataFormats";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 class CollectionBanner extends PureComponent {
-	createStats = (itemCount, ownerCount, volume) => {
+	createStats = (itemCount, floorPrice, totalVolume) => {
 		return (
 			<ListGroup horizontal>
 				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
@@ -19,35 +24,26 @@ class CollectionBanner extends PureComponent {
 					<div>items</div>
 				</ListGroup.Item>
 				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
-					<div className="lead fw-bolder">{roundNumbers(ownerCount)}</div>
-					<div>owners</div>
+					<div className="lead fw-bolder">
+						<EthData weiVal={floorPrice} />
+					</div>
+					<div>floor price</div>
 				</ListGroup.Item>
 				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
 					<div className="lead fw-bolder">
-						<EthData weiVal={volume} round />
+						<EthData weiVal={totalVolume} round />
 					</div>
 					<div>24hr volume</div>
 				</ListGroup.Item>
 				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
 					<div className="lead fw-bolder">
-						<EthData weiVal={volume} round />
+						<EthData weiVal={totalVolume} round />
 					</div>
 					<div>total volume</div>
 				</ListGroup.Item>
 			</ListGroup>
 		);
 	};
-
-	// 	"total_volume": "95480730000000000000",
-	//     "avatar_url": "https://static.gstop-content.com/0fac0dce-1e1a-4c70-a0a6-44bd60485b0d",
-	//     "banner_image_url": "https://static.gstop-content.com/b9919c2e-7fb0-411d-9811-1d62cf4488fc",
-	//     "name": "Launch Day",
-	//     "description": "\"...midnight release vibes\"",
-	//     "id": "56fe1690-2287-424a-8bf2-5314f1ba6333",
-	//     "contract_address": "0x9d8ddad8f046c7aea4180eb94596f9421c31e622",
-	//     "total_items": "10",
-	//     "slug": "vzewllaunchday"
-	//   }
 
 	render() {
 		const {
@@ -57,6 +53,7 @@ class CollectionBanner extends PureComponent {
 			slug,
 			total_items,
 			total_volume,
+			floor_price,
 		} = this.props.collection;
 		return (
 			<Card bg="dark" text="white" border="light">
@@ -76,7 +73,7 @@ class CollectionBanner extends PureComponent {
 						</Col>
 						<Col lg={5} className="d-flex flex-column align-items-end">
 							<Row className="text-center d-none d-lg-block mb-auto">
-								{this.createStats(total_items, "7374", total_volume)}
+								{this.createStats(total_items, floor_price, total_volume)}
 							</Row>
 							<Row className="mt-2">
 								<a href={makeCollectionGmeLink(slug)} target="_blank">
