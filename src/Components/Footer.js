@@ -23,12 +23,17 @@ const Footer = () => {
 	if (!match) {
 		return (
 			<Navbar bg="transparent" text="white" className="mt-auto">
-				<Container fluid className="justify-content-center">
+				<Container fluid className="justify-content-center ">
 					<Row className="w-100 align-items-center" xs={1} lg={2}>
+						<Row className="w-100 py-4">
+							<p className="font-monospace">
+								Made with 🚀 for the GameStop community
+							</p>
+						</Row>
 						<Col>
 							<small className="font-monospace ">
 								<p>
-									Made with 🚀 by{" "}
+									Dev 💻 by{" "}
 									<a
 										className="text-decoration-none text-white"
 										href="https://twitter.com/honey_crisp_"
