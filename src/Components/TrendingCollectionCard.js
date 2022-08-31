@@ -29,9 +29,13 @@ class TrendingCollectionCard extends Component {
 								<ListGroup.Item className="bg-dark text-white border-0 border-bottom border-top border-secondary">
 									Collection Size: {total_items}
 								</ListGroup.Item>
-								<ListGroup.Item className="bg-dark text-white">
+								<ListGroup.Item className="bg-dark text-white border-0 border-bottom border-secondary">
 									24hr Volume:
 									<EthData weiVal={total_volume} />
+								</ListGroup.Item>
+								<ListGroup.Item className="bg-dark text-white">
+									Floor price:
+									<EthData weiVal="79000000000000000" />
 								</ListGroup.Item>
 							</ListGroup>
 						</Card.Body>

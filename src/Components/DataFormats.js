@@ -17,11 +17,16 @@ export const transformUrl = (url) => {
 
 export const weiToEth = (wei) => {
 	const num = parseInt(wei);
-	return Math.round(num / 10 ** 18);
+	const ethVal = num / 10 ** 18;
+	if (ethVal < 0.1) {
+		return Math.round(ethVal * 1000) / 1000;
+	} else {
+		return Math.round(ethVal * 100) / 100;
+	}
 };
 
 export const roundNumbers = (num) => {
-	let newNum = String(num);
+	let newNum = String(num).split(".")[0];
 	if (newNum.length <= 3) return newNum;
 
 	if (newNum.length === 4) {
