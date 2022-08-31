@@ -4,22 +4,42 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import { transformUrl, makeNftGmeLink } from "./DataFormats";
+import { roundDecimals } from "./DataFormats";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Loading } from "./Components";
 
 export default function NftModal(props) {
-	const makeTraitRows = (traits) => {
-		return Object.keys(traits).map((category, index) => {
+	const makeTraitRows = (traitString) => {
+		const traitArr = traitString.split("-");
+		const traitCount = Math.round(traitArr.length / 3);
+		let traitObj = {};
+		for (let i = 0; i < traitCount; i++) {
+			let trait = traitArr[i * 3];
+			let category = traitArr[i * 3 + 1];
+			let score = roundDecimals(traitArr[i * 3 + 2]);
+			traitObj[category] = [trait, score];
+		}
+
+		return Object.keys(traitObj).map((category, index) => {
 			return (
 				<tr key={index.toString()}>
 					<td>{category}</td>
-					<td>{traits[category]}</td>
-					<td className="text-center">21</td>
+					<td>{traitObj[category][0]}</td>
+					<td className="text-center">{traitObj[category][1]}</td>
 				</tr>
 			);
 		});
+
+		// return Object.keys(traits).map((category, index) => {
+		// 	return (
+		// 		<tr key={index.toString()}>
+		// 			<td>{category}</td>
+		// 			<td>{traits[category]}</td>
+		// 			<td className="text-center">21</td>
+		// 		</tr>
+		// 	);
+		// });
 	};
 
 	const renderModal = () => {
@@ -89,13 +109,13 @@ export default function NftModal(props) {
 						<Row>
 							<Col xs={12} lg={6}>
 								<Card>
-									<Card.Img src={transformUrl(props.nft.metadataJson.image)} />
+									<Card.Img src={props.nft.image_url} />
 								</Card>
 							</Col>
 							<Col xs={12} lg={6}>
 								<p className="text-center">
-									<span className="fw-bold">Rarity Rank:</span>{" "}
-									{props.nft.rarityRank} out of {props.collectionSupply}
+									<span className="fw-bold">Rarity Rank:</span> {props.nft.rank}{" "}
+									out of {props.collectionSupply}
 								</p>
 								<Table hover variant="dark" size="sm">
 									<thead>
@@ -106,10 +126,12 @@ export default function NftModal(props) {
 										</tr>
 									</thead>
 									<tbody>
-										{makeTraitRows(props.nft.metadataJson.properties)}
+										{makeTraitRows(props.nft.attributes)}
 										<tr className="fw-bold text-danger">
 											<td colSpan={2}>Total Rarity Score</td>
-											<td className="text-center">352</td>
+											<td className="text-center">
+												{roundDecimals(props.nft.total_rarity_score)}
+											</td>
 										</tr>
 									</tbody>
 								</Table>
@@ -119,10 +141,7 @@ export default function NftModal(props) {
 					<Modal.Footer className="bg-dark">
 						<a
 							className="text-decoration-none text-danger"
-							href={makeNftGmeLink(
-								props.nft.contractAddress,
-								props.nft.tokenId
-							)}
+							href={props.nft.gme_url}
 							target="_blank"
 						>
 							View on Gamestop

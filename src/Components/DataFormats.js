@@ -25,6 +25,11 @@ export const weiToEth = (wei) => {
 	}
 };
 
+export const roundDecimals = (numString) => {
+	let newNum = String(numString);
+	return Math.round(newNum * 100) / 100;
+};
+
 export const roundNumbers = (num) => {
 	let newNum = String(num).split(".")[0];
 	if (newNum.length <= 3) return newNum;

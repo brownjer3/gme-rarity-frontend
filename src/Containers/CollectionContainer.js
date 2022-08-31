@@ -158,16 +158,6 @@ export default function CollectionContainer() {
 		}
 	};
 
-	// 	"total_volume": "95480730000000000000",
-	//     "avatar_url": "https://static.gstop-content.com/0fac0dce-1e1a-4c70-a0a6-44bd60485b0d",
-	//     "banner_image_url": "https://static.gstop-content.com/b9919c2e-7fb0-411d-9811-1d62cf4488fc",
-	//     "name": "Launch Day",
-	//     "description": "\"...midnight release vibes\"",
-	//     "id": "56fe1690-2287-424a-8bf2-5314f1ba6333",
-	//     "contract_address": "0x9d8ddad8f046c7aea4180eb94596f9421c31e622",
-	//     "total_items": "10",
-	//     "slug": "vzewllaunchday"
-	//   }
 	const testTraits = {
 		Hat: {
 			"Beret Hat": "5",

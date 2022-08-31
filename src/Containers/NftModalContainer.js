@@ -12,7 +12,7 @@ const NftModalContainer = () => {
 		)
 	);
 	const collectionId = collection.id;
-	const collectionSupply = collection.items;
+	const collectionSupply = collection.total_items;
 	let nftData;
 
 	const navigate = useNavigate();
