@@ -20,16 +20,16 @@ class AllCollectionsContainer extends Component {
 			"Total Supply",
 			"Floor Price",
 			"Lifetime Volume",
-			"7-day Volume",
-			"24hr Volume",
+			"30-day Volume",
+			"24-hr Volume",
 		],
 		sortTriggers: {
 			Collection: "name",
 			"Total Supply": "total_items",
 			"Floor Price": "floor_price",
-			"Lifetime Volume": "volume",
-			"7-day Volume": "volume",
-			"24hr Volume": "volume",
+			"Lifetime Volume": "total_volume",
+			"30-day Volume": "month_volume",
+			"24-hr Volume": "day_volume",
 		},
 		sortSelection: "Lifetime Volume",
 		sortOrder: "Descending",
@@ -166,10 +166,12 @@ class AllCollectionsContainer extends Component {
 						index={index}
 						slug={collection.slug}
 						name={collection.name}
-						volume={collection.total_volume}
+						totalVolume={collection.total_volume}
+						monthVolume={collection.month_volume}
+						dayVolume="TBD"
 						collectionSize={collection.total_items}
 						image={collection.avatar_url}
-						floorPrice="79000000000000000"
+						floorPrice={collection.floor_price}
 					/>
 				);
 			});
@@ -180,8 +182,8 @@ class AllCollectionsContainer extends Component {
 		return (
 			<Container className="">
 				<SectionHeader name="All Collections" />
-				<small className="text-muted mb-2">
-					*Currently displaying the top 50 collections based on total volume,
+				<small className="text-muted ">
+					*Currently displaying the top 50 collections based on lifetime volume,
 					more to come
 				</small>
 				<Table
@@ -189,7 +191,7 @@ class AllCollectionsContainer extends Component {
 					bordered
 					responsive
 					hover
-					className="align-middle"
+					className="align-middle mt-3"
 					variant="dark"
 				>
 					<thead className="align-middle">
