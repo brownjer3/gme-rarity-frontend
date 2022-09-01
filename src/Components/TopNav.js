@@ -77,11 +77,11 @@ class TopNav extends Component {
 							navbarScroll
 						>
 							<NavLink to="/collections" className="nav-link">
-								All collections
+								All Collections
 							</NavLink>
 
 							<NavLink to="/contact" className="nav-link">
-								Get in touch
+								Get in Touch
 							</NavLink>
 						</Nav>
 						<Form className="d-flex" onSubmit={this.handleSubmit}>
