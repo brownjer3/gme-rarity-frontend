@@ -20,16 +20,16 @@ class AllCollectionsContainer extends Component {
 			"Total Supply",
 			"Floor Price",
 			"Lifetime Volume",
-			"30-day Volume",
-			"24-hr Volume",
+			// "30-day Volume",
+			// "24-hr Volume",
 		],
 		sortTriggers: {
 			Collection: "name",
 			"Total Supply": "total_items",
 			"Floor Price": "floor_price",
 			"Lifetime Volume": "total_volume",
-			"30-day Volume": "month_volume",
-			"24-hr Volume": "day_volume",
+			// "30-day Volume": "month_volume",
+			// "24-hr Volume": "day_volume",
 		},
 		sortSelection: "Lifetime Volume",
 		sortOrder: "Descending",
@@ -133,7 +133,7 @@ class AllCollectionsContainer extends Component {
 				);
 			} else if (option === "Collection") {
 				return (
-					<th key={index.toString()} style={{ width: "35%" }}>
+					<th key={index.toString()} style={{ width: "40%" }}>
 						<span className="name" id={option}>
 							{option}
 						</span>
@@ -167,8 +167,8 @@ class AllCollectionsContainer extends Component {
 						slug={collection.slug}
 						name={collection.name}
 						totalVolume={collection.total_volume}
-						monthVolume={collection.month_volume}
-						dayVolume="TBD"
+						// monthVolume={collection.month_volume}
+						// dayVolume="TBD"
 						collectionSize={collection.total_items}
 						image={collection.avatar_url}
 						floorPrice={collection.floor_price}
