@@ -25,6 +25,7 @@ export default function CollectionContainer() {
 	const pageLimit = "25";
 	const navigate = useNavigate();
 
+	const [traitList, setTraitList] = useState({});
 	const [traitsQuery, setTraitsQuery] = useState([]);
 	const [filteredItemsLength, setFilteredItemsLength] = useState(
 		collection.items
@@ -51,7 +52,64 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		getTraitList();
 	}, []);
+
+	const getTraitList = async () => {
+		const url = `https://gmeraritytool.herokuapp.com/Collection=${collection.id}`;
+		const res = await fetch(url);
+		const data = await res.json();
+
+		const traitObj = handleTraitData(data);
+		setTraitList(traitObj);
+	};
+
+	const handleTraitData = (dataArr) => {
+		let traitObj = {};
+		let categoryName;
+		let traitName;
+		let traitCount;
+
+		for (let i = 1; i < dataArr.length; i++) {
+			let dataStr = dataArr[i]["attribute_list"];
+			let splitStr = dataStr.split("{");
+			categoryName = splitStr[0].split(" has")[0];
+			traitObj[categoryName] = {};
+
+			let traits = splitStr[1].split(", ");
+			for (let j = 0; j < traits.length; j++) {
+				traitName = traits[j].split(": ")[0];
+				traitCount = traits[j].split(": ")[1];
+				console.log("name: ", traitName, "count ", traitCount);
+				if (j === traits.length - 1) {
+					traitCount = traitCount.replace("}", "");
+				}
+				traitObj[categoryName][traitName] = traitCount;
+			}
+		}
+
+		return traitObj;
+	};
+
+	// Hat: {
+	// 		"Beret Hat": "5",
+	// 		Halo: "100",
+	// 		Crown: "5514",
+	// 		Santa: "928",
+	// 		Helmet: "8242",
+	// 	},
+	// 	Body: {
+	// 		Schoolboy: "2312",
+	// 		Schoolgirl: "2312",
+	// 		Armor: "2312",
+	// 		Hoodie: "2312",
+	// 	},
+	// 	Face: {
+	// 		"Teeth Smile": "23",
+	// 		Goofy: "23",
+	// 		Serious: "23",
+	// 		Angry: "23",
+	// 	}
 
 	useEffect(() => {
 		loadMore();
@@ -159,6 +217,7 @@ export default function CollectionContainer() {
 	};
 
 	const testTraits = {
+		// "(Category1;attribute1;score1)(Category2;attribute2;score2)(Category3;attribute3;score3)"
 		Hat: {
 			"Beret Hat": "5",
 			Halo: "100",
@@ -218,7 +277,7 @@ export default function CollectionContainer() {
 					<TraitFilterContainer
 						name={collection.name}
 						// traits={collection.traits}
-						traits={testTraits}
+						traits={traitList}
 						image={transformUrl(collection.avatar_url)}
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
@@ -230,7 +289,7 @@ export default function CollectionContainer() {
 					<CollectionSidebarContainer
 						name={collection.name}
 						// traits={collection.traits}
-						traits={testTraits}
+						traits={traitList}
 						image={transformUrl(collection.avatar_url)}
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
