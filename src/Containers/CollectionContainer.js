@@ -80,7 +80,6 @@ export default function CollectionContainer() {
 			for (let j = 0; j < traits.length; j++) {
 				traitName = traits[j].split(": ")[0];
 				traitCount = traits[j].split(": ")[1];
-				console.log("name: ", traitName, "count ", traitCount);
 				if (j === traits.length - 1) {
 					traitCount = traitCount.replace("}", "");
 				}
@@ -90,26 +89,6 @@ export default function CollectionContainer() {
 
 		return traitObj;
 	};
-
-	// Hat: {
-	// 		"Beret Hat": "5",
-	// 		Halo: "100",
-	// 		Crown: "5514",
-	// 		Santa: "928",
-	// 		Helmet: "8242",
-	// 	},
-	// 	Body: {
-	// 		Schoolboy: "2312",
-	// 		Schoolgirl: "2312",
-	// 		Armor: "2312",
-	// 		Hoodie: "2312",
-	// 	},
-	// 	Face: {
-	// 		"Teeth Smile": "23",
-	// 		Goofy: "23",
-	// 		Serious: "23",
-	// 		Angry: "23",
-	// 	}
 
 	useEffect(() => {
 		loadMore();
@@ -216,67 +195,12 @@ export default function CollectionContainer() {
 		}
 	};
 
-	const testTraits = {
-		// "(Category1;attribute1;score1)(Category2;attribute2;score2)(Category3;attribute3;score3)"
-		Hat: {
-			"Beret Hat": "5",
-			Halo: "100",
-			Crown: "5514",
-			Santa: "928",
-			Helmet: "8242",
-		},
-		Body: {
-			Schoolboy: "2312",
-			Schoolgirl: "2312",
-			Armor: "2312",
-			Hoodie: "2312",
-		},
-		Face: {
-			"Teeth Smile": "23",
-			Goofy: "23",
-			Serious: "23",
-			Angry: "23",
-		},
-		Weapon: {
-			"Axe and Shield": "832",
-			Sword: "832",
-			"Medusa Head": "832",
-			Bomb: "832",
-			Phonebook: "832",
-		},
-		Background: {
-			Apocalypse: "7322",
-			Space: "7322",
-			Field: "7322",
-			"Video Game": "7322",
-			"Haunted House": "7322",
-		},
-		Legendary: {
-			Hacker: "1",
-			Player: "1",
-			Goose: "1",
-			Model: "1",
-			Trader: "1",
-			Burglar: "1",
-			Surfer: "1",
-			Chess: "1",
-			Racer: "1",
-			Basketball: "1",
-			Football: "1",
-			Soccer: "1",
-			Golfer: "1",
-			Witch: "1",
-			Jetpack: "1",
-		},
-	};
-
 	return (
 		<Container fluid className="pe-0 main-collection-content">
 			<Row className="w-100 h-100">
 				<Col lg={2} className="sidebar d-none d-lg-block h-100">
 					<TraitFilterContainer
 						name={collection.name}
-						// traits={collection.traits}
 						traits={traitList}
 						image={transformUrl(collection.avatar_url)}
 						isTraitSelected={isTraitSelected}
@@ -288,7 +212,6 @@ export default function CollectionContainer() {
 				<div className="d-block d-lg-none">
 					<CollectionSidebarContainer
 						name={collection.name}
-						// traits={collection.traits}
 						traits={traitList}
 						image={transformUrl(collection.avatar_url)}
 						isTraitSelected={isTraitSelected}

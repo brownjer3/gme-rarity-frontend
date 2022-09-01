@@ -126,9 +126,9 @@ export default function NftModal(props) {
 								<Table hover variant="dark" size="sm">
 									<thead>
 										<tr>
-											<th>Type</th>
-											<th>Value</th>
-											<th>Rarity Score</th>
+											<th style={{ width: "35%" }}>Type</th>
+											<th style={{ width: "35%" }}>Value</th>
+											<th style={{ width: "30%" }}>Rarity Score</th>
 										</tr>
 									</thead>
 									<tbody>
