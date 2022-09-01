@@ -113,16 +113,16 @@ export default function NftModal(props) {
 								</Card>
 							</Col>
 							<Col xs={12} lg={6}>
-								<p className="text-center">
-									<span className="fw-bold">Rarity Rank:</span> {props.nft.rank}{" "}
-									out of {props.collectionSupply}
-								</p>
 								{props.nft.edition_count > 1 && (
-									<p className="text-center">
+									<p>
 										<span className="fw-bold">Editions:</span>{" "}
 										{props.nft.edition_count}
 									</p>
 								)}
+								<p>
+									<span className="fw-bold">Rarity Rank:</span> {props.nft.rank}{" "}
+									out of {props.collectionSupply}
+								</p>
 								<Table hover variant="dark" size="sm">
 									<thead>
 										<tr>
