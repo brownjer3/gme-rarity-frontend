@@ -10,6 +10,30 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Loading } from "./Components";
 
 export default function NftModal(props) {
+	const handleTraitString = (traitString) => {
+		let traitObj = {};
+
+		const traitArr = traitString.split(")(");
+		let categoryName;
+		let traitName;
+		let traitScore;
+		for (let i = 0; i < traitArr.length; i++) {
+			let traitGroup = traitArr[i].split(";");
+			categoryName = traitGroup[0];
+			traitName = traitGroup[1];
+			traitScore = traitGroup[2];
+			if (i == 0) {
+				categoryName = categoryName.replace("(", "");
+			}
+			if (i == traitArr.length - 1) {
+				traitScore.replace(")", "");
+			}
+			traitObj[categoryName] = [traitName, traitScore];
+		}
+
+		return traitObj;
+	};
+
 	const makeTraitRows = (traitString) => {
 		const traitArr = traitString.split("-");
 		const traitCount = Math.round(traitArr.length / 3);
