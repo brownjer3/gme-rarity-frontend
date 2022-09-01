@@ -19,10 +19,9 @@ const MetadataWarning = (props) => {
 			{showWarning && (
 				<div className="border rounded border-warning ps-2">
 					<small>
-						Due to some data inconsistencies in this collection, we decided to
-						filter out "strange" traits that appear in the data but are not
-						visible in the NFT. If you are the creator of this collection,
-						please{" "}
+						Due to some data inconsistencies in this collection, the rartiy
+						rankings may be slightly inaccurate. If you are the creator of this
+						collection, please{" "}
 						<Link
 							className="text-warning fw-bold text-decoration-none"
 							to="/contact"

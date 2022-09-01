@@ -13,6 +13,7 @@ import { Loading } from "../Components/Components";
 import CollectionBanner from "../Components/CollectionBanner";
 import CollectionSidebarContainer from "./CollectionSidebarContainer";
 import { Container } from "react-bootstrap";
+import { metadataFlagList } from "../Components/metadataFlagList";
 
 export default function CollectionContainer() {
 	const { collectionSlug } = useParams();
@@ -35,6 +36,7 @@ export default function CollectionContainer() {
 	const [pageNum, setPageNum] = useState(0);
 	const [query, setQuery] = useState("");
 	const [hasMore, setHasMore] = useState(false);
+	const [metadataFlag, setMetaDataFlag] = useState(false);
 
 	const [loadRef, setLoadRef] = useState(null);
 	const observer = useRef(
@@ -52,8 +54,16 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		checkMetadataFlag();
 		getTraitList();
 	}, []);
+
+	const checkMetadataFlag = () => {
+		// console.log(metadataFlagList);
+		if (metadataFlagList.includes(collection.id)) {
+			setMetaDataFlag(true);
+		}
+	};
 
 	const getTraitList = async () => {
 		const url = `https://gmeraritytool.herokuapp.com/Collection=${collection.id}`;
@@ -224,9 +234,7 @@ export default function CollectionContainer() {
 				<Col xs={12} lg={10} className="collection-main-view h-100 pb-4">
 					<CollectionBanner collection={collection} />
 					<br />
-					{collection.metadataFlag && (
-						<MetadataWarning name={collection.name} />
-					)}
+					{metadataFlag && <MetadataWarning name={collection.name} />}
 					<Row className="my-2 justify-content-space-between">
 						<Col className="text-muted text-start">
 							<div>{roundNumbers(filteredItemsLength)} items</div>
