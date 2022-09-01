@@ -29,12 +29,12 @@ class CollectionBanner extends PureComponent {
 					</div>
 					<div>floor price</div>
 				</ListGroup.Item>
-				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
+				{/* <ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
 					<div className="lead fw-bolder">
 						<EthData weiVal={totalVolume} round />
 					</div>
 					<div>24hr volume</div>
-				</ListGroup.Item>
+				</ListGroup.Item> */}
 				<ListGroup.Item className="bg-transparent text-white border collection-stats h-100">
 					<div className="lead fw-bolder">
 						<EthData weiVal={totalVolume} round />
