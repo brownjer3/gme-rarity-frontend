@@ -67,11 +67,11 @@ class CollectionBanner extends PureComponent {
 				</div>
 				<Card.Body style={{ textAlign: "left" }}>
 					<Row>
-						<Col xs={12} lg={7}>
+						<Col xs={12} lg={8}>
 							<Card.Title className="display-6">{name}</Card.Title>
 							<Card.Text>{description}</Card.Text>
 						</Col>
-						<Col lg={5} className="d-flex flex-column align-items-end">
+						<Col lg={4} className="d-flex flex-column align-items-end">
 							<Row className="text-center d-none d-lg-block mb-auto">
 								{this.createStats(total_items, floor_price, total_volume)}
 							</Row>
