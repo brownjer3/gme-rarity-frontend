@@ -59,8 +59,7 @@ export default function CollectionContainer() {
 	}, []);
 
 	const checkMetadataFlag = () => {
-		// console.log(metadataFlagList);
-		if (metadataFlagList.includes(collection.id)) {
+		if (!!metadataFlagList[collection.id]) {
 			setMetaDataFlag(true);
 		}
 	};
@@ -72,6 +71,16 @@ export default function CollectionContainer() {
 
 		const traitObj = handleTraitData(data);
 		setTraitList(traitObj);
+	};
+
+	const filterOutBadMetadata = (traitObj) => {
+		const goodCategories = metadataFlagList[collection.id];
+		let filteredTraitObj = {};
+		for (let i = 0; i < goodCategories.length; i++) {
+			const categoryName = goodCategories[i];
+			filteredTraitObj[categoryName] = traitObj[categoryName];
+		}
+		return filteredTraitObj;
 	};
 
 	const handleTraitData = (dataArr) => {
@@ -96,8 +105,12 @@ export default function CollectionContainer() {
 				traitObj[categoryName][traitName] = traitCount;
 			}
 		}
-
-		return traitObj;
+		console.log(traitObj);
+		if (!!metadataFlag) {
+			return filterOutBadMetadata(traitObj);
+		} else {
+			return traitObj;
+		}
 	};
 
 	useEffect(() => {
