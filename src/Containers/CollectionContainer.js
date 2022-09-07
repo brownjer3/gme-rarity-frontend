@@ -160,6 +160,9 @@ export default function CollectionContainer() {
 
 		if (traitsQuery.length > 0) {
 			setFilteredItemsLength(data[0]["count"]);
+			nfts.length + parseInt(data[0]["count"]) >= parseInt(filteredItemsLength)
+				? setHasMore(false)
+				: setHasMore(true);
 			data.shift();
 		} else {
 			data.length < 25 ? setHasMore(false) : setHasMore(true);
