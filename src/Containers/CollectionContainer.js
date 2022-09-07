@@ -100,7 +100,7 @@ export default function CollectionContainer() {
 				traitObj[categoryName][traitName] = traitCount;
 			}
 		}
-		console.log(traitObj);
+
 		if (!!metadataFlag) {
 			return filterOutBadMetadata(traitObj);
 		} else {

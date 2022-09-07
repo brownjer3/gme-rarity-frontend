@@ -26,7 +26,7 @@ export default function NftModal(props) {
 				categoryName = categoryName.replace("(", "");
 			}
 			if (i == traitArr.length - 1) {
-				traitScore.replace(")", "");
+				traitScore = traitScore.replace(")", "");
 			}
 			traitObj[categoryName] = [traitName, traitScore];
 		}
@@ -35,15 +35,7 @@ export default function NftModal(props) {
 	};
 
 	const makeTraitRows = (traitString) => {
-		const traitArr = traitString.split("-");
-		const traitCount = Math.round(traitArr.length / 3);
-		let traitObj = {};
-		for (let i = 0; i < traitCount; i++) {
-			let trait = traitArr[i * 3];
-			let category = traitArr[i * 3 + 1];
-			let score = roundDecimals(traitArr[i * 3 + 2]);
-			traitObj[category] = [trait, score];
-		}
+		const traitObj = handleTraitString(traitString);
 
 		return Object.keys(traitObj).map((category, index) => {
 			return (
@@ -54,16 +46,6 @@ export default function NftModal(props) {
 				</tr>
 			);
 		});
-
-		// return Object.keys(traits).map((category, index) => {
-		// 	return (
-		// 		<tr key={index.toString()}>
-		// 			<td>{category}</td>
-		// 			<td>{traits[category]}</td>
-		// 			<td className="text-center">21</td>
-		// 		</tr>
-		// 	);
-		// });
 	};
 
 	const renderModal = () => {
