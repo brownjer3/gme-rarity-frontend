@@ -11,6 +11,7 @@ import ContactContainer from "./Containers/ContactContainer";
 import AllCollectionsContainer from "./Containers/AllCollectionsContainer";
 import CollectionContainer from "./Containers/CollectionContainer";
 import NftModalContainer from "./Containers/NftModalContainer";
+import HowItWorks from "./Containers/HowItWorks";
 import { NotFound, LoadingScreen, Stars } from "./Components/Components";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
 					>
 						<Route path=":nftId" element={<NftModalContainer />} />
 					</Route>
+					<Route path="how-it-works" element={<HowItWorks />} />
 					<Route path="contact" element={<ContactContainer />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>

@@ -79,7 +79,9 @@ class TopNav extends Component {
 							<NavLink to="/collections" className="nav-link">
 								All Collections
 							</NavLink>
-
+							<NavLink to="/how-it-works" className="nav-link">
+								How It Works
+							</NavLink>
 							<NavLink to="/contact" className="nav-link">
 								Get in Touch
 							</NavLink>
