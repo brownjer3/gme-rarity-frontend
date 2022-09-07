@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
 export const transformImageUrl = (url, type) => {
-	if (url.startsWith("public/")) {
+	if (url && url.startsWith("public/")) {
 		url = url.replace("public/", "https://static.gstop-content.com/");
 	}
 
