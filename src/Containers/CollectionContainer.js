@@ -113,16 +113,17 @@ export default function CollectionContainer() {
 	}, [pageNum, traitsQuery]);
 
 	useEffect(() => {
-		if (traitsQuery.length == 0) {
+		if (traitsQuery.length === 0) {
 			setFilteredItemsLength(collection.total_items);
-		} else {
-			let count = 0;
-			traitsQuery.forEach((query) => {
-				let num = parseInt(collection.traits[query.category][query.trait]);
-				count += num;
-			});
-			setFilteredItemsLength(count);
 		}
+		// else {
+		// 	let count = 0;
+		// 	traitsQuery.forEach((query) => {
+		// 		let num = parseInt(collection.traits[query.category][query.trait]);
+		// 		count += num;
+		// 	});
+		// 	setFilteredItemsLength(count);
+		// }
 	}, [traitsQuery]);
 
 	useEffect(() => {
@@ -137,29 +138,35 @@ export default function CollectionContainer() {
 	}, [loadRef]);
 
 	const loadMore = async () => {
-		// let url = `http://localhost:3001/collections/${collection.id}/nfts?`;
+		// https://gmeraritytool.herokuapp.com/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Fedora
+
 		let url = `https://gmeraritytool.herokuapp.com/`;
 
-		// if (traitsQuery.length > 0) {
-		// 	traitsQuery.forEach((combo) => {
-		// 		let category = combo["category"];
-		// 		let trait = combo["trait"];
-		// 		url += `metadataJson.properties.${category}=${trait}&`;
-		// 	});
-		// }
-
-		// url += `_page=${pageNum}&_limit=${pageLimit}`;
-		url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
-
-		url += `Nft/CollectionID=${collection.id}`;
+		if (traitsQuery.length > 0) {
+			url += `nfts/Collection=${collection.id}/Attributes=`;
+			traitsQuery.forEach((query) => {
+				let category = query["category"];
+				let trait = query["trait"];
+				url += `${trait}--`;
+			});
+			url = url.slice(0, -2);
+		} else {
+			url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
+			url += `Nft/CollectionID=${collection.id}`;
+		}
 
 		const res = await fetch(url);
 		const data = await res.json();
 
-		data.length < 25 ? setHasMore(false) : setHasMore(true);
+		if (traitsQuery.length > 0) {
+			setFilteredItemsLength(data[0]["count"]);
+			data.shift();
+		} else {
+			data.length < 25 ? setHasMore(false) : setHasMore(true);
+		}
 
 		let all;
-		if (pageNum == 0) {
+		if (pageNum === 0) {
 			all = new Set([...data]);
 		} else {
 			all = new Set([...nfts, ...data]);
@@ -187,7 +194,7 @@ export default function CollectionContainer() {
 				return [...currentQuery, { trait: name, category: category }];
 			});
 		}
-		setPageNum(1);
+		setPageNum(0);
 	};
 
 	const handleTraitDeselect = (e) => {

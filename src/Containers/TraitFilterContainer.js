@@ -70,7 +70,7 @@ class TraitFilterContainer extends Component {
 
 	render() {
 		return (
-			<div className="">
+			<div>
 				<Image
 					fluid
 					thumbnail
