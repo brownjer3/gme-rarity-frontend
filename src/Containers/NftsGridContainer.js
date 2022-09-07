@@ -1,7 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Link, useLocation } from "react-router-dom";
-import { transformUrl } from "../Components/DataFormats";
+import { transformImageUrl } from "../Components/DataFormats";
 import NftBasicDetailsCard from "../Components/NftBasicDetailsCard";
 
 export default function NftsGridContainer(props) {
@@ -35,7 +35,7 @@ export default function NftsGridContainer(props) {
 					>
 						<NftBasicDetailsCard
 							index={index}
-							image={nft.image_url}
+							image={transformImageUrl(nft.image_url, "nft")}
 							name={nft.name}
 							rarityRank={nft.rank}
 						/>

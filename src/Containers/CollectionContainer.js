@@ -8,7 +8,7 @@ import TraitBadges from "../Components/TraitBadges";
 import MetadataWarning from "../Components/MetadataWarning";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { transformUrl, roundNumbers } from "../Components/DataFormats";
+import { transformImageUrl, roundNumbers } from "../Components/DataFormats";
 import { Loading } from "../Components/Components";
 import CollectionBanner from "../Components/CollectionBanner";
 import CollectionSidebarContainer from "./CollectionSidebarContainer";
@@ -220,7 +220,7 @@ export default function CollectionContainer() {
 					<TraitFilterContainer
 						name={collection.name}
 						traits={traitList}
-						image={transformUrl(collection.avatar_url)}
+						image={transformImageUrl(collection.avatar_url, "avatar")}
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
@@ -231,7 +231,7 @@ export default function CollectionContainer() {
 					<CollectionSidebarContainer
 						name={collection.name}
 						traits={traitList}
-						image={transformUrl(collection.avatar_url)}
+						image={transformImageUrl(collection.avatar_url, "avatar")}
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}

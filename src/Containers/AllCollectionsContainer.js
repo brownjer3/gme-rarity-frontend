@@ -11,6 +11,7 @@ import {
 	faCaretDown,
 	faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
+import { transformImageUrl } from "../Components/DataFormats";
 
 class AllCollectionsContainer extends Component {
 	state = {
@@ -170,7 +171,7 @@ class AllCollectionsContainer extends Component {
 						// monthVolume={collection.month_volume}
 						// dayVolume="TBD"
 						collectionSize={collection.total_items}
-						image={collection.avatar_url}
+						image={transformImageUrl(collection.avatar_url, "avatar")}
 						floorPrice={collection.floor_price}
 					/>
 				);

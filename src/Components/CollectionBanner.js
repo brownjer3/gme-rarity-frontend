@@ -8,7 +8,7 @@ import {
 	EthData,
 	roundNumbers,
 	makeCollectionGmeLink,
-	roundDecimals,
+	transformImageUrl,
 } from "./DataFormats";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -61,7 +61,7 @@ class CollectionBanner extends PureComponent {
 					<Card.Img
 						className="position-relative top-50 start-50 translate-middle"
 						variant="top"
-						src={banner_image_url}
+						src={transformImageUrl(banner_image_url, "banner")}
 						alt={`GameStop NFT Collection Banner - ${name}`}
 					/>
 				</div>

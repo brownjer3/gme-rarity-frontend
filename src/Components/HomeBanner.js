@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 class HomeBanner extends Component {
 	render() {
 		return (
-			<div className="p-5 m-3 mt-0">
+			<div className="p-5 m-3 mt-0 ">
 				<Row className="align-items-center">
 					<Col className="main-logo" sm={12} md={6}>
 						<div className="ratio ratio-4x3">

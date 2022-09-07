@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import { roundDecimals } from "./DataFormats";
+import { roundDecimals, transformImageUrl } from "./DataFormats";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Loading } from "./Components";
@@ -115,7 +115,9 @@ export default function NftModal(props) {
 						<Row>
 							<Col xs={12} lg={6}>
 								<Card>
-									<Card.Img src={props.nft.image_url} />
+									<Card.Img
+										src={transformImageUrl(props.nft.image_url, "nft")}
+									/>
 								</Card>
 							</Col>
 							<Col xs={12} lg={6}>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import { transformUrl, EthData } from "../Components/DataFormats";
+import { transformImageUrl, EthData } from "../Components/DataFormats";
 
 class TrendingCollectionCard extends Component {
 	render() {
@@ -20,7 +20,7 @@ class TrendingCollectionCard extends Component {
 						<Card.Img
 							className="trending-card-img-top"
 							variant="top"
-							src={transformUrl(avatar_url)}
+							src={transformImageUrl(avatar_url, "avatar")}
 							alt={`Trending GameStop NFT Collection - ${name}`}
 						/>
 						<Card.Body>
