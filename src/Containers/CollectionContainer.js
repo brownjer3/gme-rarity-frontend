@@ -36,7 +36,9 @@ export default function CollectionContainer() {
 	const [pageNum, setPageNum] = useState(0);
 	const [query, setQuery] = useState("");
 	const [hasMore, setHasMore] = useState(false);
-	const [metadataFlag, setMetaDataFlag] = useState(false);
+	const [metadataFlag, setMetaDataFlag] = useState(
+		!!metadataFlagList[collection.id]
+	);
 
 	const [loadRef, setLoadRef] = useState(null);
 	const observer = useRef(
@@ -54,15 +56,8 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		checkMetadataFlag();
 		getTraitList();
 	}, []);
-
-	const checkMetadataFlag = () => {
-		if (!!metadataFlagList[collection.id]) {
-			setMetaDataFlag(true);
-		}
-	};
 
 	const getTraitList = async () => {
 		const url = `https://gmeraritytool.herokuapp.com/Collection=${collection.id}`;
