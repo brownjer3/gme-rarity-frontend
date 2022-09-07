@@ -253,14 +253,6 @@ export default function CollectionContainer() {
 					<CollectionBanner collection={collection} />
 					<br />
 					{metadataFlag && <MetadataWarning name={collection.name} />}
-					<Row className="my-2 justify-content-space-between">
-						<Col className="text-muted text-start">
-							<div>{roundNumbers(filteredItemsLength)} items</div>
-						</Col>
-						<Col className="text-end">
-							<SortDropdown />
-						</Col>
-					</Row>
 					<Row>
 						<div className="d-flex flex-wrap justify-content-center">
 							<TraitBadges
@@ -268,6 +260,14 @@ export default function CollectionContainer() {
 								selectedTraits={traitsQuery}
 							/>
 						</div>
+					</Row>
+					<Row className="my-2 justify-content-space-between">
+						<Col className="text-muted text-start">
+							<div>{roundNumbers(filteredItemsLength)} items</div>
+						</Col>
+						<Col className="text-end">
+							<SortDropdown />
+						</Col>
 					</Row>
 					<NftsGridContainer nfts={nfts} collection={collection} />
 					{renderLoadMoreSpinner()}
