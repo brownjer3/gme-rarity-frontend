@@ -160,13 +160,10 @@ export default function CollectionContainer() {
 
 		if (traitsQuery.length > 0) {
 			setFilteredItemsLength(data[0]["count"]);
-			nfts.length + parseInt(data[0]["count"]) >= parseInt(filteredItemsLength)
-				? setHasMore(false)
-				: setHasMore(true);
 			data.shift();
-		} else {
-			data.length < 25 ? setHasMore(false) : setHasMore(true);
 		}
+
+		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
 		let all;
 		if (pageNum === 0) {
@@ -263,7 +260,10 @@ export default function CollectionContainer() {
 					</Row>
 					<Row className="my-2 justify-content-space-between">
 						<Col className="text-muted text-start">
-							<div>{roundNumbers(filteredItemsLength)} items</div>
+							<div>
+								{roundNumbers(filteredItemsLength)}{" "}
+								{parseInt(filteredItemsLength) === 1 ? "item" : "items"}
+							</div>
 						</Col>
 						<Col className="text-end">
 							<SortDropdown />
