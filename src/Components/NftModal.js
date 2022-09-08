@@ -28,6 +28,7 @@ export default function NftModal(props) {
 			if (i == traitArr.length - 1) {
 				traitScore = traitScore.replace(")", "");
 			}
+			traitScore = roundDecimals(traitScore);
 			traitObj[categoryName] = [traitName, traitScore];
 		}
 
