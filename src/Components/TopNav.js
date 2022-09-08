@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ListGroup from "react-bootstrap/ListGroup";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -33,13 +33,18 @@ class TopNav extends Component {
 				})
 				.slice(0, 5)
 				.map((collection) => (
-					<ListGroup.Item
-						action
-						href={`/collections/${collection.slug}`}
-						className="bg-dark text-white border-secondary"
+					<Link
+						className="text-white text-decoration-none"
+						to={`/collections/${collection.slug}`}
 					>
-						{collection.name}
-					</ListGroup.Item>
+						<ListGroup.Item
+							action
+							// href={`/collections/${collection.slug}`}
+							className="bg-dark text-white border-secondary"
+						>
+							{collection.name}
+						</ListGroup.Item>
+					</Link>
 				));
 		}
 	};
