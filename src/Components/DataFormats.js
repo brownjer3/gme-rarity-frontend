@@ -2,17 +2,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 
 export const transformImageUrl = (url, type) => {
+	let link = url;
 	if (url && url.startsWith("public/")) {
-		url = url.replace("public/", "https://static.gstop-content.com/");
+		link = url.replace("public/", "https://static.gstop-content.com/");
 	}
 
-	let link = "";
 	if (type === "banner") {
 		link = url + "?img-width=expanded&img-format=WebP";
 	} else if (type === "avatar") {
 		link = url + "?img-width=large2&img-format=WebP";
 	} else if (type === "nft") {
-		link = url + "?img-width=550&image-format=WebP";
+		// link = url + "?img-width=550&image-format=WebP";
+		link = url + "?image-format=WebP";
 	}
 	return link;
 };
