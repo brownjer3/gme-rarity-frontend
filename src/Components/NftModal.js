@@ -35,6 +35,38 @@ export default function NftModal(props) {
 		return traitObj;
 	};
 
+	const createTraitsTable = (traitString) => {
+		if (traitString.length === 0) {
+			return (
+				<p>
+					<span className="fw-bold">Total Rarity Score: </span>
+					{roundDecimals(props.nft.total_rarity_score)}
+				</p>
+			);
+		} else {
+			return (
+				<Table hover variant="dark" size="sm">
+					<thead>
+						<tr>
+							<th style={{ width: "35%" }}>Type</th>
+							<th style={{ width: "35%" }}>Value</th>
+							<th style={{ width: "30%" }}>Rarity Score</th>
+						</tr>
+					</thead>
+					<tbody>
+						{makeTraitRows(traitString)}
+						<tr className="fw-bold text-danger">
+							<td colSpan={2}>Total Rarity Score</td>
+							<td className="text-center">
+								{roundDecimals(props.nft.total_rarity_score)}
+							</td>
+						</tr>
+					</tbody>
+				</Table>
+			);
+		}
+	};
+
 	const makeTraitRows = (traitString) => {
 		const traitObj = handleTraitString(traitString);
 
@@ -132,24 +164,7 @@ export default function NftModal(props) {
 									<span className="fw-bold">Rarity Rank:</span> {props.nft.rank}{" "}
 									out of {props.collectionSupply}
 								</p>
-								<Table hover variant="dark" size="sm">
-									<thead>
-										<tr>
-											<th style={{ width: "35%" }}>Type</th>
-											<th style={{ width: "35%" }}>Value</th>
-											<th style={{ width: "30%" }}>Rarity Score</th>
-										</tr>
-									</thead>
-									<tbody>
-										{makeTraitRows(props.nft.attributes)}
-										<tr className="fw-bold text-danger">
-											<td colSpan={2}>Total Rarity Score</td>
-											<td className="text-center">
-												{roundDecimals(props.nft.total_rarity_score)}
-											</td>
-										</tr>
-									</tbody>
-								</Table>
+								{createTraitsTable(props.nft.attributes)}
 							</Col>
 						</Row>
 					</Modal.Body>
