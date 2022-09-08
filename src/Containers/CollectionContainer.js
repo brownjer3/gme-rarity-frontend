@@ -46,7 +46,6 @@ export default function CollectionContainer() {
 			(entries) => {
 				const first = entries[0];
 				if (first.isIntersecting) {
-					console.log("intersecting!");
 					setPageNum((current) => current + 1);
 				}
 			},
@@ -58,6 +57,21 @@ export default function CollectionContainer() {
 		window.scrollTo(0, 0);
 		getTraitList();
 	}, []);
+
+	useEffect(() => {
+		setNfts([]);
+		setPageNum(0);
+		setTraitList({});
+		setTraitsQuery([]);
+		setFilteredItemsLength(collection.items);
+		setQuery("");
+		setHasMore(false);
+		setMetaDataFlag(!!metadataFlagList[collection.id]);
+	}, [collection]);
+
+	useEffect(() => {
+		getTraitList();
+	}, [traitList]);
 
 	const getTraitList = async () => {
 		const url = `https://gmeraritytool.herokuapp.com/Collection=${collection.id}`;

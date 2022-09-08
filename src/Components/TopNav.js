@@ -41,6 +41,7 @@ class TopNav extends Component {
 					<Link
 						className="text-white text-decoration-none"
 						to={`/collections/${collection.slug}`}
+						key={collection.id}
 					>
 						<ListGroup.Item
 							action
