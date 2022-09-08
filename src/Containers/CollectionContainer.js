@@ -74,6 +74,80 @@ export default function CollectionContainer() {
 		getTraitList();
 	}, [traitList]);
 
+	useEffect(() => {
+		loadMore();
+	}, [pageNum, traitsQuery]);
+
+	useEffect(() => {
+		const mainView = document.getElementById("main-collection-view");
+		mainView.scroll({
+			top: 0,
+			behavior: "smooth",
+		});
+
+		if (traitsQuery.length === 0) {
+			setFilteredItemsLength(collection.total_items);
+		}
+		// else {
+		// 	let count = 0;
+		// 	traitsQuery.forEach((query) => {
+		// 		let num = parseInt(collection.traits[query.category][query.trait]);
+		// 		count += num;
+		// 	});
+		// 	setFilteredItemsLength(count);
+		// }
+	}, [traitsQuery]);
+
+	useEffect(() => {
+		const loader = loadRef;
+		const currentObserver = observer.current;
+		if (loader) currentObserver.observe(loader);
+		return () => {
+			if (loader) {
+				currentObserver.unobserve(loader);
+			}
+		};
+	}, [loadRef]);
+
+	const loadMore = async () => {
+		// https://gmeraritytool.herokuapp.com/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Fedora
+
+		let url = `https://gmeraritytool.herokuapp.com/page=${
+			pageNum * pageLimit
+		}/Limit=${pageLimit}/`;
+
+		if (traitsQuery.length > 0) {
+			url += `nfts/Collection=${collection.id}/Attributes=`;
+			traitsQuery.forEach((query) => {
+				let category = query["category"];
+				let trait = query["trait"];
+				url += `${trait}-`;
+			});
+			url = url.slice(0, -1);
+		} else {
+			// url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
+			url += `Nft/CollectionID=${collection.id}`;
+		}
+
+		const res = await fetch(url);
+		const data = await res.json();
+
+		if (traitsQuery.length > 0) {
+			setFilteredItemsLength(data[0]["count"]);
+			data.shift();
+		}
+
+		data.length < 25 ? setHasMore(false) : setHasMore(true);
+
+		let all;
+		if (pageNum === 0) {
+			all = new Set([...data]);
+		} else {
+			all = new Set([...nfts, ...data]);
+		}
+		setNfts([...all]);
+	};
+
 	const getTraitList = async () => {
 		const url = `https://gmeraritytool.herokuapp.com/Collection=${collection.id}`;
 		const res = await fetch(url);
@@ -121,78 +195,6 @@ export default function CollectionContainer() {
 		} else {
 			return traitObj;
 		}
-	};
-
-	useEffect(() => {
-		loadMore();
-	}, [pageNum, traitsQuery]);
-
-	useEffect(() => {
-		const mainView = document.getElementById("main-collection-view");
-		mainView.scroll({
-			top: 0,
-			behavior: "smooth",
-		});
-
-		if (traitsQuery.length === 0) {
-			setFilteredItemsLength(collection.total_items);
-		}
-		// else {
-		// 	let count = 0;
-		// 	traitsQuery.forEach((query) => {
-		// 		let num = parseInt(collection.traits[query.category][query.trait]);
-		// 		count += num;
-		// 	});
-		// 	setFilteredItemsLength(count);
-		// }
-	}, [traitsQuery]);
-
-	useEffect(() => {
-		const loader = loadRef;
-		const currentObserver = observer.current;
-		if (loader) currentObserver.observe(loader);
-		return () => {
-			if (loader) {
-				currentObserver.unobserve(loader);
-			}
-		};
-	}, [loadRef]);
-
-	const loadMore = async () => {
-		// https://gmeraritytool.herokuapp.com/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Fedora
-
-		let url = `https://gmeraritytool.herokuapp.com/`;
-
-		if (traitsQuery.length > 0) {
-			url += `nfts/Collection=${collection.id}/Attributes=`;
-			traitsQuery.forEach((query) => {
-				let category = query["category"];
-				let trait = query["trait"];
-				url += `${trait}--`;
-			});
-			url = url.slice(0, -2);
-		} else {
-			url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
-			url += `Nft/CollectionID=${collection.id}`;
-		}
-
-		const res = await fetch(url);
-		const data = await res.json();
-
-		if (traitsQuery.length > 0) {
-			setFilteredItemsLength(data[0]["count"]);
-			data.shift();
-		}
-
-		data.length < 25 ? setHasMore(false) : setHasMore(true);
-
-		let all;
-		if (pageNum === 0) {
-			all = new Set([...data]);
-		} else {
-			all = new Set([...nfts, ...data]);
-		}
-		setNfts([...all]);
 	};
 
 	const handleSearch = (e) => {
