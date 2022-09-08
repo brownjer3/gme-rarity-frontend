@@ -15,7 +15,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 class CollectionBanner extends PureComponent {
 	truncateDescription = (desc) => {
-		let truncated = desc;
+		let truncated = desc || "";
 		if (truncated.length > 400) {
 			truncated = truncated.slice(0, 400) + "...";
 		}
