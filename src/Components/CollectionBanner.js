@@ -14,6 +14,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 class CollectionBanner extends PureComponent {
+	truncateDescription = (desc) => {
+		let truncated = desc;
+		if (truncated.length > 400) {
+			truncated = truncated.slice(0, 400) + "...";
+		}
+		return truncated;
+	};
 	createStats = (itemCount, floorPrice, totalVolume) => {
 		return (
 			<ListGroup horizontal>
@@ -69,7 +76,7 @@ class CollectionBanner extends PureComponent {
 					<Row>
 						<Col xs={12} lg={8}>
 							<Card.Title className="display-6">{name}</Card.Title>
-							<Card.Text>{description}</Card.Text>
+							<Card.Text>{this.truncateDescription(description)}</Card.Text>
 						</Col>
 						<Col lg={4} className="d-flex flex-column align-items-end">
 							<Row className="text-center d-none d-lg-block mb-auto">

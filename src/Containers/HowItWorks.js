@@ -43,6 +43,7 @@ class HowItWorks extends Component {
 					seemingly incorrect attribute data, like{" "}
 					<a
 						className="fw-bold text-decoration-none text-white"
+						target="_blank"
 						href="https://nft.gamestop.com/token/0x1d006a27bd82e10f9194d30158d91201e9930420/0x6185b585d72ed81b6ed733dc209ae276526186b77b3ff4c7ed72bb90121c4cc8"
 					>
 						this Metaboy
