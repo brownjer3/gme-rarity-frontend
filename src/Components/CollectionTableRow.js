@@ -25,7 +25,9 @@ class CollectionTableRow extends Component {
 									alt={`GameStop NFT Collection Avatar - ${this.props.name}`}
 								/>
 							</Col>
-							<Col className="pt-2 text-wrap">{this.props.name}</Col>
+							<Col className="align-self-center text-wrap">
+								{this.props.name}
+							</Col>
 						</Row>
 					</Link>
 				</td>
