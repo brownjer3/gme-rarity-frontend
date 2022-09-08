@@ -10,17 +10,18 @@ class HowItWorks extends Component {
 				<div className="how-it-works-section">
 					<SectionHeader name="🧮 Attribute Rarity Scoring" />
 					<p>
-						To find out how rare an NFT is, you have to start with the
+						To find the rarity of an NFT, you have to start with the
 						collection's traits. Each trait is given a 'rarity score' based on
-						how many NFTs in the collection have that trait and the total
-						collection supply.
+						how many NFTs in the collection have that same trait (including
+						multiple editions) and their proportion of the total collection
+						supply.
 					</p>
 					<p>
 						To remain un-biased, we have not taken any liberties to give a
-						greater weight to certain traits over others, even if they seem like
-						they
+						greater weight to certain traits/categories over others, even if
+						they seem like they
 						<em> should </em> be rarer. If you're affiliated with a GameStop NFT
-						collection and would like to discuss custom trait scoring, please{" "}
+						collection and would like to discuss custom rarity scoring, please{" "}
 						<Link
 							className="fw-bold text-decoration-none text-white"
 							to="/contact"
@@ -34,9 +35,11 @@ class HowItWorks extends Component {
 					<SectionHeader name="📈 NFT Rarity Ranking" />
 					<p>
 						Once a rarity score has been calculated for each trait in a
-						collection, a 'total rarity score' is given to each NFT. NFTs are
-						then ranked within their collection based on that total rarity
-						score.
+						collection, a 'total rarity score' is given to each NFT by taking
+						the sum of their trait's rarity scores. NFTs are then ranked within
+						their collection based on that total rarity score. NFTs with the
+						same exact total rarity score (this it tyically only the case with
+						1/1's) are marked as a tie.
 					</p>
 				</div>
 				<hr className="my-4" />
@@ -44,7 +47,7 @@ class HowItWorks extends Component {
 					<SectionHeader name="🔎 Metadata Inconsistencies" />
 					<p>
 						There are some collections in the GameStop NFT Marketplace that have
-						seemingly incorrect attribute data, like{" "}
+						strange attribute data, like{" "}
 						<a
 							className="fw-bold text-decoration-none text-white"
 							target="_blank"
@@ -53,12 +56,14 @@ class HowItWorks extends Component {
 							this Metaboy
 						</a>{" "}
 						for example. Although this only affects a handful of NFTs, these
-						collections may display inaccurate rarity rankings as a result. We
-						did our best to create an optimal user experience while still
-						maintaining an un-biased rarity ranking system. In other words, we
-						didn't make any assumptions as to what might have been
-						unintentional. These collections have been marked with a yellow
-						'Metadata Note' on their respective page.
+						collections may display inaccurate rarity rankings as a result. The
+						goal was to create an optimal user experience while still
+						maintaining an un-biased rarity ranking system. In other words, no
+						assumptions as to the intentions of the creator(s) when it comes to
+						rarity ranking, but we did hide some of the 'wonky'
+						categories/traits from the filtering options on those collection
+						pages to keep things clean. These collections have been marked with
+						a yellow 'Metadata Note' on their respective page.
 					</p>
 					<p>
 						If you are affiliated with one of these collections, we'd love to{" "}
