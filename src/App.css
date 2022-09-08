@@ -174,3 +174,8 @@ video::-internal-media-controls-overlay-cast-button {
 .collection-column {
 	width: 35%;
 }
+
+.how-it-works-section {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
