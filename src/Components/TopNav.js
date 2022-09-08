@@ -41,10 +41,10 @@ class TopNav extends Component {
 					<Link
 						className="text-white text-decoration-none"
 						to={`/collections/${collection.slug}`}
-						key={collection.id}
 					>
 						<ListGroup.Item
 							action
+							key={collection.id}
 							onClick={this.handleSelect}
 							className="bg-dark text-white border-secondary"
 						>

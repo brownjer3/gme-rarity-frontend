@@ -29,7 +29,7 @@ export default function CollectionContainer() {
 	const [traitList, setTraitList] = useState({});
 	const [traitsQuery, setTraitsQuery] = useState([]);
 	const [filteredItemsLength, setFilteredItemsLength] = useState(
-		collection.items
+		collection.total_items
 	);
 
 	const [nfts, setNfts] = useState([]);
@@ -59,14 +59,15 @@ export default function CollectionContainer() {
 	}, []);
 
 	useEffect(() => {
-		setNfts([]);
-		setPageNum(0);
-		setTraitList({});
-		setTraitsQuery([]);
-		setFilteredItemsLength(collection.items);
-		setQuery("");
-		setHasMore(false);
-		setMetaDataFlag(!!metadataFlagList[collection.id]);
+		console.log("COLLECTION CHANGED");
+		// setNfts([]);
+		// setPageNum(0);
+		// setTraitList({});
+		// setTraitsQuery([]);
+		// // setFilteredItemsLength(collection.items);
+		// setQuery("");
+		// setHasMore(false);
+		// setMetaDataFlag(!!metadataFlagList[collection.id]);
 	}, [collection]);
 
 	useEffect(() => {
@@ -127,6 +128,12 @@ export default function CollectionContainer() {
 	}, [pageNum, traitsQuery]);
 
 	useEffect(() => {
+		const mainView = document.getElementById("main-collection-view");
+		mainView.scroll({
+			top: 0,
+			behavior: "smooth",
+		});
+
 		if (traitsQuery.length === 0) {
 			setFilteredItemsLength(collection.total_items);
 		}
@@ -209,6 +216,7 @@ export default function CollectionContainer() {
 			});
 		}
 		setPageNum(0);
+		window.scrollTo(0, 0);
 	};
 
 	const handleTraitDeselect = (e) => {
@@ -260,7 +268,12 @@ export default function CollectionContainer() {
 					/>
 				</div>
 
-				<Col xs={12} lg={10} className="collection-main-view h-100 pb-4">
+				<Col
+					xs={12}
+					lg={10}
+					className="collection-main-view h-100 pb-4"
+					id="main-collection-view"
+				>
 					<CollectionBanner collection={collection} />
 					<br />
 					{metadataFlag && <MetadataWarning name={collection.name} />}
