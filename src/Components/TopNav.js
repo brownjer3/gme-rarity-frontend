@@ -19,6 +19,11 @@ class TopNav extends Component {
 		this.setState({ query: e.target.value });
 	};
 
+	handleSelect = (e) => {
+		// e.target.reset();
+		this.setState({ query: "" });
+	};
+
 	handleSubmit = (e) => {
 		e.preventDefault();
 	};
@@ -39,7 +44,7 @@ class TopNav extends Component {
 					>
 						<ListGroup.Item
 							action
-							// href={`/collections/${collection.slug}`}
+							onClick={this.handleSelect}
 							className="bg-dark text-white border-secondary"
 						>
 							{collection.name}
@@ -102,6 +107,7 @@ class TopNav extends Component {
 								<Form.Control
 									onChange={this.onChange}
 									type="search"
+									value={this.state.query}
 									placeholder="Find a Collection"
 									aria-label="Search"
 									aria-describedby="basic-addon1"
