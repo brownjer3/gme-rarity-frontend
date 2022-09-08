@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class HowItWorks extends Component {
 	render() {
 		return (
-			<Container className="text-start">
+			<Container className="text-start my-4">
 				<SectionHeader name="🧮 Attribute Rarity Scoring" />
 				{/* Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait
 				Value] / [Total Number of Items in Collection]) The total Rarity Score

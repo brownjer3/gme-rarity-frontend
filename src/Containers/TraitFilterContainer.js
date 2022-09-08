@@ -7,6 +7,20 @@ import { faCaretDown, faSortUp } from "@fortawesome/free-solid-svg-icons";
 import Image from "react-bootstrap/Image";
 
 class TraitFilterContainer extends Component {
+	handleNoTraits = () => {
+		if (Object.keys(this.props.traits).length > 0) {
+			return (
+				<>
+					<br />
+					<h3>Traits</h3>
+					<ListGroup variant="flush" className="text-start">
+						{this.createTraitMenu(this.props.traits)}
+					</ListGroup>
+				</>
+			);
+		}
+	};
+
 	createTraits = (category, categoryName) => {
 		return Object.keys(category).map((trait, index) => {
 			return (
@@ -91,11 +105,7 @@ class TraitFilterContainer extends Component {
 						Search
 					</Button>
 				</Form>
-				<br />
-				<h3>Traits</h3>
-				<ListGroup variant="flush" className="text-start">
-					{this.createTraitMenu(this.props.traits)}
-				</ListGroup>
+				{this.handleNoTraits()}
 			</div>
 		);
 	}
