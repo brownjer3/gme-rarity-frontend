@@ -30,7 +30,12 @@ const Footer = () => {
 						</Row> */}
 						<Col className="text-start">
 							<p className="font-monospace fw-bold">
-								Made with 🚀 for the GameStop Community
+								Made with
+								<img
+									className="pb-1 mx-2"
+									src={process.env.PUBLIC_URL + "/images/rocket_1.ico"}
+								></img>
+								for the GameStop Community
 							</p>
 							<small className="font-monospace ">
 								<p>
