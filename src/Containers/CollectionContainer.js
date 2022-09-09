@@ -62,16 +62,6 @@ export default function CollectionContainer() {
 		getTraitList();
 	}, []);
 
-	// useEffect(() => {
-
-	// 	console.log("wtf");
-	// 	getTraitList();
-	// }, [collectionSlug]);
-
-	// useEffect(() => {
-	// 	getTraitList();
-	// }, [traitList]);
-
 	useEffect(() => {
 		loadMore();
 	}, [pageNum, traitsQuery]);
@@ -106,6 +96,24 @@ export default function CollectionContainer() {
 			}
 		};
 	}, [loadRef]);
+
+	// anytime search query changes -> set pageNum to 0
+	// store current query url in state variable
+
+	// useEffect(() => {
+	// 	searchForNfts();
+	// }, [query]);
+
+	// const searchForNfts = async () => {
+	// 	const url = `https://gmeraritytool.herokuapp.com/page=${
+	// 		pageNum * pageLimit
+	// 	}/Limit=${pageLimit}/Collection=${collection.id}/NamedNfts=${
+	// 		collection.id
+	// 	}`;
+
+	// 	const res = await fetch(url);
+	// 	const data = await res.json();
+	// };
 
 	const loadMore = async () => {
 		// https://gmeraritytool.herokuapp.com/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Fedora

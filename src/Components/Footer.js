@@ -23,7 +23,7 @@ const Footer = () => {
 	if (!match) {
 		return (
 			<Navbar bg="transparent" text="white" className="mt-auto">
-				<Container className="justify-content-center ">
+				<Container className="justify-content-between">
 					<Row className="w-100 align-items-center " xs={1} lg={2}>
 						{/* <Row className="w-100 py-4">
 							
