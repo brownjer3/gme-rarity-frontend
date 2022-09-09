@@ -180,6 +180,10 @@ video::-internal-media-controls-overlay-cast-button {
 	margin-bottom: 50px;
 }
 
+.how-it-works-content {
+	margin-top: 40px;
+}
+
 .nav-test {
 	display: block;
 	padding-right: 0.5rem;
@@ -198,9 +202,11 @@ video::-internal-media-controls-overlay-cast-button {
 }
 
 .nav-test:hover {
-	color: #9e86ff;
+	/* color: #9e86ff; */
+	color: #1982fc;
 }
 
 .nav-test.active {
-	color: #9e86ff;
+	/* color: #9e86ff; */
+	color: #1982fc;
 }

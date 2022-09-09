@@ -89,16 +89,16 @@ class TopNav extends Component {
 							style={{ maxHeight: "100px" }}
 							navbarScroll
 						>
-							<NavLink to="/collections" className="nav-test">
+							<NavLink to="/collections" className="nav-link">
 								All Collections
 							</NavLink>
-							<NavLink to="/how-it-works" className="nav-test">
+							<NavLink to="/how-it-works" className="nav-link">
 								How It Works
 							</NavLink>
 							<NavLink
 								to="/contact"
 								// className="nav-link text-white"
-								className="nav-test"
+								className="nav-link"
 							>
 								Get In Touch
 							</NavLink>
