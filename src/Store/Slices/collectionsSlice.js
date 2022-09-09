@@ -9,6 +9,7 @@ const COLLECTIONS_URL =
 const initialState = {
 	data: [],
 	loading: true,
+	activeCollection: {},
 	error: "",
 };
 
@@ -28,7 +29,14 @@ export const fetchCollections = createAsyncThunk(
 const collectionsSlice = createSlice({
 	name: "collections",
 	initialState: initialState,
-	reducers: {},
+	reducers: {
+		setActiveCollection(state, action) {
+			const collection = state.data.find(
+				(collection) => collection.slug === action.payload
+			);
+			state.activeCollection = collection;
+		},
+	},
 	extraReducers: (builder) => {
 		builder
 			.addCase(fetchCollections.pending, (state, action) => {
@@ -44,5 +52,7 @@ const collectionsSlice = createSlice({
 			});
 	},
 });
+
+export const { setActiveCollection } = collectionsSlice.actions;
 
 export default collectionsSlice.reducer;

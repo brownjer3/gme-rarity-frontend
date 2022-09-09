@@ -39,12 +39,14 @@ class TopNav extends Component {
 				.slice(0, 5)
 				.map((collection) => (
 					<Link
+						reloadDocument
 						className="text-white text-decoration-none"
 						to={`/collections/${collection.slug}`}
 					>
 						<ListGroup.Item
 							action
 							key={collection.id}
+							// value={collection.slug}
 							onClick={this.handleSelect}
 							className="bg-dark text-white border-secondary"
 						>

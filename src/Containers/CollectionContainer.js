@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+// import { setActiveCollection } from "../Store/Slices/collectionsSlice";
 import TraitFilterContainer from "./TraitFilterContainer";
 import NftsGridContainer from "./NftsGridContainer";
 import SortDropdown from "../Components/SortDropdown";
@@ -17,6 +18,8 @@ import { metadataFlagList } from "../Components/metadataFlagList";
 
 export default function CollectionContainer() {
 	const { collectionSlug } = useParams();
+	// const dispatch = useDispatch();
+
 	const collection = useSelector((state) =>
 		state.collections.data.find(
 			(collection) => collection.slug === collectionSlug
@@ -26,6 +29,7 @@ export default function CollectionContainer() {
 	const pageLimit = "25";
 	const navigate = useNavigate();
 
+	// const [collection, setCollection] = useState(collection);
 	const [traitList, setTraitList] = useState({});
 	const [traitsQuery, setTraitsQuery] = useState([]);
 	const [filteredItemsLength, setFilteredItemsLength] = useState(
@@ -58,21 +62,15 @@ export default function CollectionContainer() {
 		getTraitList();
 	}, []);
 
-	useEffect(() => {
-		console.log("COLLECTION CHANGED");
-		// setNfts([]);
-		// setPageNum(0);
-		// setTraitList({});
-		// setTraitsQuery([]);
-		// // setFilteredItemsLength(collection.items);
-		// setQuery("");
-		// setHasMore(false);
-		// setMetaDataFlag(!!metadataFlagList[collection.id]);
-	}, [collection]);
+	// useEffect(() => {
 
-	useEffect(() => {
-		getTraitList();
-	}, [traitList]);
+	// 	console.log("wtf");
+	// 	getTraitList();
+	// }, [collectionSlug]);
+
+	// useEffect(() => {
+	// 	getTraitList();
+	// }, [traitList]);
 
 	useEffect(() => {
 		loadMore();
