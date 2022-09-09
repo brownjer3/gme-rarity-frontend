@@ -23,14 +23,15 @@ const Footer = () => {
 	if (!match) {
 		return (
 			<Navbar bg="transparent" text="white" className="mt-auto">
-				<Container fluid className="justify-content-center ">
-					<Row className="w-100 align-items-center" xs={1} lg={2}>
-						<Row className="w-100 py-4">
-							<p className="font-monospace">
+				<Container className="justify-content-center ">
+					<Row className="w-100 align-items-center " xs={1} lg={2}>
+						{/* <Row className="w-100 py-4">
+							
+						</Row> */}
+						<Col className="text-start">
+							<p className="font-monospace fw-bold">
 								Made with 🚀 for the GameStop Community
 							</p>
-						</Row>
-						<Col>
 							<small className="font-monospace ">
 								<p>
 									Dev 💻 by{" "}
@@ -66,19 +67,17 @@ const Footer = () => {
 							</small>
 						</Col>
 						<Col>
-							<small className="font-monospace pt-3">
-								<p>Want to buy us a coffee?</p>
-								<p>
-									<span className="me-1">GME Wallet: {gmeDonationAddress}</span>
-									<FontAwesomeIcon
-										icon={faCopy}
-										beat={clicked}
-										className="beat-once"
-										onClick={handleAddressCopy}
-										onAnimationEnd={() => setClicked(false)}
-									/>
-								</p>
-							</small>
+							<p className="font-monospace pt-3">Want to buy us a coffee?</p>
+							<p className="font-monospace">
+								<span className="me-1">GME Wallet: {gmeDonationAddress}</span>
+								<FontAwesomeIcon
+									icon={faCopy}
+									beat={clicked}
+									className="beat-once"
+									onClick={handleAddressCopy}
+									onAnimationEnd={() => setClicked(false)}
+								/>
+							</p>
 						</Col>
 					</Row>
 				</Container>
