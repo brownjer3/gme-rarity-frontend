@@ -12,8 +12,8 @@ export const transformImageUrl = (url, type) => {
 	} else if (type === "avatar") {
 		link = url + "?img-width=large2&img-format=WebP";
 	} else if (type === "nft") {
-		// link = url + "?img-width=550&image-format=WebP";
-		link = url + "?image-format=WebP";
+		link = url + "?img-width=550&image-format=WebP";
+		// link = url + "?image-format=WebP";
 	}
 	return link;
 };
