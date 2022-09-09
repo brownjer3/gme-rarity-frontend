@@ -37,10 +37,9 @@ class HomeBanner extends Component {
 						</div>
 					</Col>
 					<Col sm={12} md={6}>
-						{/* className="display-4" */}
-						<h1>The #1 Rarity Tool for</h1>
-						<br />
-						<h1> Gamestop's NFT Marketplace</h1>
+						<h1 className="display-4">
+							The #1 Rarity Tool for Gamestop's NFT Marketplace
+						</h1>
 					</Col>
 				</Row>
 			</div>
