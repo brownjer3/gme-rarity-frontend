@@ -8,7 +8,7 @@ class HowItWorks extends Component {
 		return (
 			<Container className="text-start my-4">
 				<div className="how-it-works-section mt-0">
-					<SectionHeader name="🧮 Attribute Rarity Scoring" />
+					<h1 className="how-it-works-header">🧮 Attribute Rarity Scoring</h1>
 					<div className="how-it-works-content">
 						<p>
 							To find the rarity of an NFT, you have to start with the
@@ -35,7 +35,7 @@ class HowItWorks extends Component {
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section">
-					<SectionHeader name="📈 NFT Rarity Ranking" />
+					<h1 className="how-it-works-header">📈 NFT Rarity Ranking</h1>
 					<div className="how-it-works-content">
 						<p>
 							Once a rarity score has been calculated for each trait in a
@@ -49,7 +49,7 @@ class HowItWorks extends Component {
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section">
-					<SectionHeader name="🔎 Metadata Inconsistencies" />
+					<h1 className="how-it-works-header">🔎 Metadata Inconsistencies</h1>
 					<div className="how-it-works-content">
 						<p>
 							There are some collections in GameStop's NFT Marketplace that have
@@ -84,7 +84,7 @@ class HowItWorks extends Component {
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section">
-					<SectionHeader name="🚧 Future Updates" />
+					<h1 className="how-it-works-header">🚧 Future Updates</h1>
 					<div className="how-it-works-content">
 						<p>
 							Just like the GameStop NFT Marketplace, Deep Fungible Value is
