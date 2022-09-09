@@ -38,15 +38,15 @@ class HowItWorks extends Component {
 						collection, a 'total rarity score' is given to each NFT by taking
 						the sum of their trait's rarity scores. NFTs are then ranked within
 						their collection based on that total rarity score. NFTs with the
-						same exact total rarity score (this it tyically only the case with
-						1/1's) are marked as a tie.
+						same exact total rarity score (tyically only the case with 1/1's)
+						are marked as a tie.
 					</p>
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section">
 					<SectionHeader name="🔎 Metadata Inconsistencies" />
 					<p>
-						There are some collections in the GameStop NFT Marketplace that have
+						There are some collections in GameStop's NFT Marketplace that have
 						strange attribute data, like{" "}
 						<a
 							className="fw-bold text-decoration-none text-white"
@@ -100,7 +100,7 @@ class HowItWorks extends Component {
 							get in touch.
 						</Link>
 					</p>
-					<span className="lh-0">TO THE MOON, </span>
+					<span className="mt-4">TO THE MOON, </span>
 					<br />
 					<span>The Deep Fungible Value Team</span>
 				</div>

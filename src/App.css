@@ -179,3 +179,28 @@ video::-internal-media-controls-overlay-cast-button {
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
+
+.nav-test {
+	display: block;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	align-self: center;
+	text-decoration: none;
+	color: whitesmoke;
+	/* color: #1982fc; */
+
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out;
+	transition-property: color, background-color, border-color;
+	transition-duration: 0.15s, 0.15s, 0.15s;
+	transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+	transition-delay: 0s, 0s, 0s;
+}
+
+.nav-test:hover {
+	color: #9e86ff;
+}
+
+.nav-test.active {
+	color: #9e86ff;
+}

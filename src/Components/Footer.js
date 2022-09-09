@@ -34,7 +34,7 @@ const Footer = () => {
 							</p>
 							<small className="font-monospace ">
 								<p>
-									Dev 💻 by{" "}
+									Developement by{" "}
 									<a
 										className="text-decoration-none text-white"
 										href="https://twitter.com/honey_crisp_"
@@ -55,7 +55,7 @@ const Footer = () => {
 							</small>
 							<small className="font-monospace">
 								<p>
-									Logos 🎨 by{" "}
+									Logo Design by{" "}
 									<a
 										className="text-decoration-none text-white"
 										href="https://twitter.com/_ordinarypat"
