@@ -96,7 +96,7 @@ class TopNav extends Component {
 								How It Works
 							</NavLink>
 							<NavLink to="/contact" className="nav-link">
-								Get in Touch
+								Get In Touch
 							</NavLink>
 						</Nav>
 						<Form className="d-flex" onSubmit={this.handleSubmit}>

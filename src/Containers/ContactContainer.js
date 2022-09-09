@@ -52,7 +52,7 @@ class ContactContainer extends Component {
 	render() {
 		return (
 			<Container fluid>
-				<SectionHeader name="Contact Us" />
+				<SectionHeader name="Get In Touch" />
 				<Alert
 					variant="success"
 					show={this.state.formSubmitted}
@@ -64,7 +64,7 @@ class ContactContainer extends Component {
 				<Form className="contact-form" onSubmit={this.handleOnSubmit}>
 					<Row xs={1} lg={2}>
 						<Col>
-							<Form.Label>Your name</Form.Label>
+							<Form.Label>Name</Form.Label>
 							<Form.Control
 								name="name"
 								value={this.state.name}
@@ -77,7 +77,7 @@ class ContactContainer extends Component {
 							/>
 						</Col>
 						<Col>
-							<Form.Label>Your email</Form.Label>
+							<Form.Label>Email</Form.Label>
 							<Form.Control
 								name="email"
 								value={this.state.email}
@@ -91,7 +91,7 @@ class ContactContainer extends Component {
 						</Col>
 					</Row>
 					<Form.Group className="my-3" controlId="exampleForm.ControlTextarea1">
-						<Form.Label>Your message</Form.Label>
+						<Form.Label>Message</Form.Label>
 						<Form.Control
 							value={this.state.message}
 							name="message"
