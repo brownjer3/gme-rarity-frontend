@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-// import { setActiveCollection } from "../Store/Slices/collectionsSlice";
 import TraitFilterContainer from "./TraitFilterContainer";
 import NftsGridContainer from "./NftsGridContainer";
 import SortDropdown from "../Components/SortDropdown";
@@ -18,7 +17,6 @@ import { metadataFlagList } from "../Components/metadataFlagList";
 
 export default function CollectionContainer() {
 	const { collectionSlug } = useParams();
-	// const dispatch = useDispatch();
 
 	const collection = useSelector((state) =>
 		state.collections.data.find(
@@ -29,17 +27,16 @@ export default function CollectionContainer() {
 	const pageLimit = "25";
 	const navigate = useNavigate();
 
-	// const [collection, setCollection] = useState(collection);
-	const [apiSearchEndpoint, setApiSearchEndpoint] = useState(
-		"https://gmeraritytool.herokuapp.com"
-	);
+	const baseUrl = "https://gmeraritytool.herokuapp.com/";
+	const [apiSearchEndpoint, setApiSearchEndpoint] = useState("");
+
 	const [traitList, setTraitList] = useState({});
 	const [traitsQuery, setTraitsQuery] = useState([]);
 	const [filteredItemsLength, setFilteredItemsLength] = useState(
 		collection.total_items
 	);
 
-	const [nfts, setNfts] = useState([]);
+	const [nftsToDisplay, setNftsToDisplay] = useState([]);
 	const [pageNum, setPageNum] = useState(0);
 	const [searchNameQuery, setSearchNameQuery] = useState("");
 	const [hasMore, setHasMore] = useState(false);
@@ -63,31 +60,20 @@ export default function CollectionContainer() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		getTraitList();
+		handleEntireCollection();
 	}, []);
 
-	useEffect(() => {
-		loadMore();
-	}, [pageNum, traitsQuery]);
+	// useEffect(() => {
+	// 	const mainView = document.getElementById("main-collection-view");
+	// 	mainView.scroll({
+	// 		top: 0,
+	// 		behavior: "smooth",
+	// 	});
 
-	useEffect(() => {
-		const mainView = document.getElementById("main-collection-view");
-		mainView.scroll({
-			top: 0,
-			behavior: "smooth",
-		});
-
-		if (traitsQuery.length === 0) {
-			setFilteredItemsLength(collection.total_items);
-		}
-		// else {
-		// 	let count = 0;
-		// 	traitsQuery.forEach((query) => {
-		// 		let num = parseInt(collection.traits[query.category][query.trait]);
-		// 		count += num;
-		// 	});
-		// 	setFilteredItemsLength(count);
-		// }
-	}, [traitsQuery]);
+	// 	if (traitsQuery.length === 0) {
+	// 		setFilteredItemsLength(collection.total_items);
+	// 	}
+	// }, [traitsQuery]);
 
 	useEffect(() => {
 		const loader = loadRef;
@@ -100,72 +86,31 @@ export default function CollectionContainer() {
 		};
 	}, [loadRef]);
 
-	const handleSearch = async (e) => {
-		e.preventDefault();
-		// navigate(`/collections/${collection.slug}/${searchNameQuery}`);
-		let url =
-			apiSearchEndpoint +
-			`/page=${pageNum * pageLimit}/Limit=${pageLimit}/Collection=${
-				collection.id
-			}/NamedNfts=${searchNameQuery}`;
+	useEffect(() => {
+		// if (pageNum !== 0) {
+		// 	setPageNum(0);
+		// }
+		fetchNfts(apiSearchEndpoint);
+	}, [apiSearchEndpoint]);
 
+	useEffect(() => {
+		if (pageNum !== 0) {
+			fetchNextBatch();
+		}
+	}, [pageNum]);
+
+	useEffect(() => {
+		handleFilterByTraits();
+	}, [traitsQuery]);
+
+	useEffect(() => {
+		console.log("seach name changed!");
+		handleFilterBySearch();
+	}, [searchNameQuery]);
+
+	const fetchNfts = async (url) => {
 		const res = await fetch(url);
 		const data = await res.json();
-
-		let all = new Set([...data]);
-
-		setNfts([...all]);
-	};
-
-	const handleQueryInput = (e) => {
-		setSearchNameQuery(e.target.value);
-	};
-
-	// anytime search query changes -> set pageNum to 0
-	// store current query url in state variable
-
-	// useEffect(() => {
-	// 	searchForNfts();
-	// }, [query]);
-
-	// const searchForNfts = async () => {
-	// 	const url = `https://gmeraritytool.herokuapp.com/page=${
-	// 		pageNum * pageLimit
-	// 	}/Limit=${pageLimit}/Collection=${collection.id}/NamedNfts=${
-	// 		collection.id
-	// 	}`;
-
-	// 	const res = await fetch(url);
-	// 	const data = await res.json();
-	// };
-
-	const loadMore = async () => {
-		// https://gmeraritytool.herokuapp.com/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Fedora
-
-		let url = `https://gmeraritytool.herokuapp.com/page=${
-			pageNum * pageLimit
-		}/Limit=${pageLimit}/`;
-
-		if (traitsQuery.length > 0) {
-			url += `nfts/Collection=${collection.id}/Attributes=`;
-			traitsQuery.forEach((query) => {
-				let category = query["category"];
-				let trait = query["trait"];
-				url += `${trait}-`;
-			});
-			url = url.slice(0, -1);
-		} else {
-			// url += `page=${pageNum * pageLimit}/Limit=${pageLimit}/`;
-			url += `Nft/CollectionID=${collection.id}`;
-		}
-
-		const res = await fetch(url);
-		const data = await res.json();
-
-		if (traitsQuery.length > 0) {
-			setFilteredItemsLength(data[0]["count"]);
-			data.shift();
-		}
 
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
@@ -173,9 +118,76 @@ export default function CollectionContainer() {
 		if (pageNum === 0) {
 			all = new Set([...data]);
 		} else {
-			all = new Set([...nfts, ...data]);
+			all = new Set([...nftsToDisplay, ...data]);
 		}
-		setNfts([...all]);
+		setNftsToDisplay([...all]);
+	};
+
+	const handleEntireCollection = () => {
+		// https://gmeraritytool.herokuapp.com/page=0/Limit=25/Nft/CollectionID=36fab6f7-1e51-49d9-a0be-39343abafd0f
+
+		// let url =
+		// 	baseUrl +
+		// 	`page=${pageNum * pageLimit}/Limit=${pageLimit}/Nft/CollectionID=${
+		// 		collection.id
+		//     }`;
+
+		let url = baseUrl + `page=0/Limit=25/Nft/CollectionID=${collection.id}`;
+
+		setApiSearchEndpoint(url);
+	};
+
+	const handleFilterBySearch = (e) => {
+		//gmeraritytool.herokuapp.com/page=0/Limit=25/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/NamedNfts=555
+		// e.preventDefault();
+
+		// let url =
+		// 	baseUrl +
+		// 	`page=${pageNum * pageLimit}/Limit=${pageLimit}/Collection=${
+		// 		collection.id
+		// 	}/NamedNfts=${searchNameQuery}`;
+
+		if (searchNameQuery.length > 0) {
+			let url =
+				baseUrl +
+				`page=0/Limit=25/Collection=${collection.id}/NamedNfts=${searchNameQuery}`;
+
+			setApiSearchEndpoint(url);
+		}
+	};
+
+	const handleFilterByTraits = () => {
+		//https://gmeraritytool.herokuapp.com/page=0/Limit=25/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Halo-Castle
+
+		if (traitsQuery.length > 0) {
+			let url =
+				baseUrl +
+				`page=0/Limit=25/nfts/Collection=${collection.id}/Attributes=`;
+
+			traitsQuery.forEach((query) => {
+				let category = query["category"];
+				let trait = query["trait"];
+				url += `${trait}-`;
+			});
+			url = url.slice(0, -1);
+			setApiSearchEndpoint(url);
+		}
+	};
+
+	const handleQueryInput = (e) => {
+		setSearchNameQuery(e.target.value);
+	};
+
+	const fetchNextBatch = () => {
+		let url = apiSearchEndpoint;
+		let params = url.split("page=")[1];
+		let oldNum = params.split("/Limit")[0];
+		let updatedParams = params.replace(oldNum, pageNum * pageLimit);
+		let updatedUrl = baseUrl + "page=" + updatedParams;
+
+		console.log(updatedUrl);
+
+		setApiSearchEndpoint(updatedUrl);
 	};
 
 	const getTraitList = async () => {
@@ -276,7 +288,7 @@ export default function CollectionContainer() {
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
-						handleSearch={handleSearch}
+						handleSearch={handleFilterBySearch}
 					/>
 				</Col>
 				<div className="d-block d-lg-none">
@@ -287,7 +299,7 @@ export default function CollectionContainer() {
 						isTraitSelected={isTraitSelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
-						handleSearch={handleSearch}
+						handleSearch={handleFilterBySearch}
 					/>
 				</div>
 
@@ -319,7 +331,7 @@ export default function CollectionContainer() {
 							<SortDropdown />
 						</Col>
 					</Row>
-					<NftsGridContainer nfts={nfts} collection={collection} />
+					<NftsGridContainer nfts={nftsToDisplay} collection={collection} />
 					{renderLoadMoreSpinner()}
 				</Col>
 				<Outlet />

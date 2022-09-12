@@ -10,6 +10,7 @@ import HomeContainer from "./Containers/HomeContainer";
 import ContactContainer from "./Containers/ContactContainer";
 import AllCollectionsContainer from "./Containers/AllCollectionsContainer";
 import CollectionContainer from "./Containers/CollectionContainer";
+import CollectionContainer2 from "./Containers/CollectionContainer2";
 import NftModalContainer from "./Containers/NftModalContainer";
 import HowItWorks from "./Containers/HowItWorks";
 import { NotFound, LoadingScreen, Stars } from "./Components/Components";
@@ -39,7 +40,7 @@ const App = () => {
 					<Route path="collections" element={<AllCollectionsContainer />} />
 					<Route
 						path="collections/:collectionSlug"
-						element={<CollectionContainer />}
+						element={<CollectionContainer2 />}
 					>
 						<Route path=":nftId" element={<NftModalContainer />} />
 					</Route>
