@@ -60,7 +60,7 @@ const Footer = () => {
 							</small>
 							<small className="font-monospace">
 								<p>
-									Logo Design by{" "}
+									Logo Designs by{" "}
 									<a
 										className="text-decoration-none text-white"
 										href="https://twitter.com/_ordinarypat"

@@ -3,6 +3,11 @@ import Card from "react-bootstrap/Card";
 const NftBasicDetailsCard = (props) => {
 	const { index, image, name, rarityRank } = props;
 
+	const handleImgError = (e) => {
+		const newSrc = image.split("?img")[0];
+		e.target.src = newSrc;
+	};
+
 	return (
 		<Card
 			bg="dark"
@@ -12,6 +17,7 @@ const NftBasicDetailsCard = (props) => {
 			className="details-card h-100"
 		>
 			<Card.Img
+				onError={handleImgError}
 				variant="top"
 				className="nft-card-img"
 				src={image}

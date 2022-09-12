@@ -7,6 +7,10 @@ export const transformImageUrl = (url, type) => {
 		link = url.replace("public/", "https://static.gstop-content.com/");
 	}
 
+	// getMeta(link, function (width, height) {
+	// 	console.log("link: ", link, width + "px " + height + "px");
+	// });
+
 	if (type === "banner") {
 		link = url + "?img-width=expanded&img-format=WebP";
 	} else if (type === "avatar") {
@@ -17,6 +21,14 @@ export const transformImageUrl = (url, type) => {
 	}
 	return link;
 };
+
+// const getMeta = (url, callback) => {
+// 	var img = new Image();
+// 	img.src = url;
+// 	img.onload = function () {
+// 		callback(this.width, this.height);
+// 	};
+// };
 
 export const weiToEth = (wei) => {
 	const num = parseInt(wei);
