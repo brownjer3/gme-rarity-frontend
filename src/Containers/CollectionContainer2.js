@@ -87,9 +87,6 @@ export default function CollectionContainer() {
 	}, [loadRef]);
 
 	useEffect(() => {
-		// if (pageNum !== 0) {
-		// 	setPageNum(0);
-		// }
 		fetchNfts(apiSearchEndpoint);
 	}, [apiSearchEndpoint]);
 
@@ -100,12 +97,19 @@ export default function CollectionContainer() {
 	}, [pageNum]);
 
 	useEffect(() => {
-		handleFilterByTraits();
+		if (traitsQuery.length === 0) {
+			handleEntireCollection();
+		} else {
+			handleFilterByTraits();
+		}
 	}, [traitsQuery]);
 
 	useEffect(() => {
-		console.log("seach name changed!");
-		handleFilterBySearch();
+		if (searchNameQuery.length === 0) {
+			handleEntireCollection();
+		} else {
+			handleFilterBySearch();
+		}
 	}, [searchNameQuery]);
 
 	const fetchNfts = async (url) => {
@@ -113,6 +117,11 @@ export default function CollectionContainer() {
 		const data = await res.json();
 
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
+
+		if (traitsQuery.length > 0) {
+			setFilteredItemsLength(data[0]["count"]);
+			data.shift();
+		}
 
 		let all;
 		if (pageNum === 0) {
@@ -126,26 +135,13 @@ export default function CollectionContainer() {
 	const handleEntireCollection = () => {
 		// https://gmeraritytool.herokuapp.com/page=0/Limit=25/Nft/CollectionID=36fab6f7-1e51-49d9-a0be-39343abafd0f
 
-		// let url =
-		// 	baseUrl +
-		// 	`page=${pageNum * pageLimit}/Limit=${pageLimit}/Nft/CollectionID=${
-		// 		collection.id
-		//     }`;
-
 		let url = baseUrl + `page=0/Limit=25/Nft/CollectionID=${collection.id}`;
-
 		setApiSearchEndpoint(url);
 	};
 
 	const handleFilterBySearch = (e) => {
 		//gmeraritytool.herokuapp.com/page=0/Limit=25/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/NamedNfts=555
 		// e.preventDefault();
-
-		// let url =
-		// 	baseUrl +
-		// 	`page=${pageNum * pageLimit}/Limit=${pageLimit}/Collection=${
-		// 		collection.id
-		// 	}/NamedNfts=${searchNameQuery}`;
 
 		if (searchNameQuery.length > 0) {
 			let url =
