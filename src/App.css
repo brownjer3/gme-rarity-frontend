@@ -131,6 +131,7 @@ input:focus {
 
 .nft-card-img {
 	width: 100%;
+	height: auto;
 }
 
 .collection-stats {
