@@ -39,6 +39,16 @@
 	}
 }
 
+@media (max-width: 40rem) {
+	.nav-link {
+		color: white !important;
+		font-size: 1.25rem;
+	}
+	.nav-search-bar {
+		margin-top: 1.5rem;
+	}
+}
+
 .tableRow {
 	align-self: center;
 }
