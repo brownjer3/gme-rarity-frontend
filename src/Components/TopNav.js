@@ -65,7 +65,7 @@ class TopNav extends Component {
 							key={collection.id}
 							// value={collection.slug}
 							onClick={this.handleSelect}
-							className="bg-dark text-white border-secondary"
+							className="collection-dropdown-item"
 						>
 							{collection.name}
 						</ListGroup.Item>
@@ -152,7 +152,10 @@ class TopNav extends Component {
 									Get In Touch
 								</NavLink>
 							</Nav>
-							<Form className="nav-search-bar" onSubmit={this.handleSubmit}>
+							<Form
+								className="d-flex nav-search-bar d-none d-lg-block"
+								onSubmit={this.handleSubmit}
+							>
 								<InputGroup>
 									<InputGroup.Text
 										id="basic-addon1"
@@ -162,14 +165,20 @@ class TopNav extends Component {
 									</InputGroup.Text>
 									<Form.Control
 										onChange={this.onChange}
+										// onKeyUp={this.onChange}
 										type="search"
 										value={this.state.query}
 										placeholder="Find a Collection"
 										aria-label="Search"
 										aria-describedby="basic-addon1"
 										className="bg-dark text-white rounded-end"
+										data-bs-target="#navbarToggleExternalContent"
+										aria-controls="navbarToggleExternalContent"
 									/>
-									<ListGroup className="collections-dropdown position-absolute text-start rounded w-100">
+									<ListGroup
+										id="navbarToggleExternalContent"
+										className="collections-dropdown"
+									>
 										{this.filterNames()}
 									</ListGroup>
 								</InputGroup>
@@ -194,72 +203,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(TopNav);
-
-/* <Navbar bg="dark" variant="dark" expand="lg" className="mb-3">
-			 	<Container fluid>
-			 		<NavLink to="/" className="nav-link moon-logo-initials">
-			 			<Navbar.Brand>
-			 				<video
-								width="60"
-								height="45"
-								autoPlay
-								loop
-								muted
-								playsInline
-								src={
-									process.env.PUBLIC_URL +
-									"/images/final.moon.initials only.24fps0001-0356.webm"
-								}
-								alt="Deep Fungible Value Small Logo - GameStop NFT Rarity Tool"
-							>
-								<source src="/videos/testing.webm" type="video/webm" />
-								<source src="movie.ogg" type="video/ogg" />
-								Your browser does not support the video tag.
-							</video>
-						</Navbar.Brand>
-					</NavLink>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav
-							className="me-auto my-2 my-lg-0 navbar-links-section"
-							style={{ maxHeight: "100px" }}
-						>
-							<NavLink to="/collections" className="nav-link">
-								All Collections
-							</NavLink>
-							<NavLink to="/how-it-works" className="nav-link">
-								How It Works
-							</NavLink>
-							<NavLink
-								to="/contact"
-								// className="nav-link text-white"
-								className="nav-link"
-							>
-								Get In Touch
-							</NavLink>
-						</Nav>
-						<Form className="nav-search-bar" onSubmit={this.handleSubmit}>
-							<InputGroup>
-								<InputGroup.Text
-									id="basic-addon1"
-									className="bg-dark text-white"
-								>
-									<FontAwesomeIcon icon={faMagnifyingGlass} />
-								</InputGroup.Text>
-								<Form.Control
-									onChange={this.onChange}
-									type="search"
-									value={this.state.query}
-									placeholder="Find a Collection"
-									aria-label="Search"
-									aria-describedby="basic-addon1"
-									className="bg-dark text-white rounded-end"
-								/>
-								<ListGroup className="collections-dropdown position-absolute text-start rounded w-100">
-									{this.filterNames()}
-								</ListGroup>
-							</InputGroup>
-						</Form>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar> */
