@@ -11,7 +11,7 @@ const MetadataWarning = (props) => {
 	};
 
 	return (
-		<div className="text-start text-warning">
+		<div className="text-start text-warning mb-2">
 			<small onClick={toggleShow} className="metadata-warning fw-bold">
 				<FontAwesomeIcon icon={faCircleInfo} />
 				<span className="ms-1"> A note on {props.name} metadata </span>

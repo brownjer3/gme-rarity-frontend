@@ -18,6 +18,7 @@ function CollectionSidebarContainer(props) {
 		handleTraitSelect,
 		handleSearch,
 		handleQueryInput,
+		isCategorySelected,
 	} = props;
 
 	return (
@@ -30,6 +31,7 @@ function CollectionSidebarContainer(props) {
 			/>
 
 			<Offcanvas
+				fullscreen="true"
 				show={show}
 				onHide={handleClose}
 				responsive="lg"
@@ -53,6 +55,7 @@ function CollectionSidebarContainer(props) {
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
 						handleSearch={handleSearch}
+						isCategorySelected={isCategorySelected}
 					/>
 				</Offcanvas.Body>
 

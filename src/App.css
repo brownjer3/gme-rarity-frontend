@@ -168,12 +168,12 @@ input:focus {
 }
 
 .filter-icon {
-	border-radius: 50%;
+	border-radius: 40%;
 	position: fixed;
 	right: 10%;
 	bottom: 10%;
 	z-index: 999;
-	box-shadow: 1px 0px 10px 0px gray;
+	/* box-shadow: 1px 1px 1px 1px gray; */
 }
 
 .trait-category {

@@ -120,7 +120,7 @@ export default function CollectionContainer() {
 
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
-		if (traitsQuery.length > 0 || searchNameQuery.length > 0) {
+		if (setFilteredItemsLength(data[0]["count"] !== undefined)) {
 			setFilteredItemsLength(data[0]["count"]);
 			data.shift();
 		} else {
@@ -143,7 +143,7 @@ export default function CollectionContainer() {
 		setApiSearchEndpoint(url);
 	};
 
-	const handleFilterBySearch = (e) => {
+	const handleFilterBySearch = () => {
 		//gmeraritytool.herokuapp.com/page=0/Limit=25/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/NamedNfts=555
 		// e.preventDefault();
 
@@ -154,6 +154,10 @@ export default function CollectionContainer() {
 
 			setApiSearchEndpoint(url);
 		}
+	};
+
+	const handleSearchSubmit = (e) => {
+		e.preventDefault();
 	};
 
 	const handleFilterByTraits = () => {
@@ -167,7 +171,7 @@ export default function CollectionContainer() {
 			traitsQuery.forEach((query) => {
 				let category = query["category"];
 				let trait = query["trait"];
-				url += `${trait}-`;
+				url += `${category};${trait}-`;
 			});
 			url = url.slice(0, -1);
 			setApiSearchEndpoint(url);
@@ -306,7 +310,7 @@ export default function CollectionContainer() {
 						isCategorySelected={isCategorySelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
-						handleSearch={handleFilterBySearch}
+						handleSearch={handleSearchSubmit}
 						currentSearch={searchNameQuery}
 					/>
 				</Col>
@@ -319,11 +323,10 @@ export default function CollectionContainer() {
 						isCategorySelected={isCategorySelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
-						handleSearch={handleFilterBySearch}
+						handleSearch={handleSearchSubmit}
 						currentSearch={searchNameQuery}
 					/>
 				</div>
-
 				<Col
 					xs={12}
 					lg={10}
