@@ -100,6 +100,7 @@ class TraitFilterContainer extends Component {
 						className="me-2 bg-transparent text-white"
 						aria-label="Search"
 						onInput={this.props.handleQueryInput}
+						value={this.props.currentSearch}
 					/>
 					<Button type="submit" variant="outline-danger">
 						Search

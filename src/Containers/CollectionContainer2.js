@@ -98,6 +98,8 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		setPageNum(0);
+		if (searchNameQuery.length > 0) setSearchNameQuery("");
+
 		if (traitsQuery.length === 0) {
 			handleEntireCollection();
 		} else {
@@ -304,6 +306,7 @@ export default function CollectionContainer() {
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
 						handleSearch={handleFilterBySearch}
+						currentSearch={searchNameQuery}
 					/>
 				</Col>
 				<div className="d-block d-lg-none">
@@ -315,6 +318,7 @@ export default function CollectionContainer() {
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
 						handleSearch={handleFilterBySearch}
+						currentSearch={searchNameQuery}
 					/>
 				</div>
 
