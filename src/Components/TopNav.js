@@ -10,7 +10,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 class TopNav extends Component {
 	state = {
@@ -120,11 +120,9 @@ class TopNav extends Component {
 								className="text-decoration-none text-white"
 								onClick={this.handleOffCanvasClose}
 							>
-								<Offcanvas.Title
-									// className="text-decoration-none text-white"
-									id="offcanvasNavbarLabel-expand-lg"
-								>
-									Deep Fungible Value
+								<Offcanvas.Title id="offcanvasNavbarLabel-expand-lg">
+									<FontAwesomeIcon icon={faHouse} />
+									<span className="ms-1"> Deep Fungible Value</span>
 								</Offcanvas.Title>
 							</NavLink>
 						</Offcanvas.Header>
