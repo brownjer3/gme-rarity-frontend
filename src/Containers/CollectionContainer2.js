@@ -98,8 +98,6 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		setPageNum(0);
-		if (searchNameQuery.length > 0) setSearchNameQuery("");
-
 		if (traitsQuery.length === 0) {
 			handleEntireCollection();
 		} else {
@@ -122,7 +120,7 @@ export default function CollectionContainer() {
 
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
-		if (traitsQuery.length > 0) {
+		if (traitsQuery.length > 0 || searchNameQuery.length > 0) {
 			setFilteredItemsLength(data[0]["count"]);
 			data.shift();
 		} else {
@@ -259,12 +257,14 @@ export default function CollectionContainer() {
 				});
 			}
 		}
+		if (searchNameQuery.length > 0) setSearchNameQuery("");
 		setPageNum(0);
 		window.scrollTo(0, 0);
 	};
 
 	const handleQueryInput = (e) => {
 		setSearchNameQuery(e.target.value);
+		if (traitsQuery.length > 0) setTraitsQuery([]);
 	};
 
 	const handleTraitDeselect = (e) => {
