@@ -303,6 +303,7 @@ export default function CollectionContainer() {
 						traits={traitList}
 						image={transformImageUrl(collection.avatar_url, "avatar")}
 						isTraitSelected={isTraitSelected}
+						isCategorySelected={isCategorySelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
 						handleSearch={handleFilterBySearch}
@@ -315,6 +316,7 @@ export default function CollectionContainer() {
 						traits={traitList}
 						image={transformImageUrl(collection.avatar_url, "avatar")}
 						isTraitSelected={isTraitSelected}
+						isCategorySelected={isCategorySelected}
 						handleTraitSelect={handleTraitSelect}
 						handleQueryInput={handleQueryInput}
 						handleSearch={handleFilterBySearch}

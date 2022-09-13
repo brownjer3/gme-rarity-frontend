@@ -22,26 +22,51 @@ class TraitFilterContainer extends Component {
 	};
 
 	createTraits = (category, categoryName) => {
-		return Object.keys(category).map((trait, index) => {
+		if (this.props.isCategorySelected(categoryName)) {
+			const selectedTrait = Object.keys(category).find((trait) =>
+				this.props.isTraitSelected(categoryName, trait)
+			);
+			const count = category[selectedTrait];
 			return (
 				<ListGroup.Item
-					key={index.toString()}
+					// key={index.toString()}
 					className="bg-transparent text-white d-flex justify-content-between"
 				>
-					<label htmlFor={trait}>
-						{trait} ({category[trait]})
+					<label htmlFor={selectedTrait}>
+						{selectedTrait} ({count})
 					</label>
 					<input
 						className="ms-1"
-						id={trait}
+						id={selectedTrait}
 						type="checkbox"
-						value={`${categoryName}-${trait}`}
-						checked={this.props.isTraitSelected(categoryName, trait)}
+						value={`${categoryName}-${selectedTrait}`}
+						checked={this.props.isTraitSelected(categoryName, selectedTrait)}
 						onChange={this.props.handleTraitSelect}
 					/>
 				</ListGroup.Item>
 			);
-		});
+		} else {
+			return Object.keys(category).map((trait, index) => {
+				return (
+					<ListGroup.Item
+						key={index.toString()}
+						className="bg-transparent text-white d-flex justify-content-between"
+					>
+						<label htmlFor={trait}>
+							{trait} ({category[trait]})
+						</label>
+						<input
+							className="ms-1"
+							id={trait}
+							type="checkbox"
+							value={`${categoryName}-${trait}`}
+							checked={this.props.isTraitSelected(categoryName, trait)}
+							onChange={this.props.handleTraitSelect}
+						/>
+					</ListGroup.Item>
+				);
+			});
+		}
 	};
 
 	createTraitMenu = (traits) => {
@@ -99,7 +124,7 @@ class TraitFilterContainer extends Component {
 						placeholder="ID.."
 						className="me-2 bg-transparent text-white"
 						aria-label="Search"
-						onInput={this.props.handleQueryInput}
+						onChange={this.props.handleQueryInput}
 						value={this.props.currentSearch}
 					/>
 					<Button type="submit" variant="outline-danger">
