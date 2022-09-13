@@ -120,7 +120,7 @@ export default function CollectionContainer() {
 
 		data.length < 25 ? setHasMore(false) : setHasMore(true);
 
-		if (setFilteredItemsLength(data[0]["count"] !== undefined)) {
+		if (data[0]["count"] !== undefined) {
 			setFilteredItemsLength(data[0]["count"]);
 			data.shift();
 		} else {
