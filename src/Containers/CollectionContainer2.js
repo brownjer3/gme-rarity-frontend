@@ -63,17 +63,17 @@ export default function CollectionContainer() {
 		handleEntireCollection();
 	}, []);
 
-	// useEffect(() => {
-	// 	const mainView = document.getElementById("main-collection-view");
-	// 	mainView.scroll({
-	// 		top: 0,
-	// 		behavior: "smooth",
-	// 	});
+	useEffect(() => {
+		const mainView = document.getElementById("main-collection-view");
+		mainView.scroll({
+			top: 0,
+			behavior: "smooth",
+		});
 
-	// 	if (traitsQuery.length === 0) {
-	// 		setFilteredItemsLength(collection.total_items);
-	// 	}
-	// }, [traitsQuery]);
+		if (traitsQuery.length === 0 && searchNameQuery.length === 0) {
+			setFilteredItemsLength(collection.total_items);
+		}
+	}, [traitsQuery, searchNameQuery]);
 
 	useEffect(() => {
 		const loader = loadRef;
@@ -97,6 +97,7 @@ export default function CollectionContainer() {
 	}, [pageNum]);
 
 	useEffect(() => {
+		setPageNum(0);
 		if (traitsQuery.length === 0) {
 			handleEntireCollection();
 		} else {
@@ -105,6 +106,7 @@ export default function CollectionContainer() {
 	}, [traitsQuery]);
 
 	useEffect(() => {
+		setPageNum(0);
 		if (searchNameQuery.length === 0) {
 			handleEntireCollection();
 		} else {
@@ -121,6 +123,8 @@ export default function CollectionContainer() {
 		if (traitsQuery.length > 0) {
 			setFilteredItemsLength(data[0]["count"]);
 			data.shift();
+		} else {
+			setFilteredItemsLength(collection.total_items);
 		}
 
 		let all;
@@ -168,10 +172,6 @@ export default function CollectionContainer() {
 			url = url.slice(0, -1);
 			setApiSearchEndpoint(url);
 		}
-	};
-
-	const handleQueryInput = (e) => {
-		setSearchNameQuery(e.target.value);
 	};
 
 	const fetchNextBatch = () => {
@@ -248,6 +248,10 @@ export default function CollectionContainer() {
 		}
 		setPageNum(0);
 		window.scrollTo(0, 0);
+	};
+
+	const handleQueryInput = (e) => {
+		setSearchNameQuery(e.target.value);
 	};
 
 	const handleTraitDeselect = (e) => {
