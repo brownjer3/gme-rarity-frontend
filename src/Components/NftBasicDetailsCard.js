@@ -17,6 +17,7 @@ const NftBasicDetailsCard = (props) => {
 			className="details-card h-100"
 		>
 			<Card.Img
+				loading="lazy"
 				onError={handleImgError}
 				variant="top"
 				className="nft-card-img"

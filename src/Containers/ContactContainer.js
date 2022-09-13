@@ -63,7 +63,7 @@ class ContactContainer extends Component {
 				</Alert>
 				<Form className="contact-form" onSubmit={this.handleOnSubmit}>
 					<Row xs={1} lg={2}>
-						<Col>
+						<Col className="mb-3">
 							<Form.Label>Name</Form.Label>
 							<Form.Control
 								name="name"
@@ -76,7 +76,7 @@ class ContactContainer extends Component {
 								}}
 							/>
 						</Col>
-						<Col>
+						<Col className="mb-3">
 							<Form.Label>Email</Form.Label>
 							<Form.Control
 								name="email"
@@ -90,7 +90,7 @@ class ContactContainer extends Component {
 							/>
 						</Col>
 					</Row>
-					<Form.Group className="my-3" controlId="exampleForm.ControlTextarea1">
+					<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 						<Form.Label>Message</Form.Label>
 						<Form.Control
 							value={this.state.message}
@@ -104,7 +104,11 @@ class ContactContainer extends Component {
 							}}
 						/>
 					</Form.Group>
-					<Button variant="outline-danger" type="submit" className="float-end">
+					<Button
+						variant="outline-danger"
+						type="submit"
+						className="float-end mb-4"
+					>
 						Send
 					</Button>
 				</Form>
