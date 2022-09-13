@@ -217,7 +217,7 @@ export default function CollectionContainer() {
 			categoryName = splitStr[0].split(" has")[0];
 			traitObj[categoryName] = {};
 
-			let traits = splitStr[1].split(", ");
+			let traits = splitStr[1].split("| ");
 			for (let j = 0; j < traits.length; j++) {
 				traitName = traits[j].split(": ")[0];
 				traitCount = traits[j].split(": ")[1];
@@ -242,9 +242,20 @@ export default function CollectionContainer() {
 		if (isTraitSelected(category, name)) {
 			setTraitsQuery(traitsQuery.filter((item) => item.trait !== name));
 		} else {
-			setTraitsQuery((currentQuery) => {
-				return [...currentQuery, { trait: name, category: category }];
-			});
+			// if we already have a query for that category >> remove it and replace
+			if (isCategorySelected(category)) {
+				setTraitsQuery((currentQuery) => {
+					let filteredQuery = currentQuery.filter(
+						(item) => item.category !== category
+					);
+					return [...filteredQuery, { trait: name, category: category }];
+				});
+				// otherwise add it to query and collapse that section
+			} else {
+				setTraitsQuery((currentQuery) => {
+					return [...currentQuery, { trait: name, category: category }];
+				});
+			}
 		}
 		setPageNum(0);
 		window.scrollTo(0, 0);
@@ -257,6 +268,10 @@ export default function CollectionContainer() {
 	const handleTraitDeselect = (e) => {
 		const name = e.target.closest(".trait-badge").id;
 		setTraitsQuery(traitsQuery.filter((item) => item.trait !== name));
+	};
+
+	const isCategorySelected = (category) => {
+		return traitsQuery.some((combo) => combo.category === category);
 	};
 
 	const isTraitSelected = (category, trait) => {
