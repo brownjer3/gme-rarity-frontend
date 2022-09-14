@@ -10,6 +10,12 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { Loading } from "./Components";
 
 export default function NftModal(props) {
+	const handleImgError = (e) => {
+		const image = transformImageUrl(props.nft.image_url, "nft");
+		const newSrc = image.split("?img")[0];
+		e.target.src = newSrc;
+	};
+
 	const handleTraitString = (traitString) => {
 		let traitObj = {};
 
@@ -149,6 +155,7 @@ export default function NftModal(props) {
 							<Col xs={12} lg={6}>
 								<Card>
 									<Card.Img
+										onError={handleImgError}
 										src={transformImageUrl(props.nft.image_url, "nft")}
 									/>
 								</Card>
