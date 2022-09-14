@@ -336,13 +336,11 @@ export default function CollectionContainer() {
 					<CollectionBanner collection={collection} />
 					<br />
 					{metadataFlag && <MetadataWarning name={collection.name} />}
-					<Row>
-						<div className="d-flex flex-wrap justify-content-center">
-							<TraitBadges
-								handleTraitDeselect={handleTraitDeselect}
-								selectedTraits={traitsQuery}
-							/>
-						</div>
+					<Row className="text-start row-cols-auto">
+						<TraitBadges
+							handleTraitDeselect={handleTraitDeselect}
+							selectedTraits={traitsQuery}
+						/>
 					</Row>
 					<Row className="my-2 justify-content-space-between">
 						<Col className="text-muted text-start">

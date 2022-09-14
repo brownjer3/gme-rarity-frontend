@@ -7,8 +7,8 @@ class TraitBadges extends PureComponent {
 	createBadges = (traits) => {
 		return traits.map((combo) => {
 			return (
-				<Col className="mb-2">
-					<Badge className="mx-2" bg="light" text="dark">
+				<Col className="my-2">
+					<Badge bg="light" text="dark">
 						<span
 							className="d-flex align-items-center trait-badge"
 							id={combo.trait}
@@ -28,7 +28,16 @@ class TraitBadges extends PureComponent {
 	};
 
 	render() {
-		return <Row>{this.createBadges(this.props.selectedTraits)}</Row>;
+		if (this.props.selectedTraits.length === 0) {
+			return <></>;
+		} else {
+			return (
+				<>
+					<Col className="my-2 fw-bold">Active Filters: </Col>
+					{this.createBadges(this.props.selectedTraits)}
+				</>
+			);
+		}
 	}
 }
 
