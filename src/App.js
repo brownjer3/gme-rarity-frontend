@@ -9,7 +9,7 @@ import Footer from "./Components/Footer";
 import HomeContainer from "./Containers/HomeContainer";
 import ContactContainer from "./Containers/ContactContainer";
 import AllCollectionsContainer from "./Containers/AllCollectionsContainer";
-import CollectionContainer from "./Containers/CollectionContainer";
+// import CollectionContainer from "./Containers/CollectionContainer";
 import CollectionContainer2 from "./Containers/CollectionContainer2";
 import NftModalContainer from "./Containers/NftModalContainer";
 import HowItWorks from "./Containers/HowItWorks";

@@ -39,7 +39,7 @@ const Footer = () => {
 							</p>
 							<small className="font-monospace ">
 								<p>
-									Developement by{" "}
+									Development by{" "}
 									<a
 										className="text-decoration-none text-white"
 										href="https://twitter.com/honey_crisp_"

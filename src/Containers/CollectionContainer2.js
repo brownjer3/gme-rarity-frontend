@@ -171,7 +171,7 @@ export default function CollectionContainer() {
 			traitsQuery.forEach((query) => {
 				let category = query["category"];
 				let trait = query["trait"];
-				url += `${category};${trait}-`;
+				url += `${category}$${trait}-`;
 			});
 			url = url.slice(0, -1);
 			setApiSearchEndpoint(url);
@@ -262,8 +262,8 @@ export default function CollectionContainer() {
 			}
 		}
 		if (searchNameQuery.length > 0) setSearchNameQuery("");
-		setPageNum(0);
-		window.scrollTo(0, 0);
+		// setPageNum(0);
+		// window.scrollTo(0, 0);
 	};
 
 	const handleQueryInput = (e) => {
