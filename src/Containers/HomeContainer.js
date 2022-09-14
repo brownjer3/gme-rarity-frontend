@@ -3,6 +3,8 @@ import TrendingContainer from "../Containers/TrendingContainer";
 import HomeBanner from "../Components/HomeBanner";
 import { SectionHeader } from "../Components/Components";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 class HomeContainer extends Component {
 	componentDidMount() {
@@ -15,6 +17,11 @@ class HomeContainer extends Component {
 				<HomeBanner />
 				<SectionHeader name="Trending Collections" />
 				<TrendingContainer />
+				<Link to="/collections">
+					<Button className="my-4" variant="outline-light" size="lg">
+						Explore All Collections
+					</Button>
+				</Link>
 			</Container>
 		);
 	}
