@@ -10,7 +10,7 @@ class TrendingContainer extends Component {
 	};
 
 	componentDidMount() {
-		fetch("https://gmeraritytool.herokuapp.com/Top5Collections")
+		fetch("https://gmeraritytool.herokuapp.com/OrderBy=none/Top5Collections")
 			.then((res) => res.json())
 			.then((data) => this.setState({ top5: data }));
 	}

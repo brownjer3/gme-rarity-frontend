@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // const COLLECTIONS_URL = "http://localhost:3001/collections";
 const COLLECTIONS_URL =
-	"https://gmeraritytool.herokuapp.com/Top50CollectionsMonth";
+	"https://gmeraritytool.herokuapp.com/OrderBy=none/Top50CollectionsMonth";
 // const NFTS_BY_COLLECTION_ID = "http://localhost:3001/collections?collectionId=";
 // const TOP_FIVE_URL = "http://localhost:3001/topFive";
 
