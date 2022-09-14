@@ -27,7 +27,7 @@ export default function CollectionContainer() {
 	const pageLimit = "25";
 	const navigate = useNavigate();
 
-	const baseUrl = "https://gmeraritytool.herokuapp.com//OrderBy=none/";
+	const baseUrl = "https://gmeraritytool.herokuapp.com/OrderBy=none/";
 	const [apiSearchEndpoint, setApiSearchEndpoint] = useState("");
 
 	const [traitList, setTraitList] = useState({});
