@@ -14,6 +14,10 @@ import CollectionContainer2 from "./Containers/CollectionContainer2";
 import NftModalContainer from "./Containers/NftModalContainer";
 import HowItWorks from "./Containers/HowItWorks";
 import { NotFound, LoadingScreen, Stars } from "./Components/Components";
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "UA-241303790-1";
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
 	const dispatch = useDispatch();

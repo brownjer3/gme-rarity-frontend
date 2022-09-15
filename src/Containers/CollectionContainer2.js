@@ -145,7 +145,6 @@ export default function CollectionContainer() {
 
 	const handleFilterBySearch = () => {
 		//gmeraritytool.herokuapp.com/page=0/Limit=25/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/NamedNfts=555
-		// e.preventDefault();
 
 		if (searchNameQuery.length > 0) {
 			let url =
@@ -161,9 +160,9 @@ export default function CollectionContainer() {
 	};
 
 	const handleFilterByTraits = () => {
-		//https://gmeraritytool.herokuapp.com/page=0/Limit=25/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Halo-Castle
+		// https://gmeraritytool.herokuapp.com/OrderBy=none/page=0/Limit=25/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Body$Galaxy
 
-		if (traitsQuery.length > 0) {
+		https: if (traitsQuery.length > 0) {
 			let url =
 				baseUrl +
 				`page=0/Limit=25/nfts/Collection=${collection.id}/Attributes=`;

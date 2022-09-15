@@ -5,9 +5,11 @@ import { SectionHeader } from "../Components/Components";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
 
 class HomeContainer extends Component {
 	componentDidMount() {
+		ReactGA.pageview(window.location.pathname);
 		window.scrollTo(0, 0);
 	}
 
