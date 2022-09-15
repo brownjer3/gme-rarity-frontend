@@ -182,10 +182,11 @@ export default function CollectionContainer() {
 
 	const fetchNextBatch = () => {
 		let url = apiSearchEndpoint;
+		let prevFirstHalf = url.split("page=")[0];
 		let params = url.split("page=")[1];
 		let oldNum = params.split("/Limit")[0];
 		let updatedParams = params.replace(oldNum, pageNum * pageLimit);
-		let updatedUrl = baseUrl + "page=" + updatedParams;
+		let updatedUrl = prevFirstHalf + "page=" + updatedParams;
 
 		console.log(updatedUrl);
 
