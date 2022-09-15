@@ -27,7 +27,7 @@ export default function CollectionContainer() {
 	const pageLimit = "25";
 	const navigate = useNavigate();
 
-	const baseUrl = "https://gmeraritytool.herokuapp.com/";
+	const baseUrl = "https://gmeraritytool.herokuapp.com/OrderBy=none/";
 	const [apiSearchEndpoint, setApiSearchEndpoint] = useState("");
 
 	const [traitList, setTraitList] = useState({});
@@ -139,9 +139,7 @@ export default function CollectionContainer() {
 	const handleEntireCollection = () => {
 		// https://gmeraritytool.herokuapp.com/page=0/Limit=25/Nft/CollectionID=36fab6f7-1e51-49d9-a0be-39343abafd0f
 
-		let url =
-			baseUrl +
-			`OrderBy=none/page=0/Limit=25/Nft/CollectionID=${collection.id}`;
+		let url = baseUrl + `page=0/Limit=25/Nft/CollectionID=${collection.id}`;
 		setApiSearchEndpoint(url);
 	};
 
@@ -168,7 +166,7 @@ export default function CollectionContainer() {
 		if (traitsQuery.length > 0) {
 			let url =
 				baseUrl +
-				`OrderBy=none/page=0/Limit=25/nfts/Collection=${collection.id}/Attributes=`;
+				`page=0/Limit=25/nfts/Collection=${collection.id}/Attributes=`;
 
 			traitsQuery.forEach((query) => {
 				let category = query["category"];

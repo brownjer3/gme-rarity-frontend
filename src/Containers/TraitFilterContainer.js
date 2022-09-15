@@ -120,8 +120,8 @@ class TraitFilterContainer extends Component {
 				<h3>Find your NFT</h3>
 				<Form className="d-flex px-2" onSubmit={this.props.handleSearch}>
 					<Form.Control
-						type="number"
-						placeholder="ID.."
+						type="text"
+						placeholder="Name/ID.."
 						className="me-2 bg-transparent text-white"
 						aria-label="Search"
 						onChange={this.props.handleQueryInput}
