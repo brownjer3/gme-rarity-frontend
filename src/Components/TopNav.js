@@ -7,7 +7,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ListGroup from "react-bootstrap/ListGroup";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faHouse } from "@fortawesome/free-solid-svg-icons";

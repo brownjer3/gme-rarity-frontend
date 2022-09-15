@@ -186,8 +186,6 @@ export default function CollectionContainer() {
 		let updatedParams = params.replace(oldNum, pageNum * pageLimit);
 		let updatedUrl = prevFirstHalf + "page=" + updatedParams;
 
-		console.log(updatedUrl);
-
 		setApiSearchEndpoint(updatedUrl);
 	};
 
@@ -267,6 +265,10 @@ export default function CollectionContainer() {
 		// window.scrollTo(0, 0);
 	};
 
+	const handleResetQuery = () => {
+		setSearchNameQuery("");
+	};
+
 	const handleQueryInput = (e) => {
 		setSearchNameQuery(e.target.value);
 		if (traitsQuery.length > 0) setTraitsQuery([]);
@@ -341,6 +343,8 @@ export default function CollectionContainer() {
 						<TraitBadges
 							handleTraitDeselect={handleTraitDeselect}
 							selectedTraits={traitsQuery}
+							searchNameQuery={searchNameQuery}
+							handleResetQuery={handleResetQuery}
 						/>
 					</Row>
 					<Row className="my-2 justify-content-space-between">
