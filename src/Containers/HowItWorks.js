@@ -14,6 +14,40 @@ class HowItWorks extends Component {
 		return (
 			<Container className="text-start my-4">
 				<div className="how-it-works-section mt-0">
+					<h1 className="how-it-works-header">
+						[] What is Deep Fungible Value?
+					</h1>
+					<div className="how-it-works-content">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim veniam, quis nostrud exercitation ullamco laboris
+							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat
+							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+				<hr className="my-4" />
+				<div className="how-it-works-section mt-0">
+					<h1 className="how-it-works-header">
+						[] Why does NFT rarity matter?
+					</h1>
+					<div className="how-it-works-content">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim veniam, quis nostrud exercitation ullamco laboris
+							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore eu fugiat
+							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+							sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+				<hr className="my-4" />
+				<div className="how-it-works-section mt-0">
 					<h1 className="how-it-works-header">🧮 Attribute Rarity Scoring</h1>
 					<div className="how-it-works-content">
 						<p>
@@ -24,7 +58,7 @@ class HowItWorks extends Component {
 							supply.
 						</p>
 						<p>
-							To remain un-biased, we have not taken any liberties to give a
+							To remain unbiased, we have not taken any liberties to give a
 							greater weight to certain traits/categories over others, even if
 							they seem like they
 							<em> should </em> be rarer. If you're affiliated with a GameStop
@@ -48,7 +82,7 @@ class HowItWorks extends Component {
 							collection, a 'total rarity score' is given to each NFT by taking
 							the sum of their trait's rarity scores. NFTs are then ranked
 							within their collection based on that total rarity score. NFTs
-							with the same exact total rarity score (typically only the case
+							with the exact same total rarity score (typically only the case
 							with 1/1's) are marked as a tie.
 						</p>
 					</div>
@@ -70,10 +104,10 @@ class HowItWorks extends Component {
 							for example. Although this only affects a handful of NFTs, these
 							collections may display inaccurate rarity rankings as a result.
 							The goal was to create an optimal user experience while still
-							maintaining an un-biased rarity ranking system. In other words, no
+							maintaining an unbiased rarity ranking system. In other words, no
 							assumptions as to the intentions of the creator(s) when it comes
 							to rarity ranking, but we did hide some of the 'wonky'
-							categories/traits from the filtering options on those collection
+							categories/traits from the filtering options on those collection's
 							pages to keep things clean. These collections have been marked
 							with a yellow 'Metadata Note' on their respective page.
 						</p>
@@ -126,7 +160,8 @@ class HowItWorks extends Component {
 						purposes only. We do not provide financial or investment advice or
 						recommend that you purchase any NFTs. Users may not rely on rarity
 						scores, rankings, or other information provided on this site for
-						financial, investment or any other purpose.
+						financial, investment or any other purpose. Deep Fungible Value is
+						not affiliated with GameStop in any way.
 					</small>
 				</div>
 			</Container>
