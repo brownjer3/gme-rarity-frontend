@@ -14,6 +14,7 @@ import CollectionBanner from "../Components/CollectionBanner";
 import CollectionSidebarContainer from "./CollectionSidebarContainer";
 import { Container } from "react-bootstrap";
 import { metadataFlagList } from "../Components/metadataFlagList";
+import ReactGA from "react-ga";
 
 export default function CollectionContainer() {
 	const { collectionSlug } = useParams();
@@ -58,6 +59,7 @@ export default function CollectionContainer() {
 	);
 
 	useEffect(() => {
+		ReactGA.pageview(window.location.pathname);
 		window.scrollTo(0, 0);
 		getTraitList();
 		handleEntireCollection();

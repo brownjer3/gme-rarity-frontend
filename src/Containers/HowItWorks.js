@@ -1,9 +1,15 @@
 import { Component } from "react";
-import { SectionHeader } from "../Components/Components";
+// import { SectionHeader } from "../Components/Components";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
 
 class HowItWorks extends Component {
+	componentDidMount() {
+		ReactGA.pageview(window.location.pathname);
+		window.scrollTo(0, 0);
+	}
+
 	render() {
 		return (
 			<Container className="text-start my-4">

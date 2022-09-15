@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
+import ReactGA from "react-ga";
 
 class ContactContainer extends Component {
 	formSparkUrl = "https://submit-form.com/ijPyx2Vr";
@@ -18,6 +19,7 @@ class ContactContainer extends Component {
 	};
 
 	componentDidMount() {
+		ReactGA.pageview(window.location.pathname);
 		window.scrollTo(0, 0);
 	}
 

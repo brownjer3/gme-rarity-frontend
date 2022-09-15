@@ -12,6 +12,7 @@ import {
 	faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { transformImageUrl } from "../Components/DataFormats";
+import ReactGA from "react-ga";
 
 class AllCollectionsContainer extends Component {
 	state = {
@@ -37,6 +38,7 @@ class AllCollectionsContainer extends Component {
 	};
 
 	componentDidMount() {
+		ReactGA.pageview(window.location.pathname);
 		window.scrollTo(0, 0);
 	}
 
