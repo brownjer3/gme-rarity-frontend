@@ -120,6 +120,15 @@ class HowItWorks extends Component {
 						<span>The Deep Fungible Value Team</span>
 					</div>
 				</div>
+				<div>
+					<small>
+						*Deep Fungible Value is intended for informational and educational
+						purposes only. We do not provide financial or investment advice or
+						recommend that you purchase any NFTs. Users may not rely on rarity
+						scores, rankings, or other information provided on this site for
+						financial, investment or any other purpose.
+					</small>
+				</div>
 			</Container>
 		);
 	}
