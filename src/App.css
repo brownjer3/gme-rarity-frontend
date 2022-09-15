@@ -48,6 +48,9 @@
 		/* margin-top: 1.5rem; */
 		display: none !important;
 	}
+	.hero-video {
+		min-width: 70%;
+	}
 
 	/* .collections-dropdown {
 		display: inline-block !important;
@@ -130,13 +133,22 @@ input:focus {
 }
 
 .nft-card-img {
-	width: 100%;
-	height: auto;
+	display: block !important;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
 }
 
 .collection-stats {
 	text-align: center;
 	font-size: smaller;
+}
+
+.hero-video {
+	max-inline-size: 25%;
+	block-size: auto;
+	/* max-width: 25%;
+	height: auto; */
 }
 
 .main-logo {

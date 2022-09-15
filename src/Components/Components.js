@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
 export const SectionHeader = (props) => {
-	return <h1 className="display-2">{props.name}</h1>;
+	return <h1 className="display-4">{props.name}</h1>;
 };
 
 export const NotFound = () => {
