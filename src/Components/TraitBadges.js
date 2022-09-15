@@ -32,7 +32,7 @@ class TraitBadges extends PureComponent {
 					<Badge bg="light" text="dark">
 						<span
 							className="d-flex align-items-center trait-badge"
-							id={combo.trait}
+							id={combo.category}
 						>
 							{combo.category}: {combo.trait}
 							<button

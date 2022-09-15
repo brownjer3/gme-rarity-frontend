@@ -48,7 +48,7 @@ class HowItWorks extends Component {
 							collection, a 'total rarity score' is given to each NFT by taking
 							the sum of their trait's rarity scores. NFTs are then ranked
 							within their collection based on that total rarity score. NFTs
-							with the same exact total rarity score (tyically only the case
+							with the same exact total rarity score (typically only the case
 							with 1/1's) are marked as a tie.
 						</p>
 					</div>

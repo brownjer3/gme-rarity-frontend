@@ -244,7 +244,8 @@ export default function CollectionContainer() {
 		const category = categoryAndTrait[0];
 		const name = categoryAndTrait[1];
 		if (isTraitSelected(category, name)) {
-			setTraitsQuery(traitsQuery.filter((item) => item.trait !== name));
+			console.log("confirmed trait select");
+			setTraitsQuery(traitsQuery.filter((item) => item.category !== category));
 		} else {
 			// if we already have a query for that category >> remove it and replace
 			if (isCategorySelected(category)) {
@@ -276,8 +277,10 @@ export default function CollectionContainer() {
 	};
 
 	const handleTraitDeselect = (e) => {
-		const name = e.target.closest(".trait-badge").id;
-		setTraitsQuery(traitsQuery.filter((item) => item.trait !== name));
+		const categoryName = e.target.closest(".trait-badge").id;
+		setTraitsQuery(
+			traitsQuery.filter((item) => item.category !== categoryName)
+		);
 	};
 
 	const isCategorySelected = (category) => {
