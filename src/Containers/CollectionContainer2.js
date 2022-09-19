@@ -100,7 +100,7 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		setPageNum(0);
-		if (traitsQuery.length === 0) {
+		if (traitsQuery.length === 0 && searchNameQuery.length === 0) {
 			handleEntireCollection();
 		} else {
 			handleFilterByTraits();
@@ -109,7 +109,7 @@ export default function CollectionContainer() {
 
 	useEffect(() => {
 		setPageNum(0);
-		if (searchNameQuery.length === 0) {
+		if (searchNameQuery.length === 0 && traitsQuery.length === 0) {
 			handleEntireCollection();
 		} else {
 			handleFilterBySearch();
