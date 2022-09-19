@@ -19,13 +19,13 @@ class HowItWorks extends Component {
 					</h1>
 					<div className="how-it-works-content">
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Deep Fungible Value is a free tool for collectors to browse and
+							analyze the 'rarity' of NFTs and traits within a collection.
+						</p>
+						<p>
+							Deep Fungible Value was created by a few enthusiastic GameStop NFT
+							collectors who wanted to help enhance the budding GameStop NFT
+							Marketplace ecosystem. We are in no way affiliated with GameStop.
 						</p>
 					</div>
 				</div>
@@ -36,13 +36,19 @@ class HowItWorks extends Component {
 					</h1>
 					<div className="how-it-works-content">
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat
-							nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-							sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Rarity is the reason that one NFT can sell for 10x more than
+							another NFT in the same collection. Similar to traditional
+							collectibles like trading cards or sports memorabilia, NFTs with
+							traits that are uncommon within the collection can be considered
+							'rarer' which can increase the value. If you own the only signed,
+							mint condition Michael Jordan rookie card in the world, it'll be
+							worth more than a beat up Larry Bird card signed by Danny Devito.
+						</p>
+						<p>
+							Without access to these stats, it can be very hard to accurately
+							value an NFT, especially when collection supply gets into the
+							thousands. Deep Fungible Value provides a free and easy way to
+							guage NFT rarity within a collection.
 						</p>
 					</div>
 				</div>
@@ -53,9 +59,8 @@ class HowItWorks extends Component {
 						<p>
 							To find the rarity of an NFT, you have to start with the
 							collection's traits. Each trait is given a 'rarity score' based on
-							how many NFTs in the collection have that same trait (including
-							multiple editions) and their proportion of the total collection
-							supply.
+							how many NFTs in the collection have that trait and dividing it by
+							the total number of NFTs in that collection.
 						</p>
 						<p>
 							To remain unbiased, we have not taken any liberties to give a
@@ -107,9 +112,9 @@ class HowItWorks extends Component {
 							maintaining an unbiased rarity ranking system. In other words, no
 							assumptions as to the intentions of the creator(s) when it comes
 							to rarity ranking, but we did hide some of the 'wonky'
-							categories/traits from the filtering options on those collection's
-							pages to keep things clean. These collections have been marked
-							with a yellow 'Metadata Note' on their respective page.
+							categories/traits from the filtering options to keep things clean.
+							These collections have been marked with a yellow 'Metadata Note'
+							on their respective page.
 						</p>
 						<p>
 							If you are affiliated with one of these collections, we'd love to{" "}
@@ -154,6 +159,7 @@ class HowItWorks extends Component {
 						<span>The Deep Fungible Value Team</span>
 					</div>
 				</div>
+				<hr className="my-4" />
 				<div>
 					<small>
 						*Deep Fungible Value is intended for informational and educational

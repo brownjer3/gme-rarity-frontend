@@ -4,7 +4,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCollections } from "./Store/Slices/collectionsSlice";
-import TopNav from "./Components/TopNav";
+// import TopNav from "./Components/TopNav";
+import TopNav2 from "./Components/TopNav2";
 import Footer from "./Components/Footer";
 import HomeContainer from "./Containers/HomeContainer";
 import ContactContainer from "./Containers/ContactContainer";
@@ -37,7 +38,7 @@ const App = () => {
 	const appContent = () => {
 		return (
 			<>
-				<TopNav />
+				<TopNav2 />
 				<Stars />
 				<Routes location={background || location}>
 					<Route path="/" element={<HomeContainer />} />
