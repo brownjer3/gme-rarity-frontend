@@ -219,6 +219,7 @@ export default function CollectionContainer() {
 			let dataStr = dataArr[i]["attribute_list"];
 			let splitStr = dataStr.split("{");
 			categoryName = splitStr[0].split(" has")[0];
+
 			traitObj[categoryName] = {};
 
 			let traits = splitStr[1].split("| ");

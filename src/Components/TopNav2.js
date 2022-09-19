@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import InputGroup from "react-bootstrap/InputGroup";
 import Container from "react-bootstrap/Container";
@@ -36,27 +35,25 @@ const TopNav2 = () => {
 			return <></>;
 		} else {
 			return (
-				<NavLink to="/" className="nav-link moon-logo-initials">
-					<Navbar.Brand>
-						<video
-							width="60px"
-							height="45px"
-							autoPlay
-							loop
-							muted
-							playsInline
-							src={
-								process.env.PUBLIC_URL +
-								"/images/final.moon.initials only.24fps0001-0356.webm"
-							}
-							alt="Deep Fungible Value Small Logo - GameStop NFT Rarity Tool"
-						>
-							<source src="/videos/testing.webm" type="video/webm" />
-							<source src="movie.ogg" type="video/ogg" />
-							Your browser does not support the video tag.
-						</video>
-					</Navbar.Brand>
-				</NavLink>
+				<Navbar.Brand>
+					<video
+						width="60"
+						height="45"
+						autoPlay
+						loop
+						muted
+						playsInline
+						src={
+							process.env.PUBLIC_URL +
+							"/images/final.moon.initials only.24fps0001-0356.webm"
+						}
+						alt="Deep Fungible Value Small Logo - GameStop NFT Rarity Tool"
+					>
+						<source src="/videos/testing.webm" type="video/webm" />
+						<source src="movie.ogg" type="video/ogg" />
+						Your browser does not support the video tag.
+					</video>
+				</Navbar.Brand>
 			);
 		}
 	};
@@ -83,7 +80,7 @@ const TopNav2 = () => {
 	};
 
 	const filterNames = () => {
-		if (query == "") {
+		if (query === "") {
 			return;
 		} else {
 			return collections
@@ -112,9 +109,11 @@ const TopNav2 = () => {
 	};
 
 	return (
-		<Navbar bg="transparent" variant="dark" expand="lg" className="top-navbar">
+		<Navbar bg="dark" variant="dark" expand="lg" className="top-navbar">
 			<Container>
-				{handleMiniLogoShow()}
+				<NavLink to="/" className="nav-link moon-logo-initials">
+					{handleMiniLogoShow()}
+				</NavLink>
 				<Navbar.Toggle
 					onClick={toggleOffCanvasShow}
 					aria-controls="offcanvasNavbar-expand-lg"
@@ -142,7 +141,7 @@ const TopNav2 = () => {
 							</Offcanvas.Title>
 						</NavLink>
 					</Offcanvas.Header>
-					<Offcanvas.Body className="bg-transparent">
+					<Offcanvas.Body>
 						<Nav className="flex-grow-1 pe-3 navbar-links-section">
 							<NavLink
 								onClick={handleOffCanvasClose}
@@ -203,16 +202,5 @@ const TopNav2 = () => {
 		</Navbar>
 	);
 };
-
-// const mapStateToProps = (state) => {
-// 	const collections = state.collections.data.map((collection) => ({
-// 		name: collection.name,
-// 		slug: collection.slug,
-// 	}));
-
-// 	return {
-// 		collections: collections,
-// 	};
-// };
 
 export default TopNav2;

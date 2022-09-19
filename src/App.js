@@ -70,6 +70,7 @@ const App = () => {
 	return (
 		<div className="App bg-dark text-white d-flex flex-column min-vh-100">
 			{loading ? loadingContent() : appContent()}
+			{/* {loading ? loadingContent() : "whats happening"} */}
 		</div>
 	);
 };
