@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import TraitFilterContainer from "./TraitFilterContainer";
 import NftsGridContainer from "./NftsGridContainer";
 import SortDropdown from "../Components/SortDropdown";
@@ -164,7 +164,7 @@ export default function CollectionContainer() {
 	const handleFilterByTraits = () => {
 		// https://gmeraritytool.herokuapp.com/OrderBy=none/page=0/Limit=25/nfts/Collection=36fab6f7-1e51-49d9-a0be-39343abafd0f/Attributes=Body$Galaxy
 
-		https: if (traitsQuery.length > 0) {
+		if (traitsQuery.length > 0) {
 			let url =
 				baseUrl +
 				`page=0/Limit=25/nfts/Collection=${collection.id}/Attributes=`;
@@ -255,10 +255,14 @@ export default function CollectionContainer() {
 					);
 					return [...filteredQuery, { trait: name, category: category }];
 				});
-				// otherwise add it to query and collapse that section
+				// otherwise add it to query, sort query array, and collapse that section
 			} else {
 				setTraitsQuery((currentQuery) => {
-					return [...currentQuery, { trait: name, category: category }];
+					const sorted = [
+						...currentQuery,
+						{ trait: name, category: category },
+					].sort((a, b) => a.category - b.category);
+					return [...sorted];
 				});
 			}
 		}
