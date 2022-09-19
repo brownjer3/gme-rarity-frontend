@@ -257,13 +257,12 @@ export default function CollectionContainer() {
 				});
 				// otherwise add it to query, sort query array, and collapse that section
 			} else {
-				setTraitsQuery((currentQuery) => {
-					const sorted = [
-						...currentQuery,
-						{ trait: name, category: category },
-					].sort((a, b) => a.category - b.category);
-					return [...sorted];
-				});
+				const sorted = [
+					...traitsQuery,
+					{ trait: name, category: category },
+				].sort((a, b) => (a.category > b.category ? 1 : -1));
+				console.log(sorted);
+				setTraitsQuery([...sorted]);
 			}
 		}
 		if (searchNameQuery.length > 0) setSearchNameQuery("");
