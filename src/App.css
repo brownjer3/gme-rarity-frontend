@@ -270,3 +270,7 @@ video::-internal-media-controls-overlay-cast-button {
 	/* color: #9e86ff; */
 	color: #1982fc;
 }
+
+.donation-address {
+	font-size: 0.9em;
+}

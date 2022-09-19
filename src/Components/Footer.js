@@ -73,7 +73,7 @@ const Footer = () => {
 						</Col>
 						<Col>
 							<p className="font-monospace pt-3">Want to buy us a coffee?</p>
-							<p className="font-monospace">
+							<p className="font-monospace donation-address">
 								<span className="me-1">GME Wallet: {gmeDonationAddress}</span>
 								<FontAwesomeIcon
 									icon={faCopy}
