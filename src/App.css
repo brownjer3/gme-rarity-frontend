@@ -39,6 +39,17 @@
 	}
 }
 
+.top-navbar {
+	max-height: 60px;
+	background: transparent !important;
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.moon-logo-initials {
+	z-index: 999 !important;
+}
+
 @media (max-width: 40rem) {
 	.nav-link {
 		color: white !important;
@@ -208,14 +219,6 @@ input[type="number"] {
 /* Hide chromecast button for video files */
 video::-internal-media-controls-overlay-cast-button {
 	display: none;
-}
-
-.moon-logo-initials {
-	z-index: 999 !important;
-}
-
-.test-container {
-	height: 87vh;
 }
 
 .metadata-warning {

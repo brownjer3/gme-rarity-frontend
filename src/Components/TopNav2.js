@@ -39,8 +39,8 @@ const TopNav2 = () => {
 				<NavLink to="/" className="nav-link moon-logo-initials">
 					<Navbar.Brand>
 						<video
-							width="60"
-							height="45"
+							width="60px"
+							height="45px"
 							autoPlay
 							loop
 							muted
@@ -112,7 +112,7 @@ const TopNav2 = () => {
 	};
 
 	return (
-		<Navbar bg="dark" variant="dark" expand="lg" className="mb-3">
+		<Navbar bg="transparent" variant="dark" expand="lg" className="top-navbar">
 			<Container>
 				{handleMiniLogoShow()}
 				<Navbar.Toggle
@@ -142,7 +142,7 @@ const TopNav2 = () => {
 							</Offcanvas.Title>
 						</NavLink>
 					</Offcanvas.Header>
-					<Offcanvas.Body className="bg-dark">
+					<Offcanvas.Body className="bg-transparent">
 						<Nav className="flex-grow-1 pe-3 navbar-links-section">
 							<NavLink
 								onClick={handleOffCanvasClose}
