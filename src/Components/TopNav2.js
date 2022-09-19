@@ -141,7 +141,7 @@ const TopNav2 = () => {
 							</Offcanvas.Title>
 						</NavLink>
 					</Offcanvas.Header>
-					<Offcanvas.Body>
+					<Offcanvas.Body className="bg-dark">
 						<Nav className="flex-grow-1 pe-3 navbar-links-section">
 							<NavLink
 								onClick={handleOffCanvasClose}
