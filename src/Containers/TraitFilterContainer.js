@@ -18,6 +18,12 @@ class TraitFilterContainer extends Component {
 					</ListGroup>
 				</>
 			);
+		} else {
+			return (
+				<p className="my-4 text-muted">
+					This collection does not include traits
+				</p>
+			);
 		}
 	};
 
