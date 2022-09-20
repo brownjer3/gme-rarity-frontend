@@ -19,9 +19,9 @@ class AllCollectionsContainer extends Component {
 		collections: [...this.props.collections],
 		sortOptions: [
 			"Collection",
-			"Total Supply",
-			"Floor Price",
 			"Lifetime Volume",
+			"Floor Price",
+			"Total Supply",
 			// "30-day Volume",
 			// "24-hr Volume",
 		],
@@ -68,8 +68,8 @@ class AllCollectionsContainer extends Component {
 	handleSortChange = (e) => {
 		const name =
 			e.target.previousSibling || e.target.parentElement.previousSibling;
-		if (this.state.sortSelection == name.id) {
-			if (this.state.sortOrder == "Descending") {
+		if (this.state.sortSelection === name.id) {
+			if (this.state.sortOrder === "Descending") {
 				this.setState((prevState) => ({
 					sortOrder: "Ascending",
 					collections: [...prevState.collections].reverse(),
@@ -91,8 +91,8 @@ class AllCollectionsContainer extends Component {
 	};
 
 	handleSortIcon = (name) => {
-		if (this.state.sortSelection == name) {
-			if (this.state.sortOrder == "Descending") {
+		if (this.state.sortSelection === name) {
+			if (this.state.sortOrder === "Descending") {
 				return (
 					<FontAwesomeIcon
 						icon={faCaretDown}

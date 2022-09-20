@@ -31,13 +31,14 @@ class CollectionTableRow extends Component {
 						</Row>
 					</Link>
 				</td>
-				<td>{this.props.collectionSize}</td>
-				<td>
-					<EthData weiVal={this.props.floorPrice} />
-				</td>
 				<td>
 					<EthData weiVal={this.props.totalVolume} />
 				</td>
+				<td>
+					<EthData weiVal={this.props.floorPrice} />
+				</td>
+				<td>{this.props.collectionSize}</td>
+
 				{/* <td>
 					<EthData weiVal={this.props.monthVolume} />
 				</td>
