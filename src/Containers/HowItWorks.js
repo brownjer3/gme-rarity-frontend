@@ -15,40 +15,61 @@ class HowItWorks extends Component {
 			<Container className="text-start my-4">
 				<div className="how-it-works-section mt-0">
 					<h1 className="how-it-works-header">
-						[] What is Deep Fungible Value?
+						📍 What is Deep Fungible Value?
 					</h1>
 					<div className="how-it-works-content">
 						<p>
 							Deep Fungible Value is a free tool for collectors to browse and
-							analyze the 'rarity' of NFTs and traits within a collection.
+							analyze the rarity of NFTs and traits within a collection on{" "}
+							<a
+								className="fw-bold text-decoration-none text-white"
+								href="https://nft.gamestop.com/"
+								target="_blank"
+							>
+								GameStop's NFT Marketplace.
+							</a>{" "}
+							With our tool, collectors can view high-level collection data,
+							automate the NFT search/filtering process, and use our rarity
+							calculations as needed.
 						</p>
 						<p>
 							Deep Fungible Value was created by a few enthusiastic GameStop NFT
-							collectors who wanted to help enhance the budding GameStop NFT
-							Marketplace ecosystem. We are in no way affiliated with GameStop.
+							collectors who want to help enhance the budding GameStop NFT
+							ecosystem. We are in no way affiliated with GameStop. All rarity
+							metrics displayed on the site are for informational and eductional
+							purposes only.
 						</p>
 					</div>
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section mt-0">
 					<h1 className="how-it-works-header">
-						[] Why does NFT rarity matter?
+						💎 Why does NFT rarity matter?
 					</h1>
 					<div className="how-it-works-content">
 						<p>
-							Rarity is the reason that one NFT can sell for 10x more than
-							another NFT in the same collection. Similar to traditional
-							collectibles like trading cards or sports memorabilia, NFTs with
-							traits that are uncommon within the collection can be considered
-							'rarer' which can increase the value. If you own the only signed,
-							mint condition Michael Jordan rookie card in the world, it'll be
-							worth more than a beat up Larry Bird card signed by Danny Devito.
+							NFT rarity refers to how common or uncommon an NFT is within a
+							collection. Generally speaking, NFTs with traits that are commonly
+							seen throughout a collection are considered less rare, whereas
+							NFTs with more unqiue/uncommon traits are rarer. For collectors,
+							the rarity of an NFT can increase the value of certain NFTs and
+							help guide their collection strategy.
 						</p>
 						<p>
-							Without access to these stats, it can be very hard to accurately
-							value an NFT, especially when collection supply gets into the
-							thousands. Deep Fungible Value provides a free and easy way to
-							guage NFT rarity within a collection.
+							Rarity is the reason that one NFT can sell for millions while
+							another NFT in the very same collection sells for a fraction of
+							the price. Similar to traditional collectibles like trading cards
+							or sports memorabilia, NFTs with uncommon/low supply traits are
+							typically in higher demand, which often increases the market
+							value. If you own a signed, mint condition Michael Jordan rookie
+							basketball card, it'll be worth more than a beat up Dennis Rodman
+							card signed by Danny Devito.
+						</p>
+						<p>
+							Without easy access to these stats, it can be very hard to
+							accurately value an NFT, especially when collection supply gets
+							into the thousands. Deep Fungible Value provides a free and easy
+							way to guage NFT rarity within a collection.
 						</p>
 					</div>
 				</div>
@@ -57,10 +78,12 @@ class HowItWorks extends Component {
 					<h1 className="how-it-works-header">🧮 Attribute Rarity Scoring</h1>
 					<div className="how-it-works-content">
 						<p>
-							To find the rarity of an NFT, you have to start with the
-							collection's traits. Each trait is given a 'rarity score' based on
-							how many NFTs in the collection have that trait and dividing it by
-							the total number of NFTs in that collection.
+							To find the rarity of an NFT, you start by evaulating all of the
+							traits in that collection. Each trait is given a 'rarity score'
+							based on how many NFTs in the collection have that trait and
+							dividing it by the total number of NFTs in that collection. For
+							collections with NFTs that have multiple editions, this total
+							supply includes those edition counts.
 						</p>
 						<p>
 							To remain unbiased, we have not taken any liberties to give a
