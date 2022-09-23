@@ -35,7 +35,7 @@ const TopNav2 = () => {
 			return <></>;
 		} else {
 			return (
-				<Navbar.Brand>
+				<Navbar.Brand className="d-none d-lg-block">
 					<video
 						width="60"
 						height="45"
