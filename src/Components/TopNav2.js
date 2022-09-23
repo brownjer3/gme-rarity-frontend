@@ -45,7 +45,7 @@ const TopNav2 = () => {
 						playsInline
 						src={
 							process.env.PUBLIC_URL +
-							"/images/final.moon.initials only.24fps0001-0356.webm"
+							"/videos/final.moon.initials only.24fps0001-0356.webm"
 						}
 						alt="Deep Fungible Value Small Logo - GameStop NFT Rarity Tool"
 					>

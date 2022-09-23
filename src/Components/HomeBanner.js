@@ -24,18 +24,17 @@ class HomeBanner extends Component {
 								<source
 									src={
 										process.env.PUBLIC_URL +
-										"/images/final.moon.name.24fps0001-0356.webm"
+										"/videos/final.moon.name.24fps0001-0356.webm"
 									}
 									type="video/webm"
 								/>
 								<source
 									src={
-										process.env.PUBLIC_URL + "/images/mobile-moon-render.mp4"
+										process.env.PUBLIC_URL + "/videos/mobile-moon-render.mp4"
 									}
 									type="video/mp4"
 								/>
-								<source src="movie.ogg" type="video/ogg" />
-								Your browser does not support the video tag.
+								<p>Your browser does not support the video tag.</p>
 							</video>
 						</div>
 					</Col>
