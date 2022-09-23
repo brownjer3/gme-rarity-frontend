@@ -33,10 +33,10 @@ class HowItWorks extends Component {
 							calculations as needed.
 						</p>
 						<p>
-							Deep Fungible Value was created by a few enthusiastic GameStop NFT
+							This site was created by a few enthusiastic GameStop NFT
 							collectors who want to help enhance the budding GameStop NFT
-							ecosystem. We are in no way affiliated with GameStop. All rarity
-							metrics displayed on the site are for informational and eductional
+							ecosystem. We are not affiliated with GameStop. All rarity metrics
+							displayed on the site are for informational and educational
 							purposes only.
 						</p>
 					</div>
@@ -51,7 +51,7 @@ class HowItWorks extends Component {
 							NFT rarity refers to how common or uncommon an NFT is within a
 							collection. Generally speaking, NFTs with traits that are commonly
 							seen throughout a collection are considered less rare, whereas
-							NFTs with more unqiue/uncommon traits are rarer. For collectors,
+							NFTs with more unique/uncommon traits are rarer. For collectors,
 							the rarity of an NFT can increase the value of certain NFTs and
 							help guide their collection strategy.
 						</p>
@@ -63,13 +63,13 @@ class HowItWorks extends Component {
 							typically in higher demand, which often increases the market
 							value. If you own a signed, mint condition Michael Jordan rookie
 							basketball card, it'll be worth more than a beat up Dennis Rodman
-							card signed by Danny Devito.
+							card signed by Danny DeVito.
 						</p>
 						<p>
 							Without easy access to these stats, it can be very hard to
 							accurately value an NFT, especially when collection supply gets
 							into the thousands. Deep Fungible Value provides a free and easy
-							way to guage NFT rarity within a collection.
+							way to gauge NFT rarity within a collection.
 						</p>
 					</div>
 				</div>
@@ -78,7 +78,7 @@ class HowItWorks extends Component {
 					<h1 className="how-it-works-header">🧮 Attribute Rarity Scoring</h1>
 					<div className="how-it-works-content">
 						<p>
-							To find the rarity of an NFT, you start by evaulating all of the
+							To find the rarity of an NFT, you start by evaluating all of the
 							traits in that collection. Each trait is given a 'rarity score'
 							based on how many NFTs in the collection have that trait and
 							dividing it by the total number of NFTs in that collection. For
@@ -110,8 +110,8 @@ class HowItWorks extends Component {
 							collection, a 'total rarity score' is given to each NFT by taking
 							the sum of their trait's rarity scores. NFTs are then ranked
 							within their collection based on that total rarity score. NFTs
-							with the exact same total rarity score (typically only the case
-							with 1/1's) are marked as a tie.
+							with the same total rarity score (typically only the case with
+							1/1's) are marked as a tie.
 						</p>
 					</div>
 				</div>
@@ -152,7 +152,7 @@ class HowItWorks extends Component {
 				</div>
 				<hr className="my-4" />
 				<div className="how-it-works-section">
-					<h1 className="how-it-works-header">🚧 Future Updates</h1>
+					<h1 className="how-it-works-header">🛠 Future Updates</h1>
 					<div className="how-it-works-content">
 						<p>
 							Just like the GameStop NFT Marketplace, Deep Fungible Value is
@@ -164,7 +164,7 @@ class HowItWorks extends Component {
 							<li>Expanded collection support</li>
 							<li>NFT price data & filtering </li>
 							<li>Web3 wallet connectivity</li>
-							<li>Ehanced mobile experience</li>
+							<li>Enhanced mobile experience</li>
 							<li>And so much more</li>
 						</ul>
 						<p>
