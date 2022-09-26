@@ -52,6 +52,12 @@ class CollectionBanner extends PureComponent {
 		);
 	};
 
+	handleBannerError = (e) => {
+		const blackBanner =
+			"https://static.gstop-content.com/14d0d64a-cd66-4fd8-9363-95f545d9c5c5?img-width=expanded&img-format=WebP";
+		e.target.src = blackBanner;
+	};
+
 	render() {
 		const {
 			name,
@@ -68,6 +74,7 @@ class CollectionBanner extends PureComponent {
 					<Card.Img
 						className="position-relative top-50 start-50 translate-middle"
 						variant="top"
+						onError={this.handleBannerError}
 						src={transformImageUrl(banner_image_url, "banner")}
 						alt={`GameStop NFT Collection Banner - ${name}`}
 					/>
