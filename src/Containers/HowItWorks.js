@@ -44,7 +44,7 @@ class HowItWorks extends Component {
 				<hr className="my-4" />
 				<div className="how-it-works-section mt-0">
 					<h1 className="how-it-works-header">
-						💎 Why does NFT rarity matter?
+						💎 Why Does NFT Rarity Matter?
 					</h1>
 					<div className="how-it-works-content">
 						<p>
