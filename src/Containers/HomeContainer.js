@@ -19,7 +19,7 @@ class HomeContainer extends Component {
 				<HomeBanner />
 				<SectionHeader name="Trending Collections" />
 				<TrendingContainer />
-				<Link to="/collections">
+				<Link to="/">
 					<Button className="my-4" variant="outline-light" size="lg">
 						Explore All Collections
 					</Button>

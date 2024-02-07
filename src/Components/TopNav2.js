@@ -18,13 +18,13 @@ const TopNav2 = () => {
 	const [showOffCanvas, setShowOffCanvas] = useState(false);
 	const [curPage, setCurPage] = useState(location.pathname);
 
-	const collections = useSelector((state) =>
-		state.collections.data.map((collection) => ({
-			name: collection.name,
-			slug: collection.slug,
-			id: collection.id,
-		}))
-	);
+	// const collections = useSelector((state) =>
+	// 	state.collections.data.map((collection) => ({
+	// 		name: collection.name,
+	// 		slug: collection.slug,
+	// 		id: collection.id,
+	// 	}))
+	// );
 
 	useEffect(() => {
 		setCurPage(location.pathname);
@@ -79,34 +79,34 @@ const TopNav2 = () => {
 		setShowOffCanvas((curr) => !curr);
 	};
 
-	const filterNames = () => {
-		if (query === "") {
-			return;
-		} else {
-			return collections
-				.filter((collection) => {
-					return collection.name.toLowerCase().includes(query);
-				})
-				.slice(0, 5)
-				.map((collection) => (
-					<Link
-						reloadDocument
-						className="text-white text-decoration-none"
-						to={`/collections/${collection.slug}`}
-					>
-						<ListGroup.Item
-							action
-							key={collection.id}
-							// value={collection.slug}
-							onClick={handleSelect}
-							className="collection-dropdown-item"
-						>
-							{collection.name}
-						</ListGroup.Item>
-					</Link>
-				));
-		}
-	};
+	// const filterNames = () => {
+	// 	if (query === "") {
+	// 		return;
+	// 	} else {
+	// 		return collections
+	// 			.filter((collection) => {
+	// 				return collection.name.toLowerCase().includes(query);
+	// 			})
+	// 			.slice(0, 5)
+	// 			.map((collection) => (
+	// 				<Link
+	// 					reloadDocument
+	// 					className="text-white text-decoration-none"
+	// 					to={`/collections/${collection.slug}`}
+	// 				>
+	// 					<ListGroup.Item
+	// 						action
+	// 						key={collection.id}
+	// 						// value={collection.slug}
+	// 						onClick={handleSelect}
+	// 						className="collection-dropdown-item"
+	// 					>
+	// 						{collection.name}
+	// 					</ListGroup.Item>
+	// 				</Link>
+	// 			));
+	// 	}
+	// };
 
 	return (
 		<Navbar bg="dark" variant="dark" expand="lg" className="top-navbar">
@@ -145,7 +145,7 @@ const TopNav2 = () => {
 						<Nav className="flex-grow-1 pe-3 navbar-links-section">
 							<NavLink
 								onClick={handleOffCanvasClose}
-								to="/collections"
+								to="/"
 								className="nav-link"
 							>
 								All Collections
@@ -192,7 +192,7 @@ const TopNav2 = () => {
 									id="navbarToggleExternalContent"
 									className="collections-dropdown"
 								>
-									{filterNames()}
+									{/* {filterNames()} */}
 								</ListGroup>
 							</InputGroup>
 						</Form>
